@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Jan 17 11:21:40 2023
+# Process ID: 5124
+# Current directory: C:/Users/dkeum/audio_tutorial/audio_tutorial
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12892 C:\Users\dkeum\audio_tutorial\audio_tutorial\audio_tutorial.xpr
+# Log file: C:/Users/dkeum/audio_tutorial/audio_tutorial/vivado.log
+# Journal file: C:/Users/dkeum/audio_tutorial/audio_tutorial\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.xpr
+update_compile_order -fileset sources_1
