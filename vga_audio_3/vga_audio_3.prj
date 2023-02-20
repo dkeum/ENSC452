@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="vga_audio_3" location="C:/Users/dkeum/official_lab_test_vga/vga_audio_3" platform="C:/Users/dkeum/official_lab_test_vga/design_1_wrapper_2/export/design_1_wrapper_2/design_1_wrapper_2.xpfm" platformUID="xilinx:zed::0.0(custom)" systemProject="vga_audio_test3_system" sysConfig="design_1_wrapper_2" runtime="C/C++" cpu="vga_component" cpuInstance="ps7_cortexa9_1" os="standalone" language="CPP" mssSignature="f3fde9f0fef3e5a2d4d37a531776d70e">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.575744433">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1724926568" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
