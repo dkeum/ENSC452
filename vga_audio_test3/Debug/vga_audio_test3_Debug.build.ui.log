@@ -1,0 +1,10 @@
+2023-02-19T18:26:35.385953500255-18:26:35 **** Incremental Build of configuration Debug for project vga_audio_test3 ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-make[1]: Nothing to be done for 'main-build'.
+00255-
+18:26:35 Build Finished (took 346ms)
+
