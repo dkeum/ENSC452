@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="vga_audio_test4_system" platform="C:/Users/dkeum/official_lab_test_vga/design_6_wrapper_PRNG/export/design_6_wrapper_PRNG/design_6_wrapper_PRNG.xpfm" platformUID="xilinx:zed::0.0(custom)" sysConfig="design_6_wrapper_PRNG" runtime="cpp" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.1992618897">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="vga_audio_test4" domainName="standalone_ps7_cortexa9_0" domainPrettyName="standalone_ps7_cortexa9_0" appBuildConfig="Debug"/>
+      <applications name="vga_audio4" domainName="vga_test4" domainPrettyName="vga_test4" appBuildConfig="Debug"/>
+      <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="vga_audio_test4" domainName="standalone_ps7_cortexa9_0" domainPrettyName="standalone_ps7_cortexa9_0" appBuildConfig="Debug"/>
+      <applications name="vga_audio4" domainName="vga_test4" domainPrettyName="vga_test4" appBuildConfig="Debug"/>
+      <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.139255292">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="vga_audio_test4" domainName="standalone_ps7_cortexa9_0" domainPrettyName="standalone_ps7_cortexa9_0" appBuildConfig="Release"/>
+      <applications name="vga_audio4" domainName="vga_test4" domainPrettyName="vga_test4" appBuildConfig="Release"/>
+      <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>
