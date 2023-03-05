@@ -222,7 +222,6 @@ void nco_init(void *InstancePtr){
 //generates numbers up to 20 shapes. each shape will have randomized color, position,
 void generate_PRNG(XAxiDma myDma){
 	u32 status;
-	u32 seed[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}; //seed
 	int output_location[20]; // output of seed is here. We want to let at most 4 shapes per bin at a time. 4*5 = 20
 
 	//u32* prng_output = (*(volatile unsigned long *)0xFFFF0060;
@@ -237,10 +236,10 @@ void generate_PRNG(XAxiDma myDma){
 		return;
 	}
 
-	int a,b,c,d;
+	int a,b,c,d,e;
 
 	// new seeds for the next iteration
-	for(int ii =0; ii < 20;ii++){
+	for(int ii =0; ii <= 20;ii++){
 		seed[ii] = output_location[ii];
 
 
@@ -250,18 +249,20 @@ void generate_PRNG(XAxiDma myDma){
 		b = output_location[ii] % 5; // location
 		c = output_location[ii] % 7; // color
 		d = output_location[ii] % 8; // size 1-8
-		prng_output_location[4*ii] =  abs(a);
-		prng_output_location[4*ii +1] =  abs(b); // later on this could be the output from the FFT ip
-		prng_output_location[4*ii +2] =  abs(c);
-		prng_output_location[4*ii +3] =  abs(d);
+		e = output_location[ii] % 2; //is shape rotating
+		prng_output_location[5*ii] =  abs(a);
+		prng_output_location[5*ii +1] =  abs(b); // later on this could be the output from the FFT ip
+		prng_output_location[5*ii +2] =  abs(c);
+		prng_output_location[5*ii +3] =  abs(d);
+		prng_output_location[5*ii +4] =  abs(e);
 
 	}
 
 	//4*19+3 = 79
-	prng_output_location[4*20 +3] = output_location[4] % 8;// for random bin colors
-	prng_output_location[4*20 +4] = output_location[1] % 8;
-	prng_output_location[4*20 +5] = output_location[7] % 8;
-	prng_output_location[4*20 +6] = output_location[9] % 8;
+	prng_output_location[5*21 ] = output_location[4] % 8;// for random bin colors
+	prng_output_location[5*21 +1] = output_location[1] % 8;
+	prng_output_location[5*21 +2] = output_location[7] % 8;
+	prng_output_location[5*21 +3] = output_location[9] % 8;
 
 	// set a flag to indicate... something?
 

@@ -173,7 +173,7 @@ void menu(){
 	while(1){
 
 
-		if(counter_prng % 10000000 == 0 ){
+		if(counter_prng % 100000 == 0 ){
 			generate_PRNG(myDma); // this should sample the music
 			counter_prng = 0;
 		}

@@ -53,6 +53,9 @@ volatile int display_shape=1;
 void generate_shape(); // v1
 void generate_shape_from_rng(int bin_num, int counter,int background_color, double rotation,int elongate_on); // v2
 void generate_with_shape_parms(int shape_type, int location, int color, int counter,int background_color, double rotation, int elongate_on); //v2
+void generate_shape_from_Prng(int bin_num, int counter,int background_color, double rotation,int elongate_mode);
+void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int size,int counter,int background_color, double rotation, int elongate_on); //v2
+
 
 // Global Variables
 Square square;
@@ -140,11 +143,21 @@ int main()
 
 
 		// (2) generate shapes
-		generate_shape_from_rng(1,counter,background_color,rotation,elongate_mode);
-		generate_shape_from_rng(2,counter1,background_color,rotation,elongate_mode);
-		generate_shape_from_rng(3,counter2,background_color,rotation,elongate_mode);
-		generate_shape_from_rng(4,counter3,background_color,rotation,elongate_mode);
-		generate_shape_from_rng(5,counter4,background_color,rotation,elongate_mode);
+		if(light_pattern_mode == 3){
+			generate_shape_from_Prng(1,counter,background_color,rotation,elongate_mode);
+			generate_shape_from_Prng(2,counter1,background_color,rotation,elongate_mode);
+			generate_shape_from_Prng(3,counter2,background_color,rotation,elongate_mode);
+			generate_shape_from_Prng(4,counter3,background_color,rotation,elongate_mode);
+			generate_shape_from_Prng(5,counter4,background_color,rotation,elongate_mode);
+		}
+		else{
+			generate_shape_from_rng(1,counter,background_color,rotation,elongate_mode);
+			generate_shape_from_rng(2,counter1,background_color,rotation,elongate_mode);
+			generate_shape_from_rng(3,counter2,background_color,rotation,elongate_mode);
+			generate_shape_from_rng(4,counter3,background_color,rotation,elongate_mode);
+			generate_shape_from_rng(5,counter4,background_color,rotation,elongate_mode);
+		}
+
 
 		if(isbin1_changed ==1 ){
 			bin1.draw_Bin(200,20,120,0,(int)0xF0FF0FFF); //temp value for freq range
@@ -295,6 +308,9 @@ void generate_shape(){
 
 
 
+
+// EVERYONE MODE EXCEPT FOR RANDOM MODE
+
 // Idea here is that there's 5 buffers corresponding to a bin
 // 1) each buffer has 4 limit ( 4 shapes can be present in each bin at a time.
 // 2) this code will consume an element from each buffer every 2 of seconds
@@ -310,9 +326,10 @@ void generate_shape_from_rng(int bin_num, int counter,int background_color, doub
 
 	// the program accepts 4 shapes per bin at a time.
 	//
-	int shape = temp_buffer[3*4*jj  + 3*buffer_index]; // accept values 1-4
-	int bin   = temp_buffer[3*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
-	int color = temp_buffer[3*4*jj+2+ 3*buffer_index]; // accept valeus of 1-7
+	int shape = temp_buffer[4*4*jj  + 3*buffer_index]; // accept values 1-4
+	int bin   = temp_buffer[4*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
+	int color = temp_buffer[4*4*jj+2+ 3*buffer_index]; // accept valeus of 1-7
+	int size = temp_buffer[4*4*jj+3+ 3*buffer_index]; // accept valeus of 1-7
 
 
 	generate_with_shape_parms(shape, 1, color,counter,background_color,rotation,elongate_mode);
@@ -320,9 +337,10 @@ void generate_shape_from_rng(int bin_num, int counter,int background_color, doub
 
 	jj= 1;
 	//bin 2
-	shape = temp_buffer[3*4*jj  + 3*buffer_index]; // accept values 1-4
-	bin   = temp_buffer[3*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
-	color = temp_buffer[3*4*jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	shape = temp_buffer[4*4*jj  + 3*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[4*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[4*4*jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[4*4*jj+3+ 3*buffer_index]; // accept valeus of 1-7
 
 
 	generate_with_shape_parms(shape, 2, color,counter,background_color,rotation,elongate_mode);
@@ -330,20 +348,22 @@ void generate_shape_from_rng(int bin_num, int counter,int background_color, doub
 
 	jj= 2;
 	//bin 3
-	shape = temp_buffer[3*4*jj  + 3*buffer_index]; // accept values 1-4
-	bin   = temp_buffer[3*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
-	color = temp_buffer[3*4 *jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	shape = temp_buffer[4*4*jj  + 3*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[4*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[4*4 *jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[4*4*jj+3+ 3*buffer_index]; // accept valeus of 1-7
 
 
-		generate_with_shape_parms(shape, 3, color,counter,background_color,rotation,elongate_mode);
+	generate_with_shape_parms(shape, 3, color,counter,background_color,rotation,elongate_mode);
 
 
 
 	jj= 3;
 	//bin 4
-	shape = temp_buffer[3*4*jj  + 3*buffer_index]; // accept values 1-4
-	bin   = temp_buffer[3*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
-	color = temp_buffer[3*4*jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	shape = temp_buffer[4*4*jj  + 3*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[4*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[4*4*jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[4*4*jj+3+ 3*buffer_index]; // accept valeus of 1-7
 
 
 	generate_with_shape_parms(shape, 4, color,counter,background_color,rotation,elongate_mode);
@@ -351,9 +371,10 @@ void generate_shape_from_rng(int bin_num, int counter,int background_color, doub
 
 	jj= 4;
 	//bin 5
-	shape = temp_buffer[3*4*jj  + 3*buffer_index]; // accept values 1-4
-	bin   = temp_buffer[3*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
-	color = temp_buffer[3*4*jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	shape = temp_buffer[4*4*jj  + 3*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[4*4*jj+1+ 3*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[4*4*jj+2+ 3*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[4*4*jj+3+ 3*buffer_index]; // accept valeus of 1-7
 
 
 	generate_with_shape_parms(shape, 5, color,counter,background_color,rotation,elongate_mode);
@@ -474,8 +495,247 @@ void generate_with_shape_parms(int shape_type, int location, int color, int coun
 
 
 
+// RANDOM MODE BELOW
+
+void generate_shape_from_Prng(int bin_num, int counter,int background_color, double rotation,int elongate_mode){
+	// the first 15 elements will be for bin 1, next 15 is bin 2, and so on until bin 5
+		int * temp_buffer= prng_output;
+		int buffer_index = (bin_num-1); // buffer number goes from 0-4
+
+		//bin 1
+		int jj= 0;
+
+		// the program accepts 4 shapes per bin at a time.
+		//
+		int shape      = temp_buffer[5*4*jj + 5*buffer_index]; // accept values 1-4
+		int bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		int color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		int size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		int isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		if(counter>150){
+			color++;
+			if(counter>6){
+				color=shape;
+			}
+		}
+
+		double temp_rotate;
+		if(isrotating ==0){
+			temp_rotate = 0;
+		}else{
+			temp_rotate = rotation;
+		}
 
 
+		generate_with_shape_parms_PRNG(shape, 1, color,size,counter,background_color,temp_rotate,elongate_mode);
+
+
+		jj= 1;
+		//bin 2
+		shape      = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		if(counter>450){
+			color++;
+			if(counter>6){
+				color=shape;
+			}
+		}
+
+
+			if(isrotating ==0){
+				temp_rotate = 0;
+			}else{
+				temp_rotate = rotation;
+		}
+
+		generate_with_shape_parms_PRNG(shape, 2, color,size,counter,background_color,temp_rotate,elongate_mode);
+
+
+		jj= 2;
+		//bin 3
+		shape      = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		if(counter>550){
+			color++;
+			if(counter>6){
+				color=shape;
+			}
+		}
+
+			if(isrotating ==0){
+				temp_rotate = 0;
+			}else{
+				temp_rotate = rotation;
+		}
+
+		generate_with_shape_parms_PRNG(shape, 3, color,size,counter,background_color,temp_rotate,elongate_mode);
+
+
+
+		jj= 3;
+		//bin 4
+		shape      = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		if(counter>750){
+			color++;
+			if(counter>6){
+				color=shape;
+			}
+		}
+
+					if(isrotating ==0){
+						temp_rotate = 0;
+					}else{
+						temp_rotate = rotation;
+					}
+
+
+
+		generate_with_shape_parms_PRNG(shape, 4, color,size,counter,background_color,temp_rotate,elongate_mode);
+
+
+		jj= 4;
+		//bin 5
+		shape = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
+		bin   = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 1-5
+		size  = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		if(counter>850){
+					color++;
+					if(counter>6){
+						color=shape;
+					}
+			}
+		if(isrotating ==0){
+				temp_rotate = 0;
+		}else{
+			temp_rotate = rotation;
+		}
+
+
+		generate_with_shape_parms_PRNG(shape, 5, color,size,counter,background_color,temp_rotate,elongate_mode);
+
+		return;
+}
+
+
+void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int size,int counter,int background_color, double rotation, int elongate_on){
+
+	if(shape_type ==1 ){
+		//square
+		Square square;
+//		square.draw_Square(-50, (location-1)*200 +70,size, color_array[color]); // -50 is the starting y coordinate which is off the screen
+		int rv = square.draw_Square_flexible_version(-100+counter,(location-1)*200 + 70,size, color_array[color], rotation,background_color,elongate_mode);
+
+		if(rv ==1){
+			if(location==1){
+				isbin1_changed = 1;
+			}
+			else if(location==2){
+				isbin2_changed = 1;
+			}
+			else if(location==3){
+				isbin3_changed = 1;
+			}
+			else if(location==4){
+				isbin4_changed = 1;
+			}
+			else if(location==5){
+				isbin5_changed = 1;
+			}
+		}
+	}
+	else if(shape_type ==2){
+		//circle
+		Circle circle;
+//		circle.draw_Circle(-50, (location-1)*200 +70,size, color_array[color]);
+//		circle.draw_Circle(-50,(location-1)*200,size,mycolor[my_bin]);
+		int rv = circle.draw_Circle_flexible_version(-100+counter,((location-1)*200 + 70),size,color_array[color],background_color,elongate_mode);
+
+		if(rv ==1){
+			if(location==1){
+				isbin1_changed = 1;
+			}
+			else if(location==2){
+				isbin2_changed = 1;
+			}
+			else if(location==3){
+				isbin3_changed = 1;
+			}
+			else if(location==4){
+				isbin4_changed = 1;
+			}
+			else if(location==5){
+				isbin5_changed = 1;
+			}
+		}
+
+	}
+	else if(shape_type ==3){
+		//triangle
+		Triangle triangle;
+		//triangle.draw_Triangle(((location-1)*200 + 70), 100+counter,1,(int)0xFFFFFFFF);
+//		triangle.draw_Triangle(((location-1)*200 + 70), -50,size, color_array[color]);
+		int rv =triangle.draw_Triangle_flexible_version(((location-1)*200 + 70), -100+counter,size,color_array[color],rotation, background_color,elongate_mode);
+		if(rv ==1){
+			if(location==1){
+				isbin1_changed = 1;
+			}
+			else if(location==2){
+				isbin2_changed = 1;
+			}
+			else if(location==3){
+				isbin3_changed = 1;
+			}
+			else if(location==4){
+				isbin4_changed = 1;
+			}
+			else if(location==5){
+				isbin5_changed = 1;
+			}
+		}
+
+
+	}
+	else{// if(shape_type != 1 || shape_type != 2 || shape_type != 3)
+		//pentagon
+		Pentagon pentagon;
+		//pentagon.draw_Pentagon(((location-1)*200 + 70), 100+counter,1,(int)0xFFFFFFFF, rotation);
+//		pentagon.draw_Pentagon(((location-1)*200 + 70), -50,size,color_array[color]);
+		int rv =pentagon.draw_Pentagon_flexible_version(((location-1)*200 + 70), -100+counter,size,color_array[color], rotation,background_color,elongate_mode);
+
+		if(rv ==1){
+			if(location==1){
+				isbin1_changed = 1;
+			}
+			else if(location==2){
+				isbin2_changed = 1;
+			}
+			else if(location==3){
+				isbin3_changed = 1;
+			}
+			else if(location==4){
+				isbin4_changed = 1;
+			}
+			else if(location==5){
+				isbin5_changed = 1;
+			}
+		}
+
+	}
+	return;
+
+}
 
 
 
