@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
 // Date        : Mon Feb 13 16:18:52 2023
 // Host        : ensc-pit-w15 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_clk_wiz_0_2 -prefix
+//               design_1_clk_wiz_0_2_ design_1_clk_wiz_0_2_sim_netlist.v
 // Design      : design_1_clk_wiz_0_2
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -35,7 +35,6 @@ module design_1_clk_wiz_0_2
         .resetn(resetn));
 endmodule
 
-(* ORIG_REF_NAME = "design_1_clk_wiz_0_2_clk_wiz" *) 
 module design_1_clk_wiz_0_2_design_1_clk_wiz_0_2_clk_wiz
    (clk_out1,
     resetn,

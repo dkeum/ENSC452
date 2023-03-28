@@ -1,0 +1,41 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.616832",
+   "Default View_TopLeft":"-603,-720",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port M00_AXI -pg 1 -lvl 3 -x 790 -y -550 -defaultsOSRD
+preplace port slowest_sync_clk -pg 1 -lvl 0 -x -110 -y -70 -defaultsOSRD
+preplace port ext_reset_in -pg 1 -lvl 0 -x -110 -y -50 -defaultsOSRD
+preplace portBus dout -pg 1 -lvl 3 -x 790 -y -70 -defaultsOSRD
+preplace inst xfft_0 -pg 1 -lvl 1 -x 190 -y 170 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 1 -x 190 -y -270 -defaultsOSRD
+preplace inst edge_detect_0 -pg 1 -lvl 1 -x 190 -y -480 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 190 -y -30 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -x 190 -y -610 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 610 -y -550 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 2 -x 610 -y -260 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 610 -y -70 -defaultsOSRD
+preplace netloc axi_dma_0_s2mm_introut 1 1 1 430 -210n
+preplace netloc axi_dma_0_mm2s_introut 1 1 1 440 -230n
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 460 -580n
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 0 2 -60 -410 410
+preplace netloc Net 1 0 2 -40 -140 420
+preplace netloc edge_detect_0_edge_detected 1 0 2 -80 -690 400
+preplace netloc axi_gpio_0_gpio_io_o 1 0 2 -70 -710 410
+preplace netloc slowest_sync_clk_1 1 0 2 -90 -150 450
+preplace netloc xlconcat_0_dout 1 2 1 N -70
+preplace netloc ext_reset_in_1 1 0 1 N -50
+preplace netloc axi_interconnect_1_M00_AXI 1 0 3 -30 -400 NJ -400 760
+preplace netloc axi_interconnect_1_M01_AXI 1 0 3 -60 -700 NJ -700 770
+preplace netloc axi_dma_0_M_AXI_MM2S 1 1 1 430 -640n
+preplace netloc axi_dma_0_M_AXI_S2MM 1 1 1 440 -620n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 -50 -390 400
+preplace netloc xfft_0_M_AXIS_DATA 1 0 2 -30 -130 400
+preplace netloc Conn1 1 2 1 N -550
+levelinfo -pg 1 -110 190 610 790
+pagesize -pg 1 -db -bbox -sgen -270 -720 900 310
+"
+}
+

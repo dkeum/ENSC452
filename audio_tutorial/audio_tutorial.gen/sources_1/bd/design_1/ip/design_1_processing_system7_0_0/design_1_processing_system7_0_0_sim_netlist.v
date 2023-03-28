@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Wed Feb 15 17:51:30 2023
+// Date        : Mon Mar 27 17:40:57 2023
 // Host        : ensc-pit-w15 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0_sim_netlist.v
@@ -111,6 +111,51 @@ module design_1_processing_system7_0_0
     S_AXI_HP0_WID,
     S_AXI_HP0_WDATA,
     S_AXI_HP0_WSTRB,
+    S_AXI_HP1_ARREADY,
+    S_AXI_HP1_AWREADY,
+    S_AXI_HP1_BVALID,
+    S_AXI_HP1_RLAST,
+    S_AXI_HP1_RVALID,
+    S_AXI_HP1_WREADY,
+    S_AXI_HP1_BRESP,
+    S_AXI_HP1_RRESP,
+    S_AXI_HP1_BID,
+    S_AXI_HP1_RID,
+    S_AXI_HP1_RDATA,
+    S_AXI_HP1_RCOUNT,
+    S_AXI_HP1_WCOUNT,
+    S_AXI_HP1_RACOUNT,
+    S_AXI_HP1_WACOUNT,
+    S_AXI_HP1_ACLK,
+    S_AXI_HP1_ARVALID,
+    S_AXI_HP1_AWVALID,
+    S_AXI_HP1_BREADY,
+    S_AXI_HP1_RDISSUECAP1_EN,
+    S_AXI_HP1_RREADY,
+    S_AXI_HP1_WLAST,
+    S_AXI_HP1_WRISSUECAP1_EN,
+    S_AXI_HP1_WVALID,
+    S_AXI_HP1_ARBURST,
+    S_AXI_HP1_ARLOCK,
+    S_AXI_HP1_ARSIZE,
+    S_AXI_HP1_AWBURST,
+    S_AXI_HP1_AWLOCK,
+    S_AXI_HP1_AWSIZE,
+    S_AXI_HP1_ARPROT,
+    S_AXI_HP1_AWPROT,
+    S_AXI_HP1_ARADDR,
+    S_AXI_HP1_AWADDR,
+    S_AXI_HP1_ARCACHE,
+    S_AXI_HP1_ARLEN,
+    S_AXI_HP1_ARQOS,
+    S_AXI_HP1_AWCACHE,
+    S_AXI_HP1_AWLEN,
+    S_AXI_HP1_AWQOS,
+    S_AXI_HP1_ARID,
+    S_AXI_HP1_AWID,
+    S_AXI_HP1_WID,
+    S_AXI_HP1_WDATA,
+    S_AXI_HP1_WSTRB,
     IRQ_F2P,
     FCLK_CLK0,
     FCLK_CLK1,
@@ -233,7 +278,52 @@ module design_1_processing_system7_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP0 WID" *) input [5:0]S_AXI_HP0_WID;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP0 WDATA" *) input [63:0]S_AXI_HP0_WDATA;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP0 WSTRB" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_HP0, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 64, PROTOCOL AXI3, FREQ_HZ 100000000, ID_WIDTH 6, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, MAX_BURST_LENGTH 16, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [7:0]S_AXI_HP0_WSTRB;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 IRQ_F2P INTERRUPT" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME IRQ_F2P, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) input [0:0]IRQ_F2P;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARREADY" *) output S_AXI_HP1_ARREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWREADY" *) output S_AXI_HP1_AWREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 BVALID" *) output S_AXI_HP1_BVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 RLAST" *) output S_AXI_HP1_RLAST;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 RVALID" *) output S_AXI_HP1_RVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 WREADY" *) output S_AXI_HP1_WREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 BRESP" *) output [1:0]S_AXI_HP1_BRESP;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 RRESP" *) output [1:0]S_AXI_HP1_RRESP;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 BID" *) output [5:0]S_AXI_HP1_BID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 RID" *) output [5:0]S_AXI_HP1_RID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 RDATA" *) output [63:0]S_AXI_HP1_RDATA;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:hpstatusctrl:1.0 S_AXI_HP1_FIFO_CTRL RCOUNT" *) output [7:0]S_AXI_HP1_RCOUNT;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:hpstatusctrl:1.0 S_AXI_HP1_FIFO_CTRL WCOUNT" *) output [7:0]S_AXI_HP1_WCOUNT;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:hpstatusctrl:1.0 S_AXI_HP1_FIFO_CTRL RACOUNT" *) output [2:0]S_AXI_HP1_RACOUNT;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:hpstatusctrl:1.0 S_AXI_HP1_FIFO_CTRL WACOUNT" *) output [5:0]S_AXI_HP1_WACOUNT;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S_AXI_HP1_ACLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_HP1_ACLK, ASSOCIATED_BUSIF S_AXI_HP1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input S_AXI_HP1_ACLK;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARVALID" *) input S_AXI_HP1_ARVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWVALID" *) input S_AXI_HP1_AWVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 BREADY" *) input S_AXI_HP1_BREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:hpstatusctrl:1.0 S_AXI_HP1_FIFO_CTRL RDISSUECAPEN" *) input S_AXI_HP1_RDISSUECAP1_EN;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 RREADY" *) input S_AXI_HP1_RREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 WLAST" *) input S_AXI_HP1_WLAST;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:hpstatusctrl:1.0 S_AXI_HP1_FIFO_CTRL WRISSUECAPEN" *) input S_AXI_HP1_WRISSUECAP1_EN;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 WVALID" *) input S_AXI_HP1_WVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARBURST" *) input [1:0]S_AXI_HP1_ARBURST;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARLOCK" *) input [1:0]S_AXI_HP1_ARLOCK;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARSIZE" *) input [2:0]S_AXI_HP1_ARSIZE;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWBURST" *) input [1:0]S_AXI_HP1_AWBURST;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWLOCK" *) input [1:0]S_AXI_HP1_AWLOCK;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWSIZE" *) input [2:0]S_AXI_HP1_AWSIZE;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARPROT" *) input [2:0]S_AXI_HP1_ARPROT;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWPROT" *) input [2:0]S_AXI_HP1_AWPROT;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARADDR" *) input [31:0]S_AXI_HP1_ARADDR;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWADDR" *) input [31:0]S_AXI_HP1_AWADDR;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARCACHE" *) input [3:0]S_AXI_HP1_ARCACHE;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARLEN" *) input [3:0]S_AXI_HP1_ARLEN;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARQOS" *) input [3:0]S_AXI_HP1_ARQOS;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWCACHE" *) input [3:0]S_AXI_HP1_AWCACHE;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWLEN" *) input [3:0]S_AXI_HP1_AWLEN;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWQOS" *) input [3:0]S_AXI_HP1_AWQOS;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 ARID" *) input [5:0]S_AXI_HP1_ARID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 AWID" *) input [5:0]S_AXI_HP1_AWID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 WID" *) input [5:0]S_AXI_HP1_WID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 WDATA" *) input [63:0]S_AXI_HP1_WDATA;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP1 WSTRB" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_HP1, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 64, PROTOCOL AXI3, FREQ_HZ 100000000, ID_WIDTH 6, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 16, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [7:0]S_AXI_HP1_WSTRB;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 IRQ_F2P INTERRUPT" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME IRQ_F2P, SENSITIVITY LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH, PortWidth 3" *) input [2:0]IRQ_F2P;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) output FCLK_CLK0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK1 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK1, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) output FCLK_CLK1;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK2 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK2, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK2, INSERT_VIP 0" *) output FCLK_CLK2;
@@ -289,7 +379,7 @@ module design_1_processing_system7_0_0
   wire I2C0_SDA_I;
   wire I2C0_SDA_O;
   wire I2C0_SDA_T;
-  wire [0:0]IRQ_F2P;
+  wire [2:0]IRQ_F2P;
   wire [53:0]MIO;
   wire M_AXI_GP0_ACLK;
   wire [31:0]M_AXI_GP0_ARADDR;
@@ -378,6 +468,51 @@ module design_1_processing_system7_0_0
   wire S_AXI_HP0_WRISSUECAP1_EN;
   wire [7:0]S_AXI_HP0_WSTRB;
   wire S_AXI_HP0_WVALID;
+  wire S_AXI_HP1_ACLK;
+  wire [31:0]S_AXI_HP1_ARADDR;
+  wire [1:0]S_AXI_HP1_ARBURST;
+  wire [3:0]S_AXI_HP1_ARCACHE;
+  wire [5:0]S_AXI_HP1_ARID;
+  wire [3:0]S_AXI_HP1_ARLEN;
+  wire [1:0]S_AXI_HP1_ARLOCK;
+  wire [2:0]S_AXI_HP1_ARPROT;
+  wire [3:0]S_AXI_HP1_ARQOS;
+  wire S_AXI_HP1_ARREADY;
+  wire [2:0]S_AXI_HP1_ARSIZE;
+  wire S_AXI_HP1_ARVALID;
+  wire [31:0]S_AXI_HP1_AWADDR;
+  wire [1:0]S_AXI_HP1_AWBURST;
+  wire [3:0]S_AXI_HP1_AWCACHE;
+  wire [5:0]S_AXI_HP1_AWID;
+  wire [3:0]S_AXI_HP1_AWLEN;
+  wire [1:0]S_AXI_HP1_AWLOCK;
+  wire [2:0]S_AXI_HP1_AWPROT;
+  wire [3:0]S_AXI_HP1_AWQOS;
+  wire S_AXI_HP1_AWREADY;
+  wire [2:0]S_AXI_HP1_AWSIZE;
+  wire S_AXI_HP1_AWVALID;
+  wire [5:0]S_AXI_HP1_BID;
+  wire S_AXI_HP1_BREADY;
+  wire [1:0]S_AXI_HP1_BRESP;
+  wire S_AXI_HP1_BVALID;
+  wire [2:0]S_AXI_HP1_RACOUNT;
+  wire [7:0]S_AXI_HP1_RCOUNT;
+  wire [63:0]S_AXI_HP1_RDATA;
+  wire S_AXI_HP1_RDISSUECAP1_EN;
+  wire [5:0]S_AXI_HP1_RID;
+  wire S_AXI_HP1_RLAST;
+  wire S_AXI_HP1_RREADY;
+  wire [1:0]S_AXI_HP1_RRESP;
+  wire S_AXI_HP1_RVALID;
+  wire [5:0]S_AXI_HP1_WACOUNT;
+  wire [7:0]S_AXI_HP1_WCOUNT;
+  wire [63:0]S_AXI_HP1_WDATA;
+  wire [5:0]S_AXI_HP1_WID;
+  wire S_AXI_HP1_WLAST;
+  wire S_AXI_HP1_WREADY;
+  wire S_AXI_HP1_WRISSUECAP1_EN;
+  wire [7:0]S_AXI_HP1_WSTRB;
+  wire S_AXI_HP1_WVALID;
   wire TTC0_WAVE0_OUT;
   wire TTC0_WAVE1_OUT;
   wire TTC0_WAVE2_OUT;
@@ -536,12 +671,6 @@ module design_1_processing_system7_0_0
   wire NLW_inst_S_AXI_GP1_WREADY_UNCONNECTED;
   wire NLW_inst_S_AXI_HP0_ARESETN_UNCONNECTED;
   wire NLW_inst_S_AXI_HP1_ARESETN_UNCONNECTED;
-  wire NLW_inst_S_AXI_HP1_ARREADY_UNCONNECTED;
-  wire NLW_inst_S_AXI_HP1_AWREADY_UNCONNECTED;
-  wire NLW_inst_S_AXI_HP1_BVALID_UNCONNECTED;
-  wire NLW_inst_S_AXI_HP1_RLAST_UNCONNECTED;
-  wire NLW_inst_S_AXI_HP1_RVALID_UNCONNECTED;
-  wire NLW_inst_S_AXI_HP1_WREADY_UNCONNECTED;
   wire NLW_inst_S_AXI_HP2_ARESETN_UNCONNECTED;
   wire NLW_inst_S_AXI_HP2_ARREADY_UNCONNECTED;
   wire NLW_inst_S_AXI_HP2_AWREADY_UNCONNECTED;
@@ -626,15 +755,6 @@ module design_1_processing_system7_0_0
   wire [31:0]NLW_inst_S_AXI_GP1_RDATA_UNCONNECTED;
   wire [5:0]NLW_inst_S_AXI_GP1_RID_UNCONNECTED;
   wire [1:0]NLW_inst_S_AXI_GP1_RRESP_UNCONNECTED;
-  wire [5:0]NLW_inst_S_AXI_HP1_BID_UNCONNECTED;
-  wire [1:0]NLW_inst_S_AXI_HP1_BRESP_UNCONNECTED;
-  wire [2:0]NLW_inst_S_AXI_HP1_RACOUNT_UNCONNECTED;
-  wire [7:0]NLW_inst_S_AXI_HP1_RCOUNT_UNCONNECTED;
-  wire [63:0]NLW_inst_S_AXI_HP1_RDATA_UNCONNECTED;
-  wire [5:0]NLW_inst_S_AXI_HP1_RID_UNCONNECTED;
-  wire [1:0]NLW_inst_S_AXI_HP1_RRESP_UNCONNECTED;
-  wire [5:0]NLW_inst_S_AXI_HP1_WACOUNT_UNCONNECTED;
-  wire [7:0]NLW_inst_S_AXI_HP1_WCOUNT_UNCONNECTED;
   wire [5:0]NLW_inst_S_AXI_HP2_BID_UNCONNECTED;
   wire [1:0]NLW_inst_S_AXI_HP2_BRESP_UNCONNECTED;
   wire [2:0]NLW_inst_S_AXI_HP2_RACOUNT_UNCONNECTED;
@@ -694,7 +814,7 @@ module design_1_processing_system7_0_0
   (* C_M_AXI_GP1_ENABLE_STATIC_REMAP = "0" *) 
   (* C_M_AXI_GP1_ID_WIDTH = "12" *) 
   (* C_M_AXI_GP1_THREAD_ID_WIDTH = "12" *) 
-  (* C_NUM_F2P_INTR_INPUTS = "1" *) 
+  (* C_NUM_F2P_INTR_INPUTS = "3" *) 
   (* C_PACKAGE_NAME = "clg484" *) 
   (* C_PS7_SI_REV = "PRODUCTION" *) 
   (* C_S_AXI_ACP_ARUSER_VAL = "31" *) 
@@ -722,11 +842,11 @@ module design_1_processing_system7_0_0
   (* C_USE_S_AXI_GP0 = "0" *) 
   (* C_USE_S_AXI_GP1 = "0" *) 
   (* C_USE_S_AXI_HP0 = "1" *) 
-  (* C_USE_S_AXI_HP1 = "0" *) 
+  (* C_USE_S_AXI_HP1 = "1" *) 
   (* C_USE_S_AXI_HP2 = "0" *) 
   (* C_USE_S_AXI_HP3 = "0" *) 
   (* HW_HANDOFF = "design_1_processing_system7_0_0.hwdef" *) 
-  (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={200} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333313} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS33} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={Timer} ioStandard={} bidis={0} ioBank={} clockFreq={33.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={} bidis={1} ioBank={} clockFreq={33.333332} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={8} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1600.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) 
+  (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={200} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333313} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS33} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={Timer} ioStandard={} bidis={0} ioBank={} clockFreq={33.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={} bidis={1} ioBank={} clockFreq={33.333332} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={8} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1600.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP1} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) 
   (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
   design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7 inst
        (.CAN0_PHY_RX(1'b0),
@@ -1236,52 +1356,52 @@ module design_1_processing_system7_0_0
         .S_AXI_HP0_WRISSUECAP1_EN(S_AXI_HP0_WRISSUECAP1_EN),
         .S_AXI_HP0_WSTRB(S_AXI_HP0_WSTRB),
         .S_AXI_HP0_WVALID(S_AXI_HP0_WVALID),
-        .S_AXI_HP1_ACLK(1'b0),
-        .S_AXI_HP1_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_ARBURST({1'b0,1'b0}),
-        .S_AXI_HP1_ARCACHE({1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP1_ACLK(S_AXI_HP1_ACLK),
+        .S_AXI_HP1_ARADDR(S_AXI_HP1_ARADDR),
+        .S_AXI_HP1_ARBURST(S_AXI_HP1_ARBURST),
+        .S_AXI_HP1_ARCACHE(S_AXI_HP1_ARCACHE),
         .S_AXI_HP1_ARESETN(NLW_inst_S_AXI_HP1_ARESETN_UNCONNECTED),
-        .S_AXI_HP1_ARID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_ARLEN({1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_ARLOCK({1'b0,1'b0}),
-        .S_AXI_HP1_ARPROT({1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_ARQOS({1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_ARREADY(NLW_inst_S_AXI_HP1_ARREADY_UNCONNECTED),
-        .S_AXI_HP1_ARSIZE({1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_ARVALID(1'b0),
-        .S_AXI_HP1_AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWBURST({1'b0,1'b0}),
-        .S_AXI_HP1_AWCACHE({1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWLEN({1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWLOCK({1'b0,1'b0}),
-        .S_AXI_HP1_AWPROT({1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWQOS({1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWREADY(NLW_inst_S_AXI_HP1_AWREADY_UNCONNECTED),
-        .S_AXI_HP1_AWSIZE({1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_AWVALID(1'b0),
-        .S_AXI_HP1_BID(NLW_inst_S_AXI_HP1_BID_UNCONNECTED[5:0]),
-        .S_AXI_HP1_BREADY(1'b0),
-        .S_AXI_HP1_BRESP(NLW_inst_S_AXI_HP1_BRESP_UNCONNECTED[1:0]),
-        .S_AXI_HP1_BVALID(NLW_inst_S_AXI_HP1_BVALID_UNCONNECTED),
-        .S_AXI_HP1_RACOUNT(NLW_inst_S_AXI_HP1_RACOUNT_UNCONNECTED[2:0]),
-        .S_AXI_HP1_RCOUNT(NLW_inst_S_AXI_HP1_RCOUNT_UNCONNECTED[7:0]),
-        .S_AXI_HP1_RDATA(NLW_inst_S_AXI_HP1_RDATA_UNCONNECTED[63:0]),
-        .S_AXI_HP1_RDISSUECAP1_EN(1'b0),
-        .S_AXI_HP1_RID(NLW_inst_S_AXI_HP1_RID_UNCONNECTED[5:0]),
-        .S_AXI_HP1_RLAST(NLW_inst_S_AXI_HP1_RLAST_UNCONNECTED),
-        .S_AXI_HP1_RREADY(1'b0),
-        .S_AXI_HP1_RRESP(NLW_inst_S_AXI_HP1_RRESP_UNCONNECTED[1:0]),
-        .S_AXI_HP1_RVALID(NLW_inst_S_AXI_HP1_RVALID_UNCONNECTED),
-        .S_AXI_HP1_WACOUNT(NLW_inst_S_AXI_HP1_WACOUNT_UNCONNECTED[5:0]),
-        .S_AXI_HP1_WCOUNT(NLW_inst_S_AXI_HP1_WCOUNT_UNCONNECTED[7:0]),
-        .S_AXI_HP1_WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_WID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_WLAST(1'b0),
-        .S_AXI_HP1_WREADY(NLW_inst_S_AXI_HP1_WREADY_UNCONNECTED),
-        .S_AXI_HP1_WRISSUECAP1_EN(1'b0),
-        .S_AXI_HP1_WSTRB({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP1_WVALID(1'b0),
+        .S_AXI_HP1_ARID(S_AXI_HP1_ARID),
+        .S_AXI_HP1_ARLEN(S_AXI_HP1_ARLEN),
+        .S_AXI_HP1_ARLOCK(S_AXI_HP1_ARLOCK),
+        .S_AXI_HP1_ARPROT(S_AXI_HP1_ARPROT),
+        .S_AXI_HP1_ARQOS(S_AXI_HP1_ARQOS),
+        .S_AXI_HP1_ARREADY(S_AXI_HP1_ARREADY),
+        .S_AXI_HP1_ARSIZE({1'b0,S_AXI_HP1_ARSIZE[1:0]}),
+        .S_AXI_HP1_ARVALID(S_AXI_HP1_ARVALID),
+        .S_AXI_HP1_AWADDR(S_AXI_HP1_AWADDR),
+        .S_AXI_HP1_AWBURST(S_AXI_HP1_AWBURST),
+        .S_AXI_HP1_AWCACHE(S_AXI_HP1_AWCACHE),
+        .S_AXI_HP1_AWID(S_AXI_HP1_AWID),
+        .S_AXI_HP1_AWLEN(S_AXI_HP1_AWLEN),
+        .S_AXI_HP1_AWLOCK(S_AXI_HP1_AWLOCK),
+        .S_AXI_HP1_AWPROT(S_AXI_HP1_AWPROT),
+        .S_AXI_HP1_AWQOS(S_AXI_HP1_AWQOS),
+        .S_AXI_HP1_AWREADY(S_AXI_HP1_AWREADY),
+        .S_AXI_HP1_AWSIZE({1'b0,S_AXI_HP1_AWSIZE[1:0]}),
+        .S_AXI_HP1_AWVALID(S_AXI_HP1_AWVALID),
+        .S_AXI_HP1_BID(S_AXI_HP1_BID),
+        .S_AXI_HP1_BREADY(S_AXI_HP1_BREADY),
+        .S_AXI_HP1_BRESP(S_AXI_HP1_BRESP),
+        .S_AXI_HP1_BVALID(S_AXI_HP1_BVALID),
+        .S_AXI_HP1_RACOUNT(S_AXI_HP1_RACOUNT),
+        .S_AXI_HP1_RCOUNT(S_AXI_HP1_RCOUNT),
+        .S_AXI_HP1_RDATA(S_AXI_HP1_RDATA),
+        .S_AXI_HP1_RDISSUECAP1_EN(S_AXI_HP1_RDISSUECAP1_EN),
+        .S_AXI_HP1_RID(S_AXI_HP1_RID),
+        .S_AXI_HP1_RLAST(S_AXI_HP1_RLAST),
+        .S_AXI_HP1_RREADY(S_AXI_HP1_RREADY),
+        .S_AXI_HP1_RRESP(S_AXI_HP1_RRESP),
+        .S_AXI_HP1_RVALID(S_AXI_HP1_RVALID),
+        .S_AXI_HP1_WACOUNT(S_AXI_HP1_WACOUNT),
+        .S_AXI_HP1_WCOUNT(S_AXI_HP1_WCOUNT),
+        .S_AXI_HP1_WDATA(S_AXI_HP1_WDATA),
+        .S_AXI_HP1_WID(S_AXI_HP1_WID),
+        .S_AXI_HP1_WLAST(S_AXI_HP1_WLAST),
+        .S_AXI_HP1_WREADY(S_AXI_HP1_WREADY),
+        .S_AXI_HP1_WRISSUECAP1_EN(S_AXI_HP1_WRISSUECAP1_EN),
+        .S_AXI_HP1_WSTRB(S_AXI_HP1_WSTRB),
+        .S_AXI_HP1_WVALID(S_AXI_HP1_WVALID),
         .S_AXI_HP2_ACLK(1'b0),
         .S_AXI_HP2_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .S_AXI_HP2_ARBURST({1'b0,1'b0}),
@@ -1424,7 +1544,7 @@ endmodule
 (* C_INCLUDE_TRACE_BUFFER = "0" *) (* C_IRQ_F2P_MODE = "DIRECT" *) (* C_MIO_PRIMITIVE = "54" *) 
 (* C_M_AXI_GP0_ENABLE_STATIC_REMAP = "0" *) (* C_M_AXI_GP0_ID_WIDTH = "12" *) (* C_M_AXI_GP0_THREAD_ID_WIDTH = "12" *) 
 (* C_M_AXI_GP1_ENABLE_STATIC_REMAP = "0" *) (* C_M_AXI_GP1_ID_WIDTH = "12" *) (* C_M_AXI_GP1_THREAD_ID_WIDTH = "12" *) 
-(* C_NUM_F2P_INTR_INPUTS = "1" *) (* C_PACKAGE_NAME = "clg484" *) (* C_PS7_SI_REV = "PRODUCTION" *) 
+(* C_NUM_F2P_INTR_INPUTS = "3" *) (* C_PACKAGE_NAME = "clg484" *) (* C_PS7_SI_REV = "PRODUCTION" *) 
 (* C_S_AXI_ACP_ARUSER_VAL = "31" *) (* C_S_AXI_ACP_AWUSER_VAL = "31" *) (* C_S_AXI_ACP_ID_WIDTH = "3" *) 
 (* C_S_AXI_GP0_ID_WIDTH = "6" *) (* C_S_AXI_GP1_ID_WIDTH = "6" *) (* C_S_AXI_HP0_DATA_WIDTH = "64" *) 
 (* C_S_AXI_HP0_ID_WIDTH = "6" *) (* C_S_AXI_HP1_DATA_WIDTH = "64" *) (* C_S_AXI_HP1_ID_WIDTH = "6" *) 
@@ -1433,9 +1553,9 @@ endmodule
 (* C_TRACE_INTERNAL_WIDTH = "2" *) (* C_TRACE_PIPELINE_WIDTH = "8" *) (* C_USE_AXI_NONSECURE = "0" *) 
 (* C_USE_DEFAULT_ACP_USER_VAL = "0" *) (* C_USE_M_AXI_GP0 = "1" *) (* C_USE_M_AXI_GP1 = "0" *) 
 (* C_USE_S_AXI_ACP = "0" *) (* C_USE_S_AXI_GP0 = "0" *) (* C_USE_S_AXI_GP1 = "0" *) 
-(* C_USE_S_AXI_HP0 = "1" *) (* C_USE_S_AXI_HP1 = "0" *) (* C_USE_S_AXI_HP2 = "0" *) 
+(* C_USE_S_AXI_HP0 = "1" *) (* C_USE_S_AXI_HP1 = "1" *) (* C_USE_S_AXI_HP2 = "0" *) 
 (* C_USE_S_AXI_HP3 = "0" *) (* HW_HANDOFF = "design_1_processing_system7_0_0.hwdef" *) (* ORIG_REF_NAME = "processing_system7_v5_5_processing_system7" *) 
-(* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={200} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333313} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS33} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={Timer} ioStandard={} bidis={0} ioBank={} clockFreq={33.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={} bidis={1} ioBank={} clockFreq={33.333332} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={8} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1600.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
+(* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={200} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333313} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS33} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={Timer} ioStandard={} bidis={0} ioBank={} clockFreq={33.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={} bidis={1} ioBank={} clockFreq={33.333332} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={8} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1600.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP1} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
 module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7
    (CAN0_PHY_TX,
     CAN0_PHY_RX,
@@ -2705,7 +2825,7 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   output IRQ_P2F_SPI1;
   output IRQ_P2F_UART1;
   output IRQ_P2F_CAN1;
-  input [0:0]IRQ_F2P;
+  input [2:0]IRQ_F2P;
   input Core0_nFIQ;
   input Core0_nIRQ;
   input Core1_nFIQ;
@@ -2843,7 +2963,7 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire I2C0_SDA_T_n;
   wire I2C1_SCL_T_n;
   wire I2C1_SDA_T_n;
-  wire [0:0]IRQ_F2P;
+  wire [2:0]IRQ_F2P;
   wire [53:0]MIO;
   wire M_AXI_GP0_ACLK;
   wire [31:0]M_AXI_GP0_ARADDR;
@@ -2965,77 +3085,13 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire PS7_i_n_110;
   wire PS7_i_n_111;
   wire PS7_i_n_112;
-  wire PS7_i_n_1129;
   wire PS7_i_n_113;
-  wire PS7_i_n_1130;
-  wire PS7_i_n_1131;
-  wire PS7_i_n_1132;
-  wire PS7_i_n_1133;
-  wire PS7_i_n_1134;
-  wire PS7_i_n_1135;
-  wire PS7_i_n_1136;
-  wire PS7_i_n_1137;
-  wire PS7_i_n_1138;
-  wire PS7_i_n_1139;
   wire PS7_i_n_114;
-  wire PS7_i_n_1140;
-  wire PS7_i_n_1141;
-  wire PS7_i_n_1142;
-  wire PS7_i_n_1143;
-  wire PS7_i_n_1144;
-  wire PS7_i_n_1145;
-  wire PS7_i_n_1146;
-  wire PS7_i_n_1147;
-  wire PS7_i_n_1148;
-  wire PS7_i_n_1149;
   wire PS7_i_n_115;
-  wire PS7_i_n_1150;
-  wire PS7_i_n_1151;
-  wire PS7_i_n_1152;
-  wire PS7_i_n_1153;
-  wire PS7_i_n_1154;
-  wire PS7_i_n_1155;
-  wire PS7_i_n_1156;
-  wire PS7_i_n_1157;
-  wire PS7_i_n_1158;
-  wire PS7_i_n_1159;
   wire PS7_i_n_116;
-  wire PS7_i_n_1160;
-  wire PS7_i_n_1161;
-  wire PS7_i_n_1162;
-  wire PS7_i_n_1163;
-  wire PS7_i_n_1164;
-  wire PS7_i_n_1165;
-  wire PS7_i_n_1166;
-  wire PS7_i_n_1167;
-  wire PS7_i_n_1168;
-  wire PS7_i_n_1169;
   wire PS7_i_n_117;
-  wire PS7_i_n_1170;
-  wire PS7_i_n_1171;
-  wire PS7_i_n_1172;
-  wire PS7_i_n_1173;
-  wire PS7_i_n_1174;
-  wire PS7_i_n_1175;
-  wire PS7_i_n_1176;
-  wire PS7_i_n_1177;
-  wire PS7_i_n_1178;
-  wire PS7_i_n_1179;
   wire PS7_i_n_118;
-  wire PS7_i_n_1180;
-  wire PS7_i_n_1181;
-  wire PS7_i_n_1182;
-  wire PS7_i_n_1183;
-  wire PS7_i_n_1184;
-  wire PS7_i_n_1185;
-  wire PS7_i_n_1186;
-  wire PS7_i_n_1187;
-  wire PS7_i_n_1188;
-  wire PS7_i_n_1189;
   wire PS7_i_n_119;
-  wire PS7_i_n_1190;
-  wire PS7_i_n_1191;
-  wire PS7_i_n_1192;
   wire PS7_i_n_1193;
   wire PS7_i_n_1194;
   wire PS7_i_n_1195;
@@ -3171,30 +3227,8 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire PS7_i_n_1317;
   wire PS7_i_n_1318;
   wire PS7_i_n_1319;
-  wire PS7_i_n_132;
   wire PS7_i_n_1320;
-  wire PS7_i_n_133;
-  wire PS7_i_n_134;
-  wire PS7_i_n_135;
-  wire PS7_i_n_1353;
-  wire PS7_i_n_1354;
-  wire PS7_i_n_1355;
-  wire PS7_i_n_1356;
-  wire PS7_i_n_1357;
-  wire PS7_i_n_1358;
-  wire PS7_i_n_1359;
-  wire PS7_i_n_136;
-  wire PS7_i_n_1360;
-  wire PS7_i_n_1361;
-  wire PS7_i_n_1362;
-  wire PS7_i_n_1363;
-  wire PS7_i_n_1364;
-  wire PS7_i_n_1365;
-  wire PS7_i_n_1366;
-  wire PS7_i_n_1367;
-  wire PS7_i_n_1368;
   wire PS7_i_n_1369;
-  wire PS7_i_n_137;
   wire PS7_i_n_1370;
   wire PS7_i_n_1371;
   wire PS7_i_n_1372;
@@ -3327,10 +3361,6 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire PS7_i_n_274;
   wire PS7_i_n_275;
   wire PS7_i_n_28;
-  wire PS7_i_n_280;
-  wire PS7_i_n_281;
-  wire PS7_i_n_282;
-  wire PS7_i_n_283;
   wire PS7_i_n_284;
   wire PS7_i_n_285;
   wire PS7_i_n_286;
@@ -3401,9 +3431,6 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire PS7_i_n_355;
   wire PS7_i_n_356;
   wire PS7_i_n_36;
-  wire PS7_i_n_360;
-  wire PS7_i_n_361;
-  wire PS7_i_n_362;
   wire PS7_i_n_363;
   wire PS7_i_n_364;
   wire PS7_i_n_365;
@@ -3703,26 +3730,8 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire PS7_i_n_80;
   wire PS7_i_n_800;
   wire PS7_i_n_81;
-  wire PS7_i_n_819;
   wire PS7_i_n_82;
-  wire PS7_i_n_820;
-  wire PS7_i_n_821;
-  wire PS7_i_n_822;
-  wire PS7_i_n_823;
-  wire PS7_i_n_824;
-  wire PS7_i_n_825;
-  wire PS7_i_n_826;
-  wire PS7_i_n_827;
-  wire PS7_i_n_828;
-  wire PS7_i_n_829;
   wire PS7_i_n_83;
-  wire PS7_i_n_830;
-  wire PS7_i_n_831;
-  wire PS7_i_n_832;
-  wire PS7_i_n_833;
-  wire PS7_i_n_834;
-  wire PS7_i_n_835;
-  wire PS7_i_n_836;
   wire PS7_i_n_837;
   wire PS7_i_n_838;
   wire PS7_i_n_839;
@@ -3893,6 +3902,51 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire S_AXI_HP0_WRISSUECAP1_EN;
   wire [7:0]S_AXI_HP0_WSTRB;
   wire S_AXI_HP0_WVALID;
+  wire S_AXI_HP1_ACLK;
+  wire [31:0]S_AXI_HP1_ARADDR;
+  wire [1:0]S_AXI_HP1_ARBURST;
+  wire [3:0]S_AXI_HP1_ARCACHE;
+  wire [5:0]S_AXI_HP1_ARID;
+  wire [3:0]S_AXI_HP1_ARLEN;
+  wire [1:0]S_AXI_HP1_ARLOCK;
+  wire [2:0]S_AXI_HP1_ARPROT;
+  wire [3:0]S_AXI_HP1_ARQOS;
+  wire S_AXI_HP1_ARREADY;
+  wire [2:0]S_AXI_HP1_ARSIZE;
+  wire S_AXI_HP1_ARVALID;
+  wire [31:0]S_AXI_HP1_AWADDR;
+  wire [1:0]S_AXI_HP1_AWBURST;
+  wire [3:0]S_AXI_HP1_AWCACHE;
+  wire [5:0]S_AXI_HP1_AWID;
+  wire [3:0]S_AXI_HP1_AWLEN;
+  wire [1:0]S_AXI_HP1_AWLOCK;
+  wire [2:0]S_AXI_HP1_AWPROT;
+  wire [3:0]S_AXI_HP1_AWQOS;
+  wire S_AXI_HP1_AWREADY;
+  wire [2:0]S_AXI_HP1_AWSIZE;
+  wire S_AXI_HP1_AWVALID;
+  wire [5:0]S_AXI_HP1_BID;
+  wire S_AXI_HP1_BREADY;
+  wire [1:0]S_AXI_HP1_BRESP;
+  wire S_AXI_HP1_BVALID;
+  wire [2:0]S_AXI_HP1_RACOUNT;
+  wire [7:0]S_AXI_HP1_RCOUNT;
+  wire [63:0]S_AXI_HP1_RDATA;
+  wire S_AXI_HP1_RDISSUECAP1_EN;
+  wire [5:0]S_AXI_HP1_RID;
+  wire S_AXI_HP1_RLAST;
+  wire S_AXI_HP1_RREADY;
+  wire [1:0]S_AXI_HP1_RRESP;
+  wire S_AXI_HP1_RVALID;
+  wire [5:0]S_AXI_HP1_WACOUNT;
+  wire [7:0]S_AXI_HP1_WCOUNT;
+  wire [63:0]S_AXI_HP1_WDATA;
+  wire [5:0]S_AXI_HP1_WID;
+  wire S_AXI_HP1_WLAST;
+  wire S_AXI_HP1_WREADY;
+  wire S_AXI_HP1_WRISSUECAP1_EN;
+  wire [7:0]S_AXI_HP1_WSTRB;
+  wire S_AXI_HP1_WVALID;
   (* RTL_KEEP = "true" *) wire \TRACE_CTL_PIPE[0] ;
   (* RTL_KEEP = "true" *) wire \TRACE_CTL_PIPE[1] ;
   (* RTL_KEEP = "true" *) wire \TRACE_CTL_PIPE[2] ;
@@ -4674,117 +4728,6 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   assign S_AXI_GP1_WREADY = \<const0> ;
   assign S_AXI_HP0_ARESETN = \<const0> ;
   assign S_AXI_HP1_ARESETN = \<const0> ;
-  assign S_AXI_HP1_ARREADY = \<const0> ;
-  assign S_AXI_HP1_AWREADY = \<const0> ;
-  assign S_AXI_HP1_BID[5] = \<const0> ;
-  assign S_AXI_HP1_BID[4] = \<const0> ;
-  assign S_AXI_HP1_BID[3] = \<const0> ;
-  assign S_AXI_HP1_BID[2] = \<const0> ;
-  assign S_AXI_HP1_BID[1] = \<const0> ;
-  assign S_AXI_HP1_BID[0] = \<const0> ;
-  assign S_AXI_HP1_BRESP[1] = \<const0> ;
-  assign S_AXI_HP1_BRESP[0] = \<const0> ;
-  assign S_AXI_HP1_BVALID = \<const0> ;
-  assign S_AXI_HP1_RACOUNT[2] = \<const0> ;
-  assign S_AXI_HP1_RACOUNT[1] = \<const0> ;
-  assign S_AXI_HP1_RACOUNT[0] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[7] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[6] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[5] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[4] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[3] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[2] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[1] = \<const0> ;
-  assign S_AXI_HP1_RCOUNT[0] = \<const0> ;
-  assign S_AXI_HP1_RDATA[63] = \<const0> ;
-  assign S_AXI_HP1_RDATA[62] = \<const0> ;
-  assign S_AXI_HP1_RDATA[61] = \<const0> ;
-  assign S_AXI_HP1_RDATA[60] = \<const0> ;
-  assign S_AXI_HP1_RDATA[59] = \<const0> ;
-  assign S_AXI_HP1_RDATA[58] = \<const0> ;
-  assign S_AXI_HP1_RDATA[57] = \<const0> ;
-  assign S_AXI_HP1_RDATA[56] = \<const0> ;
-  assign S_AXI_HP1_RDATA[55] = \<const0> ;
-  assign S_AXI_HP1_RDATA[54] = \<const0> ;
-  assign S_AXI_HP1_RDATA[53] = \<const0> ;
-  assign S_AXI_HP1_RDATA[52] = \<const0> ;
-  assign S_AXI_HP1_RDATA[51] = \<const0> ;
-  assign S_AXI_HP1_RDATA[50] = \<const0> ;
-  assign S_AXI_HP1_RDATA[49] = \<const0> ;
-  assign S_AXI_HP1_RDATA[48] = \<const0> ;
-  assign S_AXI_HP1_RDATA[47] = \<const0> ;
-  assign S_AXI_HP1_RDATA[46] = \<const0> ;
-  assign S_AXI_HP1_RDATA[45] = \<const0> ;
-  assign S_AXI_HP1_RDATA[44] = \<const0> ;
-  assign S_AXI_HP1_RDATA[43] = \<const0> ;
-  assign S_AXI_HP1_RDATA[42] = \<const0> ;
-  assign S_AXI_HP1_RDATA[41] = \<const0> ;
-  assign S_AXI_HP1_RDATA[40] = \<const0> ;
-  assign S_AXI_HP1_RDATA[39] = \<const0> ;
-  assign S_AXI_HP1_RDATA[38] = \<const0> ;
-  assign S_AXI_HP1_RDATA[37] = \<const0> ;
-  assign S_AXI_HP1_RDATA[36] = \<const0> ;
-  assign S_AXI_HP1_RDATA[35] = \<const0> ;
-  assign S_AXI_HP1_RDATA[34] = \<const0> ;
-  assign S_AXI_HP1_RDATA[33] = \<const0> ;
-  assign S_AXI_HP1_RDATA[32] = \<const0> ;
-  assign S_AXI_HP1_RDATA[31] = \<const0> ;
-  assign S_AXI_HP1_RDATA[30] = \<const0> ;
-  assign S_AXI_HP1_RDATA[29] = \<const0> ;
-  assign S_AXI_HP1_RDATA[28] = \<const0> ;
-  assign S_AXI_HP1_RDATA[27] = \<const0> ;
-  assign S_AXI_HP1_RDATA[26] = \<const0> ;
-  assign S_AXI_HP1_RDATA[25] = \<const0> ;
-  assign S_AXI_HP1_RDATA[24] = \<const0> ;
-  assign S_AXI_HP1_RDATA[23] = \<const0> ;
-  assign S_AXI_HP1_RDATA[22] = \<const0> ;
-  assign S_AXI_HP1_RDATA[21] = \<const0> ;
-  assign S_AXI_HP1_RDATA[20] = \<const0> ;
-  assign S_AXI_HP1_RDATA[19] = \<const0> ;
-  assign S_AXI_HP1_RDATA[18] = \<const0> ;
-  assign S_AXI_HP1_RDATA[17] = \<const0> ;
-  assign S_AXI_HP1_RDATA[16] = \<const0> ;
-  assign S_AXI_HP1_RDATA[15] = \<const0> ;
-  assign S_AXI_HP1_RDATA[14] = \<const0> ;
-  assign S_AXI_HP1_RDATA[13] = \<const0> ;
-  assign S_AXI_HP1_RDATA[12] = \<const0> ;
-  assign S_AXI_HP1_RDATA[11] = \<const0> ;
-  assign S_AXI_HP1_RDATA[10] = \<const0> ;
-  assign S_AXI_HP1_RDATA[9] = \<const0> ;
-  assign S_AXI_HP1_RDATA[8] = \<const0> ;
-  assign S_AXI_HP1_RDATA[7] = \<const0> ;
-  assign S_AXI_HP1_RDATA[6] = \<const0> ;
-  assign S_AXI_HP1_RDATA[5] = \<const0> ;
-  assign S_AXI_HP1_RDATA[4] = \<const0> ;
-  assign S_AXI_HP1_RDATA[3] = \<const0> ;
-  assign S_AXI_HP1_RDATA[2] = \<const0> ;
-  assign S_AXI_HP1_RDATA[1] = \<const0> ;
-  assign S_AXI_HP1_RDATA[0] = \<const0> ;
-  assign S_AXI_HP1_RID[5] = \<const0> ;
-  assign S_AXI_HP1_RID[4] = \<const0> ;
-  assign S_AXI_HP1_RID[3] = \<const0> ;
-  assign S_AXI_HP1_RID[2] = \<const0> ;
-  assign S_AXI_HP1_RID[1] = \<const0> ;
-  assign S_AXI_HP1_RID[0] = \<const0> ;
-  assign S_AXI_HP1_RLAST = \<const0> ;
-  assign S_AXI_HP1_RRESP[1] = \<const0> ;
-  assign S_AXI_HP1_RRESP[0] = \<const0> ;
-  assign S_AXI_HP1_RVALID = \<const0> ;
-  assign S_AXI_HP1_WACOUNT[5] = \<const0> ;
-  assign S_AXI_HP1_WACOUNT[4] = \<const0> ;
-  assign S_AXI_HP1_WACOUNT[3] = \<const0> ;
-  assign S_AXI_HP1_WACOUNT[2] = \<const0> ;
-  assign S_AXI_HP1_WACOUNT[1] = \<const0> ;
-  assign S_AXI_HP1_WACOUNT[0] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[7] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[6] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[5] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[4] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[3] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[2] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[1] = \<const0> ;
-  assign S_AXI_HP1_WCOUNT[0] = \<const0> ;
-  assign S_AXI_HP1_WREADY = \<const0> ;
   assign S_AXI_HP2_ARESETN = \<const0> ;
   assign S_AXI_HP2_ARREADY = \<const0> ;
   assign S_AXI_HP2_AWREADY = \<const0> ;
@@ -5311,7 +5254,7 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
         .FTMTP2FDEBUG({PS7_i_n_401,PS7_i_n_402,PS7_i_n_403,PS7_i_n_404,PS7_i_n_405,PS7_i_n_406,PS7_i_n_407,PS7_i_n_408,PS7_i_n_409,PS7_i_n_410,PS7_i_n_411,PS7_i_n_412,PS7_i_n_413,PS7_i_n_414,PS7_i_n_415,PS7_i_n_416,PS7_i_n_417,PS7_i_n_418,PS7_i_n_419,PS7_i_n_420,PS7_i_n_421,PS7_i_n_422,PS7_i_n_423,PS7_i_n_424,PS7_i_n_425,PS7_i_n_426,PS7_i_n_427,PS7_i_n_428,PS7_i_n_429,PS7_i_n_430,PS7_i_n_431,PS7_i_n_432}),
         .FTMTP2FTRIG({PS7_i_n_717,PS7_i_n_718,PS7_i_n_719,PS7_i_n_720}),
         .FTMTP2FTRIGACK({1'b0,1'b0,1'b0,1'b0}),
-        .IRQF2P({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,IRQ_F2P}),
+        .IRQF2P({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,IRQ_F2P}),
         .IRQP2F({PS7_i_n_292,PS7_i_n_293,PS7_i_n_294,PS7_i_n_295,PS7_i_n_296,PS7_i_n_297,PS7_i_n_298,PS7_i_n_299,PS7_i_n_300,PS7_i_n_301,PS7_i_n_302,PS7_i_n_303,PS7_i_n_304,PS7_i_n_305,PS7_i_n_306,PS7_i_n_307,PS7_i_n_308,PS7_i_n_309,PS7_i_n_310,PS7_i_n_311,PS7_i_n_312,PS7_i_n_313,PS7_i_n_314,PS7_i_n_315,PS7_i_n_316,PS7_i_n_317,PS7_i_n_318,PS7_i_n_319,PS7_i_n_320}),
         .MAXIGP0ACLK(M_AXI_GP0_ACLK),
         .MAXIGP0ARADDR(M_AXI_GP0_ARADDR),
@@ -5565,52 +5508,52 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
         .SAXIHP0WRISSUECAP1EN(S_AXI_HP0_WRISSUECAP1_EN),
         .SAXIHP0WSTRB(S_AXI_HP0_WSTRB),
         .SAXIHP0WVALID(S_AXI_HP0_WVALID),
-        .SAXIHP1ACLK(1'b0),
-        .SAXIHP1ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1ARBURST({1'b0,1'b0}),
-        .SAXIHP1ARCACHE({1'b0,1'b0,1'b0,1'b0}),
+        .SAXIHP1ACLK(S_AXI_HP1_ACLK),
+        .SAXIHP1ARADDR(S_AXI_HP1_ARADDR),
+        .SAXIHP1ARBURST(S_AXI_HP1_ARBURST),
+        .SAXIHP1ARCACHE(S_AXI_HP1_ARCACHE),
         .SAXIHP1ARESETN(PS7_i_n_131),
-        .SAXIHP1ARID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1ARLEN({1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1ARLOCK({1'b0,1'b0}),
-        .SAXIHP1ARPROT({1'b0,1'b0,1'b0}),
-        .SAXIHP1ARQOS({1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1ARREADY(PS7_i_n_132),
-        .SAXIHP1ARSIZE({1'b0,1'b0}),
-        .SAXIHP1ARVALID(1'b0),
-        .SAXIHP1AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1AWBURST({1'b0,1'b0}),
-        .SAXIHP1AWCACHE({1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1AWID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1AWLEN({1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1AWLOCK({1'b0,1'b0}),
-        .SAXIHP1AWPROT({1'b0,1'b0,1'b0}),
-        .SAXIHP1AWQOS({1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1AWREADY(PS7_i_n_133),
-        .SAXIHP1AWSIZE({1'b0,1'b0}),
-        .SAXIHP1AWVALID(1'b0),
-        .SAXIHP1BID({PS7_i_n_819,PS7_i_n_820,PS7_i_n_821,PS7_i_n_822,PS7_i_n_823,PS7_i_n_824}),
-        .SAXIHP1BREADY(1'b0),
-        .SAXIHP1BRESP({PS7_i_n_280,PS7_i_n_281}),
-        .SAXIHP1BVALID(PS7_i_n_134),
-        .SAXIHP1RACOUNT({PS7_i_n_360,PS7_i_n_361,PS7_i_n_362}),
-        .SAXIHP1RCOUNT({PS7_i_n_1353,PS7_i_n_1354,PS7_i_n_1355,PS7_i_n_1356,PS7_i_n_1357,PS7_i_n_1358,PS7_i_n_1359,PS7_i_n_1360}),
-        .SAXIHP1RDATA({PS7_i_n_1129,PS7_i_n_1130,PS7_i_n_1131,PS7_i_n_1132,PS7_i_n_1133,PS7_i_n_1134,PS7_i_n_1135,PS7_i_n_1136,PS7_i_n_1137,PS7_i_n_1138,PS7_i_n_1139,PS7_i_n_1140,PS7_i_n_1141,PS7_i_n_1142,PS7_i_n_1143,PS7_i_n_1144,PS7_i_n_1145,PS7_i_n_1146,PS7_i_n_1147,PS7_i_n_1148,PS7_i_n_1149,PS7_i_n_1150,PS7_i_n_1151,PS7_i_n_1152,PS7_i_n_1153,PS7_i_n_1154,PS7_i_n_1155,PS7_i_n_1156,PS7_i_n_1157,PS7_i_n_1158,PS7_i_n_1159,PS7_i_n_1160,PS7_i_n_1161,PS7_i_n_1162,PS7_i_n_1163,PS7_i_n_1164,PS7_i_n_1165,PS7_i_n_1166,PS7_i_n_1167,PS7_i_n_1168,PS7_i_n_1169,PS7_i_n_1170,PS7_i_n_1171,PS7_i_n_1172,PS7_i_n_1173,PS7_i_n_1174,PS7_i_n_1175,PS7_i_n_1176,PS7_i_n_1177,PS7_i_n_1178,PS7_i_n_1179,PS7_i_n_1180,PS7_i_n_1181,PS7_i_n_1182,PS7_i_n_1183,PS7_i_n_1184,PS7_i_n_1185,PS7_i_n_1186,PS7_i_n_1187,PS7_i_n_1188,PS7_i_n_1189,PS7_i_n_1190,PS7_i_n_1191,PS7_i_n_1192}),
-        .SAXIHP1RDISSUECAP1EN(1'b0),
-        .SAXIHP1RID({PS7_i_n_825,PS7_i_n_826,PS7_i_n_827,PS7_i_n_828,PS7_i_n_829,PS7_i_n_830}),
-        .SAXIHP1RLAST(PS7_i_n_135),
-        .SAXIHP1RREADY(1'b0),
-        .SAXIHP1RRESP({PS7_i_n_282,PS7_i_n_283}),
-        .SAXIHP1RVALID(PS7_i_n_136),
-        .SAXIHP1WACOUNT({PS7_i_n_831,PS7_i_n_832,PS7_i_n_833,PS7_i_n_834,PS7_i_n_835,PS7_i_n_836}),
-        .SAXIHP1WCOUNT({PS7_i_n_1361,PS7_i_n_1362,PS7_i_n_1363,PS7_i_n_1364,PS7_i_n_1365,PS7_i_n_1366,PS7_i_n_1367,PS7_i_n_1368}),
-        .SAXIHP1WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1WID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1WLAST(1'b0),
-        .SAXIHP1WREADY(PS7_i_n_137),
-        .SAXIHP1WRISSUECAP1EN(1'b0),
-        .SAXIHP1WSTRB({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .SAXIHP1WVALID(1'b0),
+        .SAXIHP1ARID(S_AXI_HP1_ARID),
+        .SAXIHP1ARLEN(S_AXI_HP1_ARLEN),
+        .SAXIHP1ARLOCK(S_AXI_HP1_ARLOCK),
+        .SAXIHP1ARPROT(S_AXI_HP1_ARPROT),
+        .SAXIHP1ARQOS(S_AXI_HP1_ARQOS),
+        .SAXIHP1ARREADY(S_AXI_HP1_ARREADY),
+        .SAXIHP1ARSIZE(S_AXI_HP1_ARSIZE[1:0]),
+        .SAXIHP1ARVALID(S_AXI_HP1_ARVALID),
+        .SAXIHP1AWADDR(S_AXI_HP1_AWADDR),
+        .SAXIHP1AWBURST(S_AXI_HP1_AWBURST),
+        .SAXIHP1AWCACHE(S_AXI_HP1_AWCACHE),
+        .SAXIHP1AWID(S_AXI_HP1_AWID),
+        .SAXIHP1AWLEN(S_AXI_HP1_AWLEN),
+        .SAXIHP1AWLOCK(S_AXI_HP1_AWLOCK),
+        .SAXIHP1AWPROT(S_AXI_HP1_AWPROT),
+        .SAXIHP1AWQOS(S_AXI_HP1_AWQOS),
+        .SAXIHP1AWREADY(S_AXI_HP1_AWREADY),
+        .SAXIHP1AWSIZE(S_AXI_HP1_AWSIZE[1:0]),
+        .SAXIHP1AWVALID(S_AXI_HP1_AWVALID),
+        .SAXIHP1BID(S_AXI_HP1_BID),
+        .SAXIHP1BREADY(S_AXI_HP1_BREADY),
+        .SAXIHP1BRESP(S_AXI_HP1_BRESP),
+        .SAXIHP1BVALID(S_AXI_HP1_BVALID),
+        .SAXIHP1RACOUNT(S_AXI_HP1_RACOUNT),
+        .SAXIHP1RCOUNT(S_AXI_HP1_RCOUNT),
+        .SAXIHP1RDATA(S_AXI_HP1_RDATA),
+        .SAXIHP1RDISSUECAP1EN(S_AXI_HP1_RDISSUECAP1_EN),
+        .SAXIHP1RID(S_AXI_HP1_RID),
+        .SAXIHP1RLAST(S_AXI_HP1_RLAST),
+        .SAXIHP1RREADY(S_AXI_HP1_RREADY),
+        .SAXIHP1RRESP(S_AXI_HP1_RRESP),
+        .SAXIHP1RVALID(S_AXI_HP1_RVALID),
+        .SAXIHP1WACOUNT(S_AXI_HP1_WACOUNT),
+        .SAXIHP1WCOUNT(S_AXI_HP1_WCOUNT),
+        .SAXIHP1WDATA(S_AXI_HP1_WDATA),
+        .SAXIHP1WID(S_AXI_HP1_WID),
+        .SAXIHP1WLAST(S_AXI_HP1_WLAST),
+        .SAXIHP1WREADY(S_AXI_HP1_WREADY),
+        .SAXIHP1WRISSUECAP1EN(S_AXI_HP1_WRISSUECAP1_EN),
+        .SAXIHP1WSTRB(S_AXI_HP1_WSTRB),
+        .SAXIHP1WVALID(S_AXI_HP1_WVALID),
         .SAXIHP2ACLK(1'b0),
         .SAXIHP2ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .SAXIHP2ARBURST({1'b0,1'b0}),

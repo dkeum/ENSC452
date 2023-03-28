@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_processing_system7_0_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -81,13 +82,15 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.cache/wt [current_project]
 set_property parent.project_path C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths {
   c:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/ip
   c:/Users/dkeum/Downloads/vga_tutorial_students/vga_controller_ip
+  c:/Users/dkeum/audio_tutorial/CustomIP_test
+  c:/Users/dkeum/Desktop/dma_ex_fft/lib
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.cache/ip [current_project]

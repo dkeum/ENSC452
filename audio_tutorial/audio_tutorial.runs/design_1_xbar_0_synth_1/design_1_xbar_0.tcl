@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_xbar_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -89,6 +90,7 @@ set_property ip_repo_paths {
   c:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/ip
   c:/Users/dkeum/Downloads/vga_tutorial_students/vga_controller_ip
   c:/Users/dkeum/audio_tutorial/CustomIP_test
+  c:/Users/dkeum/Desktop/dma_ex_fft/lib
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.cache/ip [current_project]

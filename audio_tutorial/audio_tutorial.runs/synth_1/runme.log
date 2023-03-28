@@ -14,6 +14,7 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/ip'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/dkeum/Downloads/vga_tutorial_students/vga_controller_ip'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/dkeum/audio_tutorial/CustomIP_test'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/dkeum/Desktop/dma_ex_fft/lib'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
 Command: synth_design -top design_1_wrapper -part xc7z020clg484-1
 Starting synth_design
@@ -22,9 +23,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 22476
+INFO: [Synth 8-7075] Helper process launched with PID 7116
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1201.570 ; gain = 57.820
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1217.078 ; gain = 68.027
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:55]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'GPIO_tri_iobuf_0' of component 'IOBUF' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:125]
@@ -37,88 +38,401 @@ INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [C:/Xilinx/Vivado/20
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'GPIO_tri_iobuf_1' of component 'IOBUF' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:132]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'IIC_0_scl_iobuf' of component 'IOBUF' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:139]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'IIC_0_sda_iobuf' of component 'IOBUF' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:146]
-INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:5183' bound to instance 'design_1_i' of component 'design_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:153]
-INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:5234]
-WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:5533]
-INFO: [Synth 8-3491] module 'design_1_axi_dma_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'design_1_axi_dma_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6017]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_dma_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_axi_dma_0_0_stub.vhdl:75]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6083]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_axi_gpio_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_1_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_axi_gpio_1_1_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'design_1_axi_gpio_1_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6108]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_1_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_axi_gpio_1_1_stub.vhdl:33]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2579]
-INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1R706YB' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:213]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:466]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_pc_1_stub.vhdl:94]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1R706YB' (2#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:213]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_7HNO1D' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1155]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_2' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_2' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1408]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_2' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_pc_2_stub.vhdl:94]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_7HNO1D' (3#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1155]
-INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1W60HW0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1852]
-INFO: [Synth 8-3491] module 'design_1_auto_us_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_us_0_stub.vhdl:5' bound to instance 'auto_us' of component 'design_1_auto_us_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1953]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_us_0_stub.vhdl:45]
-INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1W60HW0' (4#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1852]
-INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_8NCF02' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2038]
-INFO: [Synth 8-3491] module 'design_1_auto_us_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_us_1_stub.vhdl:5' bound to instance 'auto_us' of component 'design_1_auto_us_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2157]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_us_1_stub.vhdl:51]
-INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_8NCF02' (5#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2038]
-INFO: [Synth 8-638] synthesizing module 's03_couplers_imp_1UQ1PUB' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2292]
-INFO: [Synth 8-256] done synthesizing module 's03_couplers_imp_1UQ1PUB' (6#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2292]
-INFO: [Synth 8-3491] module 'design_1_xbar_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3459]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_xbar_1_stub.vhdl:93]
-INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_0' (7#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2579]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_2' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_clk_wiz_0_2_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_2' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6294]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_2' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_clk_wiz_0_2_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:5' bound to instance 'proc_sys_reset_0' of component 'design_1_proc_sys_reset_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6301]
-INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6314]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_processing_system7_0_0_stub.vhdl:133]
-INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4009]
+INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:9366' bound to instance 'design_1_i' of component 'design_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:9417]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:9761]
+INFO: [Synth 8-3491] module 'design_1_axi_dma_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'design_1_axi_dma_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:10561]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_dma_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_dma_0_0_stub.vhdl:75]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:9883]
+INFO: [Synth 8-3491] module 'design_1_axi_dma_0_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_dma_0_1_stub.vhdl:5' bound to instance 'axi_dma_1' of component 'design_1_axi_dma_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:10627]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_dma_0_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_dma_0_1_stub.vhdl:75]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:10693]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_gpio_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_1_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_gpio_1_1_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'design_1_axi_gpio_1_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:10718]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_1_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_gpio_1_1_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_gpio_0_1_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'design_1_axi_gpio_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:10743]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_axi_gpio_0_1_stub.vhdl:33]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_interconnect_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3931]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_ZLTC2M' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:739]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_3' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_3_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_3' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:982]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_3' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_3_stub.vhdl:90]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_ZLTC2M' (2#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:739]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_XOWISC' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2463]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_XOWISC' (3#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2463]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_15OSRGD' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_15OSRGD' (4#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2550]
+INFO: [Synth 8-3491] module 'design_1_xbar_2' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_2_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_2' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4388]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_2' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_2_stub.vhdl:89]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_interconnect_0_0' (5#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3931]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_interconnect_1_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4568]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1614QE6' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:166]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1614QE6' (6#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_XC9BB3' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1112]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_XC9BB3' (7#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1112]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_ULGAU4' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2048]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_ULGAU4' (8#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2048]
+INFO: [Synth 8-3491] module 'design_1_xbar_3' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_3_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_3' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4902]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_3' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_3_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_interconnect_1_0' (9#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4568]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:5253]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1R706YB' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:309]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:562]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_1_stub.vhdl:94]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1R706YB' (10#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:309]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_7HNO1D' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1657]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_2' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_2' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1910]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_2' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_2_stub.vhdl:94]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_7HNO1D' (11#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1657]
+INFO: [Synth 8-3491] module 'design_1_s00_mmu_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_s00_mmu_0_stub.vhdl:5' bound to instance 's00_mmu' of component 'design_1_s00_mmu_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6592]
+INFO: [Synth 8-638] synthesizing module 'design_1_s00_mmu_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_s00_mmu_0_stub.vhdl:93]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1W60HW0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2644]
+INFO: [Synth 8-3491] module 'design_1_auto_us_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_us_0_stub.vhdl:5' bound to instance 'auto_us' of component 'design_1_auto_us_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2749]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_us_0_stub.vhdl:45]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1W60HW0' (12#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2644]
+INFO: [Synth 8-3491] module 'design_1_s01_mmu_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_s01_mmu_0_stub.vhdl:5' bound to instance 's01_mmu' of component 'design_1_s01_mmu_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6714]
+INFO: [Synth 8-638] synthesizing module 'design_1_s01_mmu_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_s01_mmu_0_stub.vhdl:43]
+INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_8NCF02' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2836]
+INFO: [Synth 8-3491] module 'design_1_auto_us_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_us_1_stub.vhdl:5' bound to instance 'auto_us' of component 'design_1_auto_us_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2959]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_us_1_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_8NCF02' (13#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2836]
+INFO: [Synth 8-3491] module 'design_1_s02_mmu_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_s02_mmu_0_stub.vhdl:5' bound to instance 's02_mmu' of component 'design_1_s02_mmu_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6792]
+INFO: [Synth 8-638] synthesizing module 'design_1_s02_mmu_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_s02_mmu_0_stub.vhdl:49]
+INFO: [Synth 8-638] synthesizing module 's03_couplers_imp_1UQ1PUB' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3094]
+INFO: [Synth 8-256] done synthesizing module 's03_couplers_imp_1UQ1PUB' (14#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3094]
+INFO: [Synth 8-638] synthesizing module 's04_couplers_imp_4T8GAF' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3305]
+INFO: [Synth 8-256] done synthesizing module 's04_couplers_imp_4T8GAF' (15#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3305]
+INFO: [Synth 8-638] synthesizing module 's05_couplers_imp_1YHCGIE' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3516]
+INFO: [Synth 8-256] done synthesizing module 's05_couplers_imp_1YHCGIE' (16#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3516]
+INFO: [Synth 8-638] synthesizing module 's06_couplers_imp_5OWWZ8' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3727]
+INFO: [Synth 8-256] done synthesizing module 's06_couplers_imp_5OWWZ8' (17#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:3727]
+INFO: [Synth 8-3491] module 'design_1_xbar_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:7173]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_1_stub.vhdl:93]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_0' (18#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:5253]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_2' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_clk_wiz_0_2_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_2' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11193]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_2' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_clk_wiz_0_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_edge_detect_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_edge_detect_0_0_stub.vhdl:5' bound to instance 'edge_detect_0' of component 'design_1_edge_detect_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11200]
+INFO: [Synth 8-638] synthesizing module 'design_1_edge_detect_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_edge_detect_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:5' bound to instance 'proc_sys_reset_0' of component 'design_1_proc_sys_reset_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11206]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_proc_sys_reset_0_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_proc_sys_reset_0_1_stub.vhdl:5' bound to instance 'proc_sys_reset_1' of component 'design_1_proc_sys_reset_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11219]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_proc_sys_reset_0_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11232]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_processing_system7_0_0_stub.vhdl:178]
+INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:8379]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_15SPJYW' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_15SPJYW' (8#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:61]
-INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_XU9C55' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:600]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_XU9C55' (9#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:600]
-INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_14WQB4R' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:699]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_14WQB4R' (10#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:699]
-INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_YFYJ3U' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:797]
-INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_YFYJ3U' (11#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:797]
-INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_17KQ732' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:898]
-INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_17KQ732' (12#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:898]
-INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_VQEDA7' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1003]
-INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_VQEDA7' (13#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1003]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1565]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1748]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_auto_pc_0_stub.vhdl:70]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (14#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1565]
-INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4980]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_xbar_0_stub.vhdl:51]
-INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_1' (15#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:4009]
-INFO: [Synth 8-3491] module 'design_1_rand_num_generator_0_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_rand_num_generator_0_1_stub.vhdl:5' bound to instance 'rand_num_generator_0' of component 'design_1_rand_num_generator_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6605]
-INFO: [Synth 8-638] synthesizing module 'design_1_rand_num_generator_0_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_rand_num_generator_0_1_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6616]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_3' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_3_stub.vhdl:5' bound to instance 'rst_ps7_0_100M1' of component 'design_1_rst_ps7_0_100M_3' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6629]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_3' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_3_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_vga_controller_0_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_vga_controller_0_1_stub.vhdl:5' bound to instance 'vga_controller_0' of component 'design_1_vga_controller_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6642]
-INFO: [Synth 8-638] synthesizing module 'design_1_vga_controller_0_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_vga_controller_0_1_stub.vhdl:64]
-INFO: [Synth 8-3491] module 'design_1_zed_audio_ctrl_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_zed_audio_ctrl_0_0_stub.vhdl:5' bound to instance 'zed_audio_ctrl_0' of component 'design_1_zed_audio_ctrl_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:6698]
-INFO: [Synth 8-638] synthesizing module 'design_1_zed_audio_ctrl_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-9244-ensc-pit-w15/realtime/design_1_zed_audio_ctrl_0_0_stub.vhdl:34]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (16#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:5234]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (17#1) [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_15SPJYW' (19#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_XU9C55' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1213]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_XU9C55' (20#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1213]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_14WQB4R' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1312]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_14WQB4R' (21#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1312]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_YFYJ3U' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1410]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_YFYJ3U' (22#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1410]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_17KQ732' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1511]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_17KQ732' (23#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:1511]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2178]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2361]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (24#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:2178]
+INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:9248]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_1' (25#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:8379]
+INFO: [Synth 8-3491] module 'design_1_rand_num_generator_0_2' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_rand_num_generator_0_2_stub.vhdl:5' bound to instance 'rand_num_generator_0' of component 'design_1_rand_num_generator_0_2' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11547]
+INFO: [Synth 8-638] synthesizing module 'design_1_rand_num_generator_0_2' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_rand_num_generator_0_2_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11558]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_3' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_3_stub.vhdl:5' bound to instance 'rst_ps7_0_100M1' of component 'design_1_rst_ps7_0_100M_3' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11571]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_3' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_rst_ps7_0_100M_3_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_vga_controller_0_1' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_vga_controller_0_1_stub.vhdl:5' bound to instance 'vga_controller_0' of component 'design_1_vga_controller_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11584]
+INFO: [Synth 8-638] synthesizing module 'design_1_vga_controller_0_1' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_vga_controller_0_1_stub.vhdl:64]
+INFO: [Synth 8-3491] module 'design_1_xfft_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xfft_0_0_stub.vhdl:5' bound to instance 'xfft_0' of component 'design_1_xfft_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11640]
+INFO: [Synth 8-638] synthesizing module 'design_1_xfft_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_xfft_0_0_stub.vhdl:29]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_1' declared at 'c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_1/synth/design_1_xlconcat_0_1.v:60' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11661]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_1' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_1/synth/design_1_xlconcat_0_1.v:60]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 2 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter IN32_WIDTH bound to: 1 - type: integer 
+	Parameter IN33_WIDTH bound to: 1 - type: integer 
+	Parameter IN34_WIDTH bound to: 1 - type: integer 
+	Parameter IN35_WIDTH bound to: 1 - type: integer 
+	Parameter IN36_WIDTH bound to: 1 - type: integer 
+	Parameter IN37_WIDTH bound to: 1 - type: integer 
+	Parameter IN38_WIDTH bound to: 1 - type: integer 
+	Parameter IN39_WIDTH bound to: 1 - type: integer 
+	Parameter IN40_WIDTH bound to: 1 - type: integer 
+	Parameter IN41_WIDTH bound to: 1 - type: integer 
+	Parameter IN42_WIDTH bound to: 1 - type: integer 
+	Parameter IN43_WIDTH bound to: 1 - type: integer 
+	Parameter IN44_WIDTH bound to: 1 - type: integer 
+	Parameter IN45_WIDTH bound to: 1 - type: integer 
+	Parameter IN46_WIDTH bound to: 1 - type: integer 
+	Parameter IN47_WIDTH bound to: 1 - type: integer 
+	Parameter IN48_WIDTH bound to: 1 - type: integer 
+	Parameter IN49_WIDTH bound to: 1 - type: integer 
+	Parameter IN50_WIDTH bound to: 1 - type: integer 
+	Parameter IN51_WIDTH bound to: 1 - type: integer 
+	Parameter IN52_WIDTH bound to: 1 - type: integer 
+	Parameter IN53_WIDTH bound to: 1 - type: integer 
+	Parameter IN54_WIDTH bound to: 1 - type: integer 
+	Parameter IN55_WIDTH bound to: 1 - type: integer 
+	Parameter IN56_WIDTH bound to: 1 - type: integer 
+	Parameter IN57_WIDTH bound to: 1 - type: integer 
+	Parameter IN58_WIDTH bound to: 1 - type: integer 
+	Parameter IN59_WIDTH bound to: 1 - type: integer 
+	Parameter IN60_WIDTH bound to: 1 - type: integer 
+	Parameter IN61_WIDTH bound to: 1 - type: integer 
+	Parameter IN62_WIDTH bound to: 1 - type: integer 
+	Parameter IN63_WIDTH bound to: 1 - type: integer 
+	Parameter IN64_WIDTH bound to: 1 - type: integer 
+	Parameter IN65_WIDTH bound to: 1 - type: integer 
+	Parameter IN66_WIDTH bound to: 1 - type: integer 
+	Parameter IN67_WIDTH bound to: 1 - type: integer 
+	Parameter IN68_WIDTH bound to: 1 - type: integer 
+	Parameter IN69_WIDTH bound to: 1 - type: integer 
+	Parameter IN70_WIDTH bound to: 1 - type: integer 
+	Parameter IN71_WIDTH bound to: 1 - type: integer 
+	Parameter IN72_WIDTH bound to: 1 - type: integer 
+	Parameter IN73_WIDTH bound to: 1 - type: integer 
+	Parameter IN74_WIDTH bound to: 1 - type: integer 
+	Parameter IN75_WIDTH bound to: 1 - type: integer 
+	Parameter IN76_WIDTH bound to: 1 - type: integer 
+	Parameter IN77_WIDTH bound to: 1 - type: integer 
+	Parameter IN78_WIDTH bound to: 1 - type: integer 
+	Parameter IN79_WIDTH bound to: 1 - type: integer 
+	Parameter IN80_WIDTH bound to: 1 - type: integer 
+	Parameter IN81_WIDTH bound to: 1 - type: integer 
+	Parameter IN82_WIDTH bound to: 1 - type: integer 
+	Parameter IN83_WIDTH bound to: 1 - type: integer 
+	Parameter IN84_WIDTH bound to: 1 - type: integer 
+	Parameter IN85_WIDTH bound to: 1 - type: integer 
+	Parameter IN86_WIDTH bound to: 1 - type: integer 
+	Parameter IN87_WIDTH bound to: 1 - type: integer 
+	Parameter IN88_WIDTH bound to: 1 - type: integer 
+	Parameter IN89_WIDTH bound to: 1 - type: integer 
+	Parameter IN90_WIDTH bound to: 1 - type: integer 
+	Parameter IN91_WIDTH bound to: 1 - type: integer 
+	Parameter IN92_WIDTH bound to: 1 - type: integer 
+	Parameter IN93_WIDTH bound to: 1 - type: integer 
+	Parameter IN94_WIDTH bound to: 1 - type: integer 
+	Parameter IN95_WIDTH bound to: 1 - type: integer 
+	Parameter IN96_WIDTH bound to: 1 - type: integer 
+	Parameter IN97_WIDTH bound to: 1 - type: integer 
+	Parameter IN98_WIDTH bound to: 1 - type: integer 
+	Parameter IN99_WIDTH bound to: 1 - type: integer 
+	Parameter IN100_WIDTH bound to: 1 - type: integer 
+	Parameter IN101_WIDTH bound to: 1 - type: integer 
+	Parameter IN102_WIDTH bound to: 1 - type: integer 
+	Parameter IN103_WIDTH bound to: 1 - type: integer 
+	Parameter IN104_WIDTH bound to: 1 - type: integer 
+	Parameter IN105_WIDTH bound to: 1 - type: integer 
+	Parameter IN106_WIDTH bound to: 1 - type: integer 
+	Parameter IN107_WIDTH bound to: 1 - type: integer 
+	Parameter IN108_WIDTH bound to: 1 - type: integer 
+	Parameter IN109_WIDTH bound to: 1 - type: integer 
+	Parameter IN110_WIDTH bound to: 1 - type: integer 
+	Parameter IN111_WIDTH bound to: 1 - type: integer 
+	Parameter IN112_WIDTH bound to: 1 - type: integer 
+	Parameter IN113_WIDTH bound to: 1 - type: integer 
+	Parameter IN114_WIDTH bound to: 1 - type: integer 
+	Parameter IN115_WIDTH bound to: 1 - type: integer 
+	Parameter IN116_WIDTH bound to: 1 - type: integer 
+	Parameter IN117_WIDTH bound to: 1 - type: integer 
+	Parameter IN118_WIDTH bound to: 1 - type: integer 
+	Parameter IN119_WIDTH bound to: 1 - type: integer 
+	Parameter IN120_WIDTH bound to: 1 - type: integer 
+	Parameter IN121_WIDTH bound to: 1 - type: integer 
+	Parameter IN122_WIDTH bound to: 1 - type: integer 
+	Parameter IN123_WIDTH bound to: 1 - type: integer 
+	Parameter IN124_WIDTH bound to: 1 - type: integer 
+	Parameter IN125_WIDTH bound to: 1 - type: integer 
+	Parameter IN126_WIDTH bound to: 1 - type: integer 
+	Parameter IN127_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 3 - type: integer 
+	Parameter NUM_PORTS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (26#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_1' (27#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_1/synth/design_1_xlconcat_0_1.v:60]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at 'c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:60' bound to instance 'xlconcat_1' of component 'design_1_xlconcat_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11667]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:60]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat__parameterized0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter IN32_WIDTH bound to: 1 - type: integer 
+	Parameter IN33_WIDTH bound to: 1 - type: integer 
+	Parameter IN34_WIDTH bound to: 1 - type: integer 
+	Parameter IN35_WIDTH bound to: 1 - type: integer 
+	Parameter IN36_WIDTH bound to: 1 - type: integer 
+	Parameter IN37_WIDTH bound to: 1 - type: integer 
+	Parameter IN38_WIDTH bound to: 1 - type: integer 
+	Parameter IN39_WIDTH bound to: 1 - type: integer 
+	Parameter IN40_WIDTH bound to: 1 - type: integer 
+	Parameter IN41_WIDTH bound to: 1 - type: integer 
+	Parameter IN42_WIDTH bound to: 1 - type: integer 
+	Parameter IN43_WIDTH bound to: 1 - type: integer 
+	Parameter IN44_WIDTH bound to: 1 - type: integer 
+	Parameter IN45_WIDTH bound to: 1 - type: integer 
+	Parameter IN46_WIDTH bound to: 1 - type: integer 
+	Parameter IN47_WIDTH bound to: 1 - type: integer 
+	Parameter IN48_WIDTH bound to: 1 - type: integer 
+	Parameter IN49_WIDTH bound to: 1 - type: integer 
+	Parameter IN50_WIDTH bound to: 1 - type: integer 
+	Parameter IN51_WIDTH bound to: 1 - type: integer 
+	Parameter IN52_WIDTH bound to: 1 - type: integer 
+	Parameter IN53_WIDTH bound to: 1 - type: integer 
+	Parameter IN54_WIDTH bound to: 1 - type: integer 
+	Parameter IN55_WIDTH bound to: 1 - type: integer 
+	Parameter IN56_WIDTH bound to: 1 - type: integer 
+	Parameter IN57_WIDTH bound to: 1 - type: integer 
+	Parameter IN58_WIDTH bound to: 1 - type: integer 
+	Parameter IN59_WIDTH bound to: 1 - type: integer 
+	Parameter IN60_WIDTH bound to: 1 - type: integer 
+	Parameter IN61_WIDTH bound to: 1 - type: integer 
+	Parameter IN62_WIDTH bound to: 1 - type: integer 
+	Parameter IN63_WIDTH bound to: 1 - type: integer 
+	Parameter IN64_WIDTH bound to: 1 - type: integer 
+	Parameter IN65_WIDTH bound to: 1 - type: integer 
+	Parameter IN66_WIDTH bound to: 1 - type: integer 
+	Parameter IN67_WIDTH bound to: 1 - type: integer 
+	Parameter IN68_WIDTH bound to: 1 - type: integer 
+	Parameter IN69_WIDTH bound to: 1 - type: integer 
+	Parameter IN70_WIDTH bound to: 1 - type: integer 
+	Parameter IN71_WIDTH bound to: 1 - type: integer 
+	Parameter IN72_WIDTH bound to: 1 - type: integer 
+	Parameter IN73_WIDTH bound to: 1 - type: integer 
+	Parameter IN74_WIDTH bound to: 1 - type: integer 
+	Parameter IN75_WIDTH bound to: 1 - type: integer 
+	Parameter IN76_WIDTH bound to: 1 - type: integer 
+	Parameter IN77_WIDTH bound to: 1 - type: integer 
+	Parameter IN78_WIDTH bound to: 1 - type: integer 
+	Parameter IN79_WIDTH bound to: 1 - type: integer 
+	Parameter IN80_WIDTH bound to: 1 - type: integer 
+	Parameter IN81_WIDTH bound to: 1 - type: integer 
+	Parameter IN82_WIDTH bound to: 1 - type: integer 
+	Parameter IN83_WIDTH bound to: 1 - type: integer 
+	Parameter IN84_WIDTH bound to: 1 - type: integer 
+	Parameter IN85_WIDTH bound to: 1 - type: integer 
+	Parameter IN86_WIDTH bound to: 1 - type: integer 
+	Parameter IN87_WIDTH bound to: 1 - type: integer 
+	Parameter IN88_WIDTH bound to: 1 - type: integer 
+	Parameter IN89_WIDTH bound to: 1 - type: integer 
+	Parameter IN90_WIDTH bound to: 1 - type: integer 
+	Parameter IN91_WIDTH bound to: 1 - type: integer 
+	Parameter IN92_WIDTH bound to: 1 - type: integer 
+	Parameter IN93_WIDTH bound to: 1 - type: integer 
+	Parameter IN94_WIDTH bound to: 1 - type: integer 
+	Parameter IN95_WIDTH bound to: 1 - type: integer 
+	Parameter IN96_WIDTH bound to: 1 - type: integer 
+	Parameter IN97_WIDTH bound to: 1 - type: integer 
+	Parameter IN98_WIDTH bound to: 1 - type: integer 
+	Parameter IN99_WIDTH bound to: 1 - type: integer 
+	Parameter IN100_WIDTH bound to: 1 - type: integer 
+	Parameter IN101_WIDTH bound to: 1 - type: integer 
+	Parameter IN102_WIDTH bound to: 1 - type: integer 
+	Parameter IN103_WIDTH bound to: 1 - type: integer 
+	Parameter IN104_WIDTH bound to: 1 - type: integer 
+	Parameter IN105_WIDTH bound to: 1 - type: integer 
+	Parameter IN106_WIDTH bound to: 1 - type: integer 
+	Parameter IN107_WIDTH bound to: 1 - type: integer 
+	Parameter IN108_WIDTH bound to: 1 - type: integer 
+	Parameter IN109_WIDTH bound to: 1 - type: integer 
+	Parameter IN110_WIDTH bound to: 1 - type: integer 
+	Parameter IN111_WIDTH bound to: 1 - type: integer 
+	Parameter IN112_WIDTH bound to: 1 - type: integer 
+	Parameter IN113_WIDTH bound to: 1 - type: integer 
+	Parameter IN114_WIDTH bound to: 1 - type: integer 
+	Parameter IN115_WIDTH bound to: 1 - type: integer 
+	Parameter IN116_WIDTH bound to: 1 - type: integer 
+	Parameter IN117_WIDTH bound to: 1 - type: integer 
+	Parameter IN118_WIDTH bound to: 1 - type: integer 
+	Parameter IN119_WIDTH bound to: 1 - type: integer 
+	Parameter IN120_WIDTH bound to: 1 - type: integer 
+	Parameter IN121_WIDTH bound to: 1 - type: integer 
+	Parameter IN122_WIDTH bound to: 1 - type: integer 
+	Parameter IN123_WIDTH bound to: 1 - type: integer 
+	Parameter IN124_WIDTH bound to: 1 - type: integer 
+	Parameter IN125_WIDTH bound to: 1 - type: integer 
+	Parameter IN126_WIDTH bound to: 1 - type: integer 
+	Parameter IN127_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 2 - type: integer 
+	Parameter NUM_PORTS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat__parameterized0' (27#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_0' (28#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:60]
+INFO: [Synth 8-3491] module 'design_1_zed_audio_ctrl_0_0' declared at 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_zed_audio_ctrl_0_0_stub.vhdl:5' bound to instance 'zed_audio_ctrl_0' of component 'design_1_zed_audio_ctrl_0_0' [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:11673]
+INFO: [Synth 8-638] synthesizing module 'design_1_zed_audio_ctrl_0_0' [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/.Xil/Vivado-23272-ensc-pit-w15/realtime/design_1_zed_audio_ctrl_0_0_stub.vhdl:34]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (29#1) [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/synth/design_1.vhd:9417]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (30#1) [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:55]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1276.883 ; gain = 133.133
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1307.480 ; gain = 158.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1276.883 ; gain = 133.133
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.480 ; gain = 158.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1276.883 ; gain = 133.133
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.480 ; gain = 158.430
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1276.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1307.480 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -147,6 +461,12 @@ Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.ge
 Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s02_couplers/auto_us'
 Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/m00_couplers/auto_pc'
 Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/m00_couplers/auto_pc'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s00_mmu_0/design_1_s00_mmu_0/design_1_s00_mmu_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_mmu'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s00_mmu_0/design_1_s00_mmu_0/design_1_s00_mmu_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_mmu'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s01_mmu_0/design_1_s01_mmu_0/design_1_s01_mmu_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s01_mmu'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s01_mmu_0/design_1_s01_mmu_0/design_1_s01_mmu_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s01_mmu'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s02_mmu'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s02_mmu'
 Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1/design_1_axi_gpio_0_0_in_context.xdc] for cell 'design_1_i/axi_gpio_1'
 Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1/design_1_axi_gpio_0_0_in_context.xdc] for cell 'design_1_i/axi_gpio_1'
 Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3_in_context.xdc] for cell 'design_1_i/rst_ps7_0_100M1'
@@ -159,8 +479,24 @@ Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.ge
 Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0/design_1_axi_dma_0_0_in_context.xdc] for cell 'design_1_i/axi_dma_0'
 Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0/design_1_rst_ps7_0_100M_1_in_context.xdc] for cell 'design_1_i/proc_sys_reset_0'
 Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0/design_1_rst_ps7_0_100M_1_in_context.xdc] for cell 'design_1_i/proc_sys_reset_0'
-Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rand_num_generator_0_1/design_1_rand_num_generator_0_1/design_1_rand_num_generator_0_1_in_context.xdc] for cell 'design_1_i/rand_num_generator_0'
-Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rand_num_generator_0_1/design_1_rand_num_generator_0_1/design_1_rand_num_generator_0_1_in_context.xdc] for cell 'design_1_i/rand_num_generator_0'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rand_num_generator_0_2/design_1_rand_num_generator_0_2/design_1_rand_num_generator_0_2_in_context.xdc] for cell 'design_1_i/rand_num_generator_0'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rand_num_generator_0_2/design_1_rand_num_generator_0_2/design_1_rand_num_generator_0_2_in_context.xdc] for cell 'design_1_i/rand_num_generator_0'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xfft_0_0/design_1_xfft_0_0/design_1_xfft_0_0_in_context.xdc] for cell 'design_1_i/xfft_0'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xfft_0_0/design_1_xfft_0_0/design_1_xfft_0_0_in_context.xdc] for cell 'design_1_i/xfft_0'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1/design_1_axi_dma_0_1_in_context.xdc] for cell 'design_1_i/axi_dma_1'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1/design_1_axi_dma_0_1_in_context.xdc] for cell 'design_1_i/axi_dma_1'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_edge_detect_0_0/design_1_edge_detect_0_0/design_1_edge_detect_0_0_in_context.xdc] for cell 'design_1_i/edge_detect_0'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_edge_detect_0_0/design_1_edge_detect_0_0/design_1_edge_detect_0_0_in_context.xdc] for cell 'design_1_i/edge_detect_0'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1/design_1_rst_ps7_0_100M_1_in_context.xdc] for cell 'design_1_i/proc_sys_reset_1'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1/design_1_rst_ps7_0_100M_1_in_context.xdc] for cell 'design_1_i/proc_sys_reset_1'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_2'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_2'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_2/design_1_xbar_2/design_1_xbar_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_2/xbar'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_2/design_1_xbar_2/design_1_xbar_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_2/xbar'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3/design_1_auto_pc_3_in_context.xdc] for cell 'design_1_i/axi_interconnect_2/m00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3/design_1_auto_pc_3_in_context.xdc] for cell 'design_1_i/axi_interconnect_2/m00_couplers/auto_pc'
+Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_3/design_1_xbar_3/design_1_xbar_3_in_context.xdc] for cell 'design_1_i/axi_interconnect_3/xbar'
+Finished Parsing XDC File [c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_3/design_1_xbar_3/design_1_xbar_3_in_context.xdc] for cell 'design_1_i/axi_interconnect_3/xbar'
 Parsing XDC File [C:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/constraints/adventures_with_ip.xdc]
 WARNING: [Vivado 12-584] No ports matched '[get_ports -of_objects [get_iobanks 33]]'. [C:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/constraints/adventures_with_ip.xdc:86]
 WARNING: [Vivado 12-584] No ports matched '[get_ports -of_objects [get_iobanks 34]]'. [C:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/constraints/adventures_with_ip.xdc:91]
@@ -173,21 +509,21 @@ Parsing XDC File [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.ru
 Finished Parsing XDC File [C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1329.477 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1353.711 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1329.477 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1353.711 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1329.477 ; gain = 185.727
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1353.711 ; gain = 204.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1329.477 ; gain = 185.727
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1353.711 ; gain = 204.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -465,6 +801,9 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s00_c
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s01_couplers/auto_us. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s02_couplers/auto_us. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/m00_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s00_mmu. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s01_mmu. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s02_mmu. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_gpio_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/rst_ps7_0_100M1. (constraint file  auto generated constraint).
@@ -473,11 +812,23 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/clk_wiz_0. (constraint
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_dma_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/proc_sys_reset_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/rand_num_generator_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/xlconcat_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/xfft_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_dma_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/edge_detect_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/proc_sys_reset_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_gpio_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_interconnect_2/xbar. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_interconnect_2/m00_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_interconnect_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_interconnect_3/xbar. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_interconnect_3. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/xlconcat_1. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1329.477 ; gain = 185.727
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1353.711 ; gain = 204.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1329.477 ; gain = 185.727
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1353.711 ; gain = 204.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -499,25 +850,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1329.477 ; gain = 185.727
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1353.711 ; gain = 204.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1339.246 ; gain = 195.496
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1353.711 ; gain = 204.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1339.988 ; gain = 196.238
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1354.559 ; gain = 205.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1359.625 ; gain = 215.875
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1375.191 ; gain = 226.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -534,38 +885,86 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module axi_gpio_2 has unconnected pin gpio_io_i[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module xfft_0 has unconnected pin s_axis_config_tdata[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -575,24 +974,35 @@ Report BlackBoxes:
 +------+--------------------------------+----------+
 |      |BlackBox name                   |Instances |
 +------+--------------------------------+----------+
-|1     |design_1_xbar_1                 |         1|
-|2     |design_1_auto_pc_1              |         1|
-|3     |design_1_auto_pc_2              |         1|
-|4     |design_1_auto_us_0              |         1|
-|5     |design_1_auto_us_1              |         1|
-|6     |design_1_xbar_0                 |         1|
-|7     |design_1_auto_pc_0              |         1|
-|8     |design_1_axi_dma_0_0            |         1|
-|9     |design_1_axi_gpio_0_0           |         1|
-|10    |design_1_axi_gpio_1_1           |         1|
-|11    |design_1_clk_wiz_0_2            |         1|
-|12    |design_1_proc_sys_reset_0_0     |         1|
-|13    |design_1_processing_system7_0_0 |         1|
-|14    |design_1_rand_num_generator_0_1 |         1|
-|15    |design_1_rst_ps7_0_100M_1       |         1|
-|16    |design_1_rst_ps7_0_100M_3       |         1|
-|17    |design_1_vga_controller_0_1     |         1|
-|18    |design_1_zed_audio_ctrl_0_0     |         1|
+|1     |design_1_xbar_2                 |         1|
+|2     |design_1_auto_pc_3              |         1|
+|3     |design_1_xbar_3                 |         1|
+|4     |design_1_s00_mmu_0              |         1|
+|5     |design_1_s01_mmu_0              |         1|
+|6     |design_1_s02_mmu_0              |         1|
+|7     |design_1_xbar_1                 |         1|
+|8     |design_1_auto_pc_1              |         1|
+|9     |design_1_auto_pc_2              |         1|
+|10    |design_1_auto_us_0              |         1|
+|11    |design_1_auto_us_1              |         1|
+|12    |design_1_xbar_0                 |         1|
+|13    |design_1_auto_pc_0              |         1|
+|14    |design_1_axi_dma_0_0            |         1|
+|15    |design_1_axi_dma_0_1            |         1|
+|16    |design_1_axi_gpio_0_0           |         1|
+|17    |design_1_axi_gpio_1_1           |         1|
+|18    |design_1_axi_gpio_0_1           |         1|
+|19    |design_1_clk_wiz_0_2            |         1|
+|20    |design_1_edge_detect_0_0        |         1|
+|21    |design_1_proc_sys_reset_0_0     |         1|
+|22    |design_1_proc_sys_reset_0_1     |         1|
+|23    |design_1_processing_system7_0_0 |         1|
+|24    |design_1_rand_num_generator_0_2 |         1|
+|25    |design_1_rst_ps7_0_100M_1       |         1|
+|26    |design_1_rst_ps7_0_100M_3       |         1|
+|27    |design_1_vga_controller_0_1     |         1|
+|28    |design_1_xfft_0_0               |         1|
+|29    |design_1_zed_audio_ctrl_0_0     |         1|
 +------+--------------------------------+----------+
 
 Report Cell Usage: 
@@ -602,46 +1012,58 @@ Report Cell Usage:
 |1     |design_1_auto_pc_0_bbox              |     1|
 |2     |design_1_auto_pc_1_bbox              |     1|
 |3     |design_1_auto_pc_2_bbox              |     1|
-|4     |design_1_auto_us_0_bbox              |     1|
-|5     |design_1_auto_us_1_bbox              |     1|
-|6     |design_1_axi_dma_0_0_bbox            |     1|
-|7     |design_1_axi_gpio_0_0_bbox           |     1|
-|8     |design_1_axi_gpio_1_1_bbox           |     1|
-|9     |design_1_clk_wiz_0_2_bbox            |     1|
-|10    |design_1_proc_sys_reset_0_0_bbox     |     1|
-|11    |design_1_processing_system7_0_0_bbox |     1|
-|12    |design_1_rand_num_generator_0_1_bbox |     1|
-|13    |design_1_rst_ps7_0_100M_1_bbox       |     1|
-|14    |design_1_rst_ps7_0_100M_3_bbox       |     1|
-|15    |design_1_vga_controller_0_1_bbox     |     1|
-|16    |design_1_xbar_0_bbox                 |     1|
-|17    |design_1_xbar_1_bbox                 |     1|
-|18    |design_1_zed_audio_ctrl_0_0_bbox     |     1|
-|19    |IBUF                                 |    14|
-|20    |IOBUF                                |     4|
-|21    |OBUF                                 |    18|
+|4     |design_1_auto_pc_3_bbox              |     1|
+|5     |design_1_auto_us_0_bbox              |     1|
+|6     |design_1_auto_us_1_bbox              |     1|
+|7     |design_1_axi_dma_0_0_bbox            |     1|
+|8     |design_1_axi_dma_0_1_bbox            |     1|
+|9     |design_1_axi_gpio_0_0_bbox           |     1|
+|10    |design_1_axi_gpio_0_1_bbox           |     1|
+|11    |design_1_axi_gpio_1_1_bbox           |     1|
+|12    |design_1_clk_wiz_0_2_bbox            |     1|
+|13    |design_1_edge_detect_0_0_bbox        |     1|
+|14    |design_1_proc_sys_reset_0_0_bbox     |     1|
+|15    |design_1_proc_sys_reset_0_1_bbox     |     1|
+|16    |design_1_processing_system7_0_0_bbox |     1|
+|17    |design_1_rand_num_generator_0_2_bbox |     1|
+|18    |design_1_rst_ps7_0_100M_1_bbox       |     1|
+|19    |design_1_rst_ps7_0_100M_3_bbox       |     1|
+|20    |design_1_s00_mmu_0_bbox              |     1|
+|21    |design_1_s01_mmu_0_bbox              |     1|
+|22    |design_1_s02_mmu_0_bbox              |     1|
+|23    |design_1_vga_controller_0_1_bbox     |     1|
+|24    |design_1_xbar_0_bbox                 |     1|
+|25    |design_1_xbar_1_bbox                 |     1|
+|26    |design_1_xbar_2_bbox                 |     1|
+|27    |design_1_xbar_3_bbox                 |     1|
+|28    |design_1_xfft_0_0_bbox               |     1|
+|29    |design_1_zed_audio_ctrl_0_0_bbox     |     1|
+|30    |IBUF                                 |    14|
+|31    |IOBUF                                |     4|
+|32    |OBUF                                 |    18|
 +------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1364.383 ; gain = 168.039
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.383 ; gain = 220.633
+Synthesis finished with 0 errors, 48 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1378.996 ; gain = 183.715
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.996 ; gain = 229.945
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1364.383 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1378.996 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1387.270 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1403.156 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-97 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+150 Infos, 6 Warnings, 48 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1387.270 ; gain = 243.520
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 1403.156 ; gain = 254.105
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar  2 12:48:50 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 27 19:25:40 2023...

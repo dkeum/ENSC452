@@ -86,6 +86,12 @@ public:
   xtlm::xtlm_aximm_target_socket* target_2_wr_socket;
   xtlm::xtlm_aximm_target_socket* target_3_rd_socket;
   xtlm::xtlm_aximm_target_socket* target_3_wr_socket;
+  xtlm::xtlm_aximm_target_socket* target_4_rd_socket;
+  xtlm::xtlm_aximm_target_socket* target_4_wr_socket;
+  xtlm::xtlm_aximm_target_socket* target_5_rd_socket;
+  xtlm::xtlm_aximm_target_socket* target_5_wr_socket;
+  xtlm::xtlm_aximm_target_socket* target_6_rd_socket;
+  xtlm::xtlm_aximm_target_socket* target_6_wr_socket;
 
   // module socket-to-socket TLM interfaces
 
