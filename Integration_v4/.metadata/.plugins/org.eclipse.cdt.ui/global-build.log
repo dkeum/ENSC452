@@ -1,0 +1,35 @@
+Nothing to build in platform 'test'
+
+21:45:24 **** Incremental Build of configuration Debug for project temptmee ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/Desktop/Integration_v4/test/export/test/sw/test/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:4:
+C:/Users/dkeum/Desktop/Integration_v4/test/export/test/sw/test/standalone_domain/bspinclude/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |         ^~~~~~~
+../src/main.c: In function 'main':
+../src/main.c:80:9: warning: implicit declaration of function 'generate_PRNG' [-Wimplicit-function-declaration]
+   80 |         generate_PRNG(&myDma, tempTime);
+      |         ^~~~~~~~~~~~~
+../src/main.c:69:9: warning: variable 'bin' set but not used [-Wunused-but-set-variable]
+   69 |     int bin = 0;
+      |         ^~~
+'Finished building: ../src/main.c'
+' '
+'Building target: temptmee.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dkeum/Desktop/Integration_v4/test/export/test/sw/test/standalone_domain/bsplib/lib -o "temptmee.elf"  ./src/audio.o ./src/cplx_data.o ./src/dma_accel.o ./src/fft.o ./src/interrupts.o ./src/intr_handlers.o ./src/ip_functions.o ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: temptmee.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size temptmee.elf  |tee "temptmee.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78968	   3532	3862768	3945268	 3c3334	temptmee.elf
+'Finished building: temptmee.elf.size'
+' '

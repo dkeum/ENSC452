@@ -1,0 +1,1872 @@
+18:32:50 INFO  : Registering command handlers for Vitis TCF services
+18:32:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\dkeum\Desktop\Integration_v4\temp_xsdb_launch_script.tcl
+18:32:52 INFO  : XSCT server has started successfully.
+18:32:52 INFO  : Successfully done setting XSCT server connection channel  
+18:32:52 INFO  : Platform repository initialization has completed.
+18:32:52 INFO  : plnx-install-location is set to ''
+18:32:52 INFO  : Successfully done setting workspace for the tool. 
+18:32:52 INFO  : Successfully done query RDI_DATADIR 
+18:33:23 INFO  : Result from executing command 'getProjects': Integration_v4
+18:33:23 INFO  : Result from executing command 'getPlatforms': 
+18:33:46 INFO  : Result from executing command 'getProjects': Integration_v4
+18:33:46 INFO  : Result from executing command 'getPlatforms': Integration_v4|C:/Users/dkeum/Desktop/Integration_v4/Integration_v4/export/Integration_v4/Integration_v4.xpfm
+18:35:24 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\dkeum\Desktop\Integration_v4\temp_xsdb_launch_script.tcl
+18:35:27 INFO  : XSCT server has started successfully.
+18:35:27 INFO  : plnx-install-location is set to ''
+18:35:27 INFO  : Successfully done setting XSCT server connection channel  
+18:35:27 INFO  : Registering command handlers for Vitis TCF services
+18:35:27 INFO  : Successfully done setting workspace for the tool. 
+18:35:27 INFO  : Successfully done query RDI_DATADIR 
+18:35:29 INFO  : Platform repository initialization has completed.
+18:36:03 INFO  : Hardware specification for platform project 'Integration_v4' is updated.
+18:36:11 INFO  : Result from executing command 'getProjects': Integration_v4
+18:36:11 INFO  : Result from executing command 'getPlatforms': Integration_v4|C:/Users/dkeum/Desktop/Integration_v4/Integration_v4/export/Integration_v4/Integration_v4.xpfm
+18:51:20 INFO  : Hardware specification for platform project 'Integration_v4' is updated.
+18:51:28 INFO  : Result from executing command 'getProjects': Integration_v4
+18:51:28 INFO  : Result from executing command 'getPlatforms': Integration_v4|C:/Users/dkeum/Desktop/Integration_v4/Integration_v4/export/Integration_v4/Integration_v4.xpfm
+18:52:43 INFO  : Result from executing command 'getProjects': test
+18:52:43 INFO  : Result from executing command 'getPlatforms': 
+18:53:04 INFO  : Result from executing command 'getProjects': test
+18:53:04 INFO  : Result from executing command 'getPlatforms': test|C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm
+19:51:48 INFO  : Hardware specification for platform project 'test' is updated.
+19:51:56 INFO  : Result from executing command 'getProjects': test
+19:51:56 INFO  : Result from executing command 'getPlatforms': test|C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm
+19:52:23 ERROR : Unexpected exception occurred while writing platform project 'tempempmep' log.
+19:53:56 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:54:22 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:55:58 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:56:04 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:56:20 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:56:27 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:56:45 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:58:24 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:58:33 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:58:55 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+19:59:41 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:00:37 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:00:45 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:01:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:01:00 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:01:00 INFO  : 'jtag frequency' command is executed.
+20:01:00 INFO  : Context for 'APU' is selected.
+20:01:00 INFO  : System reset is completed.
+20:01:03 INFO  : 'after 3000' command is executed.
+20:01:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:01:06 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:01:06 INFO  : Context for 'APU' is selected.
+20:01:06 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:01:06 INFO  : 'configparams force-mem-access 1' command is executed.
+20:01:06 INFO  : Context for 'APU' is selected.
+20:01:06 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:01:06 INFO  : 'ps7_init' command is executed.
+20:01:06 INFO  : 'ps7_post_config' command is executed.
+20:01:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:01:07 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:01:07 INFO  : 'configparams force-mem-access 0' command is executed.
+20:01:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:01:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:01:07 INFO  : 'con' command is executed.
+20:01:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:01:07 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\systemdebugger_temptmee_system_standalone.tcl'
+20:01:30 INFO  : Disconnected from the channel tcfchan#5.
+20:01:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:01:31 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:01:31 INFO  : 'jtag frequency' command is executed.
+20:01:31 INFO  : Context for 'APU' is selected.
+20:01:31 INFO  : System reset is completed.
+20:01:34 INFO  : 'after 3000' command is executed.
+20:01:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:01:37 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:01:37 INFO  : Context for 'APU' is selected.
+20:01:37 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:01:37 INFO  : 'configparams force-mem-access 1' command is executed.
+20:01:37 INFO  : Context for 'APU' is selected.
+20:01:37 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:01:37 INFO  : 'ps7_init' command is executed.
+20:01:37 INFO  : 'ps7_post_config' command is executed.
+20:01:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:01:37 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:01:38 INFO  : 'configparams force-mem-access 0' command is executed.
+20:01:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:01:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:01:38 INFO  : 'con' command is executed.
+20:01:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:01:38 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:02:25 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:02:29 INFO  : Disconnected from the channel tcfchan#6.
+20:02:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:02:30 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:02:30 INFO  : 'jtag frequency' command is executed.
+20:02:30 INFO  : Context for 'APU' is selected.
+20:02:30 INFO  : System reset is completed.
+20:02:33 INFO  : 'after 3000' command is executed.
+20:02:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:02:36 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:02:36 INFO  : Context for 'APU' is selected.
+20:02:36 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:02:36 INFO  : 'configparams force-mem-access 1' command is executed.
+20:02:36 INFO  : Context for 'APU' is selected.
+20:02:36 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:02:36 INFO  : 'ps7_init' command is executed.
+20:02:36 INFO  : 'ps7_post_config' command is executed.
+20:02:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:02:36 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:02:36 INFO  : 'configparams force-mem-access 0' command is executed.
+20:02:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:02:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:02:36 INFO  : 'con' command is executed.
+20:02:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:02:36 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:02:58 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:03:10 INFO  : Disconnected from the channel tcfchan#7.
+20:03:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:03:11 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:03:11 INFO  : 'jtag frequency' command is executed.
+20:03:11 INFO  : Context for 'APU' is selected.
+20:03:11 INFO  : System reset is completed.
+20:03:14 INFO  : 'after 3000' command is executed.
+20:03:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:03:16 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:03:17 INFO  : Context for 'APU' is selected.
+20:03:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:03:17 INFO  : 'configparams force-mem-access 1' command is executed.
+20:03:17 INFO  : Context for 'APU' is selected.
+20:03:17 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:03:17 INFO  : 'ps7_init' command is executed.
+20:03:17 INFO  : 'ps7_post_config' command is executed.
+20:03:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:17 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:03:17 INFO  : 'configparams force-mem-access 0' command is executed.
+20:03:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:03:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:17 INFO  : 'con' command is executed.
+20:03:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:03:17 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:03:30 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:03:32 INFO  : Disconnected from the channel tcfchan#8.
+20:03:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:03:41 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:03:41 INFO  : 'jtag frequency' command is executed.
+20:03:41 INFO  : Context for 'APU' is selected.
+20:03:41 INFO  : System reset is completed.
+20:03:44 INFO  : 'after 3000' command is executed.
+20:03:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:03:47 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:03:47 INFO  : Context for 'APU' is selected.
+20:03:47 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:03:47 INFO  : 'configparams force-mem-access 1' command is executed.
+20:03:47 INFO  : Context for 'APU' is selected.
+20:03:47 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:03:47 INFO  : 'ps7_init' command is executed.
+20:03:47 INFO  : 'ps7_post_config' command is executed.
+20:03:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:48 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:03:48 INFO  : 'configparams force-mem-access 0' command is executed.
+20:03:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:03:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:03:48 INFO  : 'con' command is executed.
+20:03:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:03:48 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\systemdebugger_temptmee_system_standalone.tcl'
+20:04:14 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:05:10 INFO  : Disconnected from the channel tcfchan#9.
+20:05:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:05:12 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:05:12 INFO  : 'jtag frequency' command is executed.
+20:05:12 INFO  : Context for 'APU' is selected.
+20:05:12 INFO  : System reset is completed.
+20:05:15 INFO  : 'after 3000' command is executed.
+20:05:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:05:17 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:05:17 INFO  : Context for 'APU' is selected.
+20:05:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:05:17 INFO  : 'configparams force-mem-access 1' command is executed.
+20:05:17 INFO  : Context for 'APU' is selected.
+20:05:17 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:05:17 INFO  : 'ps7_init' command is executed.
+20:05:17 INFO  : 'ps7_post_config' command is executed.
+20:05:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:05:18 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:05:18 INFO  : 'configparams force-mem-access 0' command is executed.
+20:05:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:05:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:05:18 INFO  : 'con' command is executed.
+20:05:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:05:18 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:06:03 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:06:12 INFO  : Disconnected from the channel tcfchan#10.
+20:06:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:06:13 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:06:13 INFO  : 'jtag frequency' command is executed.
+20:06:13 INFO  : Context for 'APU' is selected.
+20:06:14 INFO  : System reset is completed.
+20:06:17 INFO  : 'after 3000' command is executed.
+20:06:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:06:19 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:06:19 INFO  : Context for 'APU' is selected.
+20:06:19 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:06:19 INFO  : 'configparams force-mem-access 1' command is executed.
+20:06:19 INFO  : Context for 'APU' is selected.
+20:06:19 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:06:19 INFO  : 'ps7_init' command is executed.
+20:06:19 INFO  : 'ps7_post_config' command is executed.
+20:06:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:20 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:06:20 INFO  : 'configparams force-mem-access 0' command is executed.
+20:06:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:06:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:20 INFO  : 'con' command is executed.
+20:06:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:06:20 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:06:29 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:06:40 INFO  : Disconnected from the channel tcfchan#11.
+20:06:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:06:41 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:06:41 INFO  : 'jtag frequency' command is executed.
+20:06:41 INFO  : Context for 'APU' is selected.
+20:06:41 INFO  : System reset is completed.
+20:06:45 INFO  : 'after 3000' command is executed.
+20:06:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:06:47 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:06:47 INFO  : Context for 'APU' is selected.
+20:06:47 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:06:47 INFO  : 'configparams force-mem-access 1' command is executed.
+20:06:47 INFO  : Context for 'APU' is selected.
+20:06:47 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:06:47 INFO  : 'ps7_init' command is executed.
+20:06:47 INFO  : 'ps7_post_config' command is executed.
+20:06:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:48 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:06:48 INFO  : 'configparams force-mem-access 0' command is executed.
+20:06:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:06:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:06:48 INFO  : 'con' command is executed.
+20:06:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:06:48 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:08:57 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:09:04 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:09:19 INFO  : Disconnected from the channel tcfchan#12.
+20:09:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:09:21 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:09:21 INFO  : 'jtag frequency' command is executed.
+20:09:21 INFO  : Context for 'APU' is selected.
+20:09:21 INFO  : System reset is completed.
+20:09:24 INFO  : 'after 3000' command is executed.
+20:09:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:09:26 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:09:26 INFO  : Context for 'APU' is selected.
+20:09:26 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:09:26 INFO  : 'configparams force-mem-access 1' command is executed.
+20:09:26 INFO  : Context for 'APU' is selected.
+20:09:26 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:09:26 INFO  : 'ps7_init' command is executed.
+20:09:26 INFO  : 'ps7_post_config' command is executed.
+20:09:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:27 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:09:27 INFO  : 'configparams force-mem-access 0' command is executed.
+20:09:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:09:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:27 INFO  : 'con' command is executed.
+20:09:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:09:27 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:10:10 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:11:16 INFO  : Disconnected from the channel tcfchan#13.
+20:11:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:11:17 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:11:17 INFO  : 'jtag frequency' command is executed.
+20:11:17 INFO  : Context for 'APU' is selected.
+20:11:17 INFO  : System reset is completed.
+20:11:20 INFO  : 'after 3000' command is executed.
+20:11:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:11:22 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:11:22 INFO  : Context for 'APU' is selected.
+20:11:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:11:22 INFO  : 'configparams force-mem-access 1' command is executed.
+20:11:23 INFO  : Context for 'APU' is selected.
+20:11:23 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:11:23 INFO  : 'ps7_init' command is executed.
+20:11:23 INFO  : 'ps7_post_config' command is executed.
+20:11:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:11:23 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:11:23 INFO  : 'configparams force-mem-access 0' command is executed.
+20:11:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:11:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:11:23 INFO  : 'con' command is executed.
+20:11:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:11:23 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:11:39 INFO  : Disconnected from the channel tcfchan#14.
+20:11:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:11:40 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:11:40 INFO  : 'jtag frequency' command is executed.
+20:11:40 INFO  : Context for 'APU' is selected.
+20:11:40 INFO  : System reset is completed.
+20:11:43 INFO  : 'after 3000' command is executed.
+20:11:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:11:45 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:11:45 INFO  : Context for 'APU' is selected.
+20:11:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:11:45 INFO  : 'configparams force-mem-access 1' command is executed.
+20:11:45 INFO  : Context for 'APU' is selected.
+20:11:45 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:11:46 INFO  : 'ps7_init' command is executed.
+20:11:46 INFO  : 'ps7_post_config' command is executed.
+20:11:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:11:46 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:11:46 INFO  : 'configparams force-mem-access 0' command is executed.
+20:11:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:11:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:11:46 INFO  : 'con' command is executed.
+20:11:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:11:46 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:11:54 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:12:34 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:13:10 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:13:17 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:13:35 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:14:09 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:14:19 INFO  : Disconnected from the channel tcfchan#15.
+20:14:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:14:20 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:14:20 INFO  : 'jtag frequency' command is executed.
+20:14:20 INFO  : Context for 'APU' is selected.
+20:14:20 INFO  : System reset is completed.
+20:14:23 INFO  : 'after 3000' command is executed.
+20:14:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:14:25 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:14:25 INFO  : Context for 'APU' is selected.
+20:14:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:14:25 INFO  : 'configparams force-mem-access 1' command is executed.
+20:14:25 INFO  : Context for 'APU' is selected.
+20:14:25 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:14:26 INFO  : 'ps7_init' command is executed.
+20:14:26 INFO  : 'ps7_post_config' command is executed.
+20:14:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:14:26 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:14:26 INFO  : 'configparams force-mem-access 0' command is executed.
+20:14:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:14:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:14:26 INFO  : 'con' command is executed.
+20:14:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:14:26 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:15:18 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:15:22 INFO  : Disconnected from the channel tcfchan#16.
+20:15:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:15:28 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:15:28 INFO  : 'jtag frequency' command is executed.
+20:15:28 INFO  : Context for 'APU' is selected.
+20:15:28 INFO  : System reset is completed.
+20:15:31 INFO  : 'after 3000' command is executed.
+20:15:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:15:34 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:15:34 INFO  : Context for 'APU' is selected.
+20:15:34 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:15:34 INFO  : 'configparams force-mem-access 1' command is executed.
+20:15:34 INFO  : Context for 'APU' is selected.
+20:15:34 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:15:34 INFO  : 'ps7_init' command is executed.
+20:15:34 INFO  : 'ps7_post_config' command is executed.
+20:15:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:15:34 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:15:34 INFO  : 'configparams force-mem-access 0' command is executed.
+20:15:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:15:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:15:34 INFO  : 'con' command is executed.
+20:15:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:15:34 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\systemdebugger_temptmee_system_standalone.tcl'
+20:15:42 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:16:13 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:16:21 INFO  : Disconnected from the channel tcfchan#17.
+20:16:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:16:22 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:16:22 INFO  : 'jtag frequency' command is executed.
+20:16:22 INFO  : Context for 'APU' is selected.
+20:16:23 INFO  : System reset is completed.
+20:16:26 INFO  : 'after 3000' command is executed.
+20:16:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:16:28 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:16:28 INFO  : Context for 'APU' is selected.
+20:16:28 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:16:28 INFO  : 'configparams force-mem-access 1' command is executed.
+20:16:28 INFO  : Context for 'APU' is selected.
+20:16:28 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:16:28 INFO  : 'ps7_init' command is executed.
+20:16:28 INFO  : 'ps7_post_config' command is executed.
+20:16:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:16:29 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:16:29 INFO  : 'configparams force-mem-access 0' command is executed.
+20:16:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:16:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:16:29 INFO  : 'con' command is executed.
+20:16:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:16:29 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:19:45 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:19:54 INFO  : Disconnected from the channel tcfchan#19.
+20:19:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:19:55 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:19:55 INFO  : 'jtag frequency' command is executed.
+20:19:55 INFO  : Context for 'APU' is selected.
+20:19:55 INFO  : System reset is completed.
+20:19:58 INFO  : 'after 3000' command is executed.
+20:19:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:20:01 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:20:01 INFO  : Context for 'APU' is selected.
+20:20:01 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:20:01 INFO  : 'configparams force-mem-access 1' command is executed.
+20:20:01 INFO  : Context for 'APU' is selected.
+20:20:01 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:20:01 INFO  : 'ps7_init' command is executed.
+20:20:01 INFO  : 'ps7_post_config' command is executed.
+20:20:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:01 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:20:01 INFO  : 'configparams force-mem-access 0' command is executed.
+20:20:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:20:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:02 INFO  : 'con' command is executed.
+20:20:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:20:02 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\systemdebugger_temptmee_system_standalone.tcl'
+20:20:17 INFO  : Disconnected from the channel tcfchan#20.
+20:20:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:20:18 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:20:18 INFO  : 'jtag frequency' command is executed.
+20:20:18 INFO  : Context for 'APU' is selected.
+20:20:18 INFO  : System reset is completed.
+20:20:21 INFO  : 'after 3000' command is executed.
+20:20:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:20:23 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:20:23 INFO  : Context for 'APU' is selected.
+20:20:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:20:23 INFO  : 'configparams force-mem-access 1' command is executed.
+20:20:24 INFO  : Context for 'APU' is selected.
+20:20:24 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:20:24 INFO  : 'ps7_init' command is executed.
+20:20:24 INFO  : 'ps7_post_config' command is executed.
+20:20:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:24 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:20:24 INFO  : 'configparams force-mem-access 0' command is executed.
+20:20:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:20:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:20:24 INFO  : 'con' command is executed.
+20:20:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:20:24 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:21:56 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:22:06 INFO  : Disconnected from the channel tcfchan#21.
+20:22:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:22:07 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:22:07 INFO  : 'jtag frequency' command is executed.
+20:22:07 INFO  : Context for 'APU' is selected.
+20:22:07 INFO  : System reset is completed.
+20:22:10 INFO  : 'after 3000' command is executed.
+20:22:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:22:12 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:22:12 INFO  : Context for 'APU' is selected.
+20:22:12 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:22:12 INFO  : 'configparams force-mem-access 1' command is executed.
+20:22:12 INFO  : Context for 'APU' is selected.
+20:22:12 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:22:13 INFO  : 'ps7_init' command is executed.
+20:22:13 INFO  : 'ps7_post_config' command is executed.
+20:22:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:13 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:22:13 INFO  : 'configparams force-mem-access 0' command is executed.
+20:22:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:22:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:13 INFO  : 'con' command is executed.
+20:22:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:22:13 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:22:19 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:22:37 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+20:22:41 INFO  : Disconnected from the channel tcfchan#22.
+20:22:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:22:42 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:22:42 INFO  : 'jtag frequency' command is executed.
+20:22:42 INFO  : Context for 'APU' is selected.
+20:22:42 INFO  : System reset is completed.
+20:22:45 INFO  : 'after 3000' command is executed.
+20:22:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:22:48 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:22:48 INFO  : Context for 'APU' is selected.
+20:22:48 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:22:48 INFO  : 'configparams force-mem-access 1' command is executed.
+20:22:48 INFO  : Context for 'APU' is selected.
+20:22:48 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:22:48 INFO  : 'ps7_init' command is executed.
+20:22:48 INFO  : 'ps7_post_config' command is executed.
+20:22:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:48 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:22:48 INFO  : 'configparams force-mem-access 0' command is executed.
+20:22:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:22:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:22:48 INFO  : 'con' command is executed.
+20:22:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:22:48 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:23:16 INFO  : Disconnected from the channel tcfchan#23.
+20:23:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:23:17 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+20:23:17 INFO  : 'jtag frequency' command is executed.
+20:23:17 INFO  : Context for 'APU' is selected.
+20:23:17 INFO  : System reset is completed.
+20:23:20 INFO  : 'after 3000' command is executed.
+20:23:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+20:23:23 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+20:23:23 INFO  : Context for 'APU' is selected.
+20:23:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+20:23:23 INFO  : 'configparams force-mem-access 1' command is executed.
+20:23:23 INFO  : Context for 'APU' is selected.
+20:23:23 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+20:23:23 INFO  : 'ps7_init' command is executed.
+20:23:23 INFO  : 'ps7_post_config' command is executed.
+20:23:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:23:23 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:23:24 INFO  : 'configparams force-mem-access 0' command is executed.
+20:23:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:23:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:23:24 INFO  : 'con' command is executed.
+20:23:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:23:24 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+20:53:42 INFO  : Result from executing command 'getProjects': design_1_wrapper;test
+20:53:42 INFO  : Result from executing command 'getPlatforms': test|C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm
+20:53:42 ERROR : Unexpected exception occurred while writing platform project 'tempempmep' log.
+20:53:42 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+20:53:52 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+20:54:48 INFO  : Result from executing command 'getProjects': design_1_wrapper;test
+20:54:48 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;test|C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm
+20:54:48 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:55:37 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:55:59 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:56:31 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:56:43 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:56:50 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:56:56 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:57:12 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:57:20 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:57:37 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:57:44 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:57:51 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:58:35 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:58:44 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+20:59:18 INFO  : No changes in MSS file content so sources will not be generated.
+20:59:32 INFO  : Result from executing command 'getProjects': design_1_wrapper;test
+20:59:32 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;test|C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm
+20:59:32 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:00:00 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:00:05 INFO  : Disconnected from the channel tcfchan#24.
+21:00:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:00:06 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:00:06 INFO  : 'jtag frequency' command is executed.
+21:00:06 INFO  : Context for 'APU' is selected.
+21:00:06 INFO  : System reset is completed.
+21:00:09 INFO  : 'after 3000' command is executed.
+21:00:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:00:11 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:00:11 INFO  : Context for 'APU' is selected.
+21:00:12 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:00:12 INFO  : 'configparams force-mem-access 1' command is executed.
+21:00:12 INFO  : Context for 'APU' is selected.
+21:00:12 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:00:12 INFO  : 'ps7_init' command is executed.
+21:00:12 INFO  : 'ps7_post_config' command is executed.
+21:00:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:00:12 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:00:12 INFO  : 'configparams force-mem-access 0' command is executed.
+21:00:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:00:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:00:12 INFO  : 'con' command is executed.
+21:00:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:00:12 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:02:32 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:02:39 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:02:49 INFO  : Disconnected from the channel tcfchan#27.
+21:02:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:02:51 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:02:51 INFO  : 'jtag frequency' command is executed.
+21:02:51 INFO  : Context for 'APU' is selected.
+21:02:51 INFO  : System reset is completed.
+21:02:54 INFO  : 'after 3000' command is executed.
+21:02:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:02:56 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:02:56 INFO  : Context for 'APU' is selected.
+21:02:56 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:02:56 INFO  : 'configparams force-mem-access 1' command is executed.
+21:02:56 INFO  : Context for 'APU' is selected.
+21:02:56 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:02:56 INFO  : 'ps7_init' command is executed.
+21:02:56 INFO  : 'ps7_post_config' command is executed.
+21:02:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:02:57 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:02:57 INFO  : 'configparams force-mem-access 0' command is executed.
+21:02:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:02:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:02:57 INFO  : 'con' command is executed.
+21:02:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:02:57 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:03:51 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:04:00 INFO  : Disconnected from the channel tcfchan#28.
+21:04:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:04:01 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:04:01 INFO  : 'jtag frequency' command is executed.
+21:04:01 INFO  : Context for 'APU' is selected.
+21:04:01 INFO  : System reset is completed.
+21:04:04 INFO  : 'after 3000' command is executed.
+21:04:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:04:06 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:04:06 INFO  : Context for 'APU' is selected.
+21:04:06 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:04:06 INFO  : 'configparams force-mem-access 1' command is executed.
+21:04:06 INFO  : Context for 'APU' is selected.
+21:04:06 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:04:07 INFO  : 'ps7_init' command is executed.
+21:04:07 INFO  : 'ps7_post_config' command is executed.
+21:04:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:04:07 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:04:07 INFO  : 'configparams force-mem-access 0' command is executed.
+21:04:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:04:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:04:07 INFO  : 'con' command is executed.
+21:04:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:04:07 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:04:18 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:04:21 INFO  : Disconnected from the channel tcfchan#29.
+21:04:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:04:22 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:04:22 INFO  : 'jtag frequency' command is executed.
+21:04:22 INFO  : Context for 'APU' is selected.
+21:04:22 INFO  : System reset is completed.
+21:04:25 INFO  : 'after 3000' command is executed.
+21:04:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:04:28 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:04:28 INFO  : Context for 'APU' is selected.
+21:04:28 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:04:28 INFO  : 'configparams force-mem-access 1' command is executed.
+21:04:28 INFO  : Context for 'APU' is selected.
+21:04:28 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:04:28 INFO  : 'ps7_init' command is executed.
+21:04:28 INFO  : 'ps7_post_config' command is executed.
+21:04:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:04:28 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:04:28 INFO  : 'configparams force-mem-access 0' command is executed.
+21:04:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:04:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:04:28 INFO  : 'con' command is executed.
+21:04:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:04:28 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:05:05 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:05:10 INFO  : Disconnected from the channel tcfchan#30.
+21:05:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:05:12 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:05:12 INFO  : 'jtag frequency' command is executed.
+21:05:12 INFO  : Context for 'APU' is selected.
+21:05:12 INFO  : System reset is completed.
+21:05:15 INFO  : 'after 3000' command is executed.
+21:05:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:05:17 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:05:17 INFO  : Context for 'APU' is selected.
+21:05:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:05:17 INFO  : 'configparams force-mem-access 1' command is executed.
+21:05:17 INFO  : Context for 'APU' is selected.
+21:05:17 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:05:17 INFO  : 'ps7_init' command is executed.
+21:05:17 INFO  : 'ps7_post_config' command is executed.
+21:05:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:05:18 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:05:18 INFO  : 'configparams force-mem-access 0' command is executed.
+21:05:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:05:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:05:18 INFO  : 'con' command is executed.
+21:05:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:05:18 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:05:52 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:05:55 INFO  : Disconnected from the channel tcfchan#31.
+21:05:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:05:56 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:05:56 INFO  : 'jtag frequency' command is executed.
+21:05:56 INFO  : Context for 'APU' is selected.
+21:05:56 INFO  : System reset is completed.
+21:05:59 INFO  : 'after 3000' command is executed.
+21:05:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:06:02 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:06:02 INFO  : Context for 'APU' is selected.
+21:06:02 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:06:02 INFO  : 'configparams force-mem-access 1' command is executed.
+21:06:02 INFO  : Context for 'APU' is selected.
+21:06:02 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:06:02 INFO  : 'ps7_init' command is executed.
+21:06:02 INFO  : 'ps7_post_config' command is executed.
+21:06:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:02 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:06:02 INFO  : 'configparams force-mem-access 0' command is executed.
+21:06:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:06:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:02 INFO  : 'con' command is executed.
+21:06:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:06:02 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:06:16 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:06:21 INFO  : Disconnected from the channel tcfchan#32.
+21:06:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:06:22 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:06:22 INFO  : 'jtag frequency' command is executed.
+21:06:22 INFO  : Context for 'APU' is selected.
+21:06:22 INFO  : System reset is completed.
+21:06:25 INFO  : 'after 3000' command is executed.
+21:06:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:06:28 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:06:28 INFO  : Context for 'APU' is selected.
+21:06:28 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:06:28 INFO  : 'configparams force-mem-access 1' command is executed.
+21:06:28 INFO  : Context for 'APU' is selected.
+21:06:28 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:06:28 INFO  : 'ps7_init' command is executed.
+21:06:28 INFO  : 'ps7_post_config' command is executed.
+21:06:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:28 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:06:28 INFO  : 'configparams force-mem-access 0' command is executed.
+21:06:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:06:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:28 INFO  : 'con' command is executed.
+21:06:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:06:28 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:06:30 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:06:34 INFO  : Disconnected from the channel tcfchan#33.
+21:06:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:06:35 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:06:35 INFO  : 'jtag frequency' command is executed.
+21:06:35 INFO  : Context for 'APU' is selected.
+21:06:35 INFO  : System reset is completed.
+21:06:38 INFO  : 'after 3000' command is executed.
+21:06:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:06:40 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:06:40 INFO  : Context for 'APU' is selected.
+21:06:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:06:40 INFO  : 'configparams force-mem-access 1' command is executed.
+21:06:40 INFO  : Context for 'APU' is selected.
+21:06:40 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:06:41 INFO  : 'ps7_init' command is executed.
+21:06:41 INFO  : 'ps7_post_config' command is executed.
+21:06:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:41 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:06:41 INFO  : 'configparams force-mem-access 0' command is executed.
+21:06:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:06:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:41 INFO  : 'con' command is executed.
+21:06:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:06:41 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:09:14 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:09:34 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:09:37 INFO  : Disconnected from the channel tcfchan#34.
+21:09:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:09:39 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:09:39 INFO  : 'jtag frequency' command is executed.
+21:09:39 INFO  : Context for 'APU' is selected.
+21:09:39 INFO  : System reset is completed.
+21:09:42 INFO  : 'after 3000' command is executed.
+21:09:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:09:44 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:09:44 INFO  : Context for 'APU' is selected.
+21:09:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:09:44 INFO  : 'configparams force-mem-access 1' command is executed.
+21:09:44 INFO  : Context for 'APU' is selected.
+21:09:44 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:09:44 INFO  : 'ps7_init' command is executed.
+21:09:44 INFO  : 'ps7_post_config' command is executed.
+21:09:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:09:45 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:09:45 INFO  : 'configparams force-mem-access 0' command is executed.
+21:09:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:09:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:09:45 INFO  : 'con' command is executed.
+21:09:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:09:45 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:10:07 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:10:11 INFO  : Disconnected from the channel tcfchan#35.
+21:10:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:10:13 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:10:13 INFO  : 'jtag frequency' command is executed.
+21:10:13 INFO  : Context for 'APU' is selected.
+21:10:13 INFO  : System reset is completed.
+21:10:16 INFO  : 'after 3000' command is executed.
+21:10:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:10:18 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:10:18 INFO  : Context for 'APU' is selected.
+21:10:18 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:10:18 INFO  : 'configparams force-mem-access 1' command is executed.
+21:10:18 INFO  : Context for 'APU' is selected.
+21:10:18 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:10:18 INFO  : 'ps7_init' command is executed.
+21:10:18 INFO  : 'ps7_post_config' command is executed.
+21:10:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:10:19 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:10:19 INFO  : 'configparams force-mem-access 0' command is executed.
+21:10:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:10:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:10:19 INFO  : 'con' command is executed.
+21:10:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:10:19 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:11:03 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:11:07 INFO  : Disconnected from the channel tcfchan#36.
+21:11:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:11:09 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:11:09 INFO  : 'jtag frequency' command is executed.
+21:11:09 INFO  : Context for 'APU' is selected.
+21:11:09 INFO  : System reset is completed.
+21:11:12 INFO  : 'after 3000' command is executed.
+21:11:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:11:14 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:11:14 INFO  : Context for 'APU' is selected.
+21:11:14 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:11:14 INFO  : 'configparams force-mem-access 1' command is executed.
+21:11:14 INFO  : Context for 'APU' is selected.
+21:11:14 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:11:14 INFO  : 'ps7_init' command is executed.
+21:11:14 INFO  : 'ps7_post_config' command is executed.
+21:11:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:11:15 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:11:15 INFO  : 'configparams force-mem-access 0' command is executed.
+21:11:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:11:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:11:15 INFO  : 'con' command is executed.
+21:11:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:11:15 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:11:30 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:11:33 INFO  : Disconnected from the channel tcfchan#37.
+21:11:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:11:35 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:11:35 INFO  : 'jtag frequency' command is executed.
+21:11:35 INFO  : Context for 'APU' is selected.
+21:11:35 INFO  : System reset is completed.
+21:11:38 INFO  : 'after 3000' command is executed.
+21:11:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:11:40 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:11:40 INFO  : Context for 'APU' is selected.
+21:11:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:11:40 INFO  : 'configparams force-mem-access 1' command is executed.
+21:11:40 INFO  : Context for 'APU' is selected.
+21:11:40 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:11:40 INFO  : 'ps7_init' command is executed.
+21:11:40 INFO  : 'ps7_post_config' command is executed.
+21:11:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:11:41 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:11:41 INFO  : 'configparams force-mem-access 0' command is executed.
+21:11:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:11:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:11:41 INFO  : 'con' command is executed.
+21:11:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:11:41 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:13:57 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:14:01 INFO  : Disconnected from the channel tcfchan#38.
+21:14:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:14:03 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:14:03 INFO  : 'jtag frequency' command is executed.
+21:14:03 INFO  : Context for 'APU' is selected.
+21:14:03 INFO  : System reset is completed.
+21:14:06 INFO  : 'after 3000' command is executed.
+21:14:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:14:08 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:14:08 INFO  : Context for 'APU' is selected.
+21:14:08 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:14:08 INFO  : 'configparams force-mem-access 1' command is executed.
+21:14:08 INFO  : Context for 'APU' is selected.
+21:14:08 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:14:08 INFO  : 'ps7_init' command is executed.
+21:14:08 INFO  : 'ps7_post_config' command is executed.
+21:14:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:09 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:14:09 INFO  : 'configparams force-mem-access 0' command is executed.
+21:14:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:14:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:09 INFO  : 'con' command is executed.
+21:14:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:14:09 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:14:22 INFO  : Disconnected from the channel tcfchan#39.
+21:14:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:14:23 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:14:23 INFO  : 'jtag frequency' command is executed.
+21:14:23 INFO  : Context for 'APU' is selected.
+21:14:24 INFO  : System reset is completed.
+21:14:27 INFO  : 'after 3000' command is executed.
+21:14:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:14:29 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:14:29 INFO  : Context for 'APU' is selected.
+21:14:29 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:14:29 INFO  : 'configparams force-mem-access 1' command is executed.
+21:14:29 INFO  : Context for 'APU' is selected.
+21:14:29 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:14:29 INFO  : 'ps7_init' command is executed.
+21:14:29 INFO  : 'ps7_post_config' command is executed.
+21:14:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:29 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:14:29 INFO  : 'configparams force-mem-access 0' command is executed.
+21:14:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:14:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:30 INFO  : 'con' command is executed.
+21:14:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:14:30 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:14:40 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:14:45 INFO  : Disconnected from the channel tcfchan#40.
+21:14:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:14:47 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:14:47 INFO  : 'jtag frequency' command is executed.
+21:14:47 INFO  : Context for 'APU' is selected.
+21:14:47 INFO  : System reset is completed.
+21:14:50 INFO  : 'after 3000' command is executed.
+21:14:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:14:52 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:14:52 INFO  : Context for 'APU' is selected.
+21:14:52 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:14:52 INFO  : 'configparams force-mem-access 1' command is executed.
+21:14:52 INFO  : Context for 'APU' is selected.
+21:14:52 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:14:52 INFO  : 'ps7_init' command is executed.
+21:14:52 INFO  : 'ps7_post_config' command is executed.
+21:14:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:53 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:14:53 INFO  : 'configparams force-mem-access 0' command is executed.
+21:14:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:14:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:53 INFO  : 'con' command is executed.
+21:14:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:14:53 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:16:09 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:16:12 INFO  : Disconnected from the channel tcfchan#41.
+21:16:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:16:19 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:16:19 INFO  : 'jtag frequency' command is executed.
+21:16:19 INFO  : Context for 'APU' is selected.
+21:16:19 INFO  : System reset is completed.
+21:16:22 INFO  : 'after 3000' command is executed.
+21:16:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:16:25 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:16:25 INFO  : Context for 'APU' is selected.
+21:16:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:16:25 INFO  : 'configparams force-mem-access 1' command is executed.
+21:16:25 INFO  : Context for 'APU' is selected.
+21:16:25 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:16:25 INFO  : 'ps7_init' command is executed.
+21:16:25 INFO  : 'ps7_post_config' command is executed.
+21:16:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:16:25 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:16:25 INFO  : 'configparams force-mem-access 0' command is executed.
+21:16:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:16:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:16:25 INFO  : 'con' command is executed.
+21:16:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:16:25 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:16:43 INFO  : Checking for BSP changes to sync application flags for project 'temp_v1'...
+21:16:52 INFO  : Disconnected from the channel tcfchan#42.
+21:16:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:16:53 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:16:53 INFO  : 'jtag frequency' command is executed.
+21:16:53 INFO  : Context for 'APU' is selected.
+21:16:53 INFO  : System reset is completed.
+21:16:56 INFO  : 'after 3000' command is executed.
+21:16:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:16:58 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit"
+21:16:58 INFO  : Context for 'APU' is selected.
+21:16:58 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:16:58 INFO  : 'configparams force-mem-access 1' command is executed.
+21:16:58 INFO  : Context for 'APU' is selected.
+21:16:58 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl' is done.
+21:16:59 INFO  : 'ps7_init' command is executed.
+21:16:59 INFO  : 'ps7_post_config' command is executed.
+21:16:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:16:59 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:16:59 INFO  : 'configparams force-mem-access 0' command is executed.
+21:16:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temp_v1/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temp_v1/Debug/temp_v1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:16:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:16:59 INFO  : 'con' command is executed.
+21:16:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:16:59 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temp_v1_system\_ide\scripts\debugger_temp_v1-default.tcl'
+21:19:44 INFO  : Disconnected from the channel tcfchan#43.
+21:41:55 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\dkeum\Desktop\Integration_v4\temp_xsdb_launch_script.tcl
+21:41:57 INFO  : XSCT server has started successfully.
+21:41:57 INFO  : plnx-install-location is set to ''
+21:41:57 INFO  : Successfully done setting XSCT server connection channel  
+21:41:57 INFO  : Successfully done setting workspace for the tool. 
+21:41:59 INFO  : Platform repository initialization has completed.
+21:41:59 INFO  : Registering command handlers for Vitis TCF services
+21:42:00 INFO  : Successfully done query RDI_DATADIR 
+21:42:42 INFO  : Hardware specification for platform project 'test' is updated.
+21:42:49 INFO  : Result from executing command 'getProjects': design_1_wrapper;test
+21:42:49 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/dkeum/Desktop/Integration_v4/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;test|C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm
+21:44:12 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+21:44:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:33 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:44:33 INFO  : 'jtag frequency' command is executed.
+21:44:33 INFO  : Context for 'APU' is selected.
+21:44:33 INFO  : System reset is completed.
+21:44:36 INFO  : 'after 3000' command is executed.
+21:44:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:44:38 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+21:44:38 INFO  : Context for 'APU' is selected.
+21:44:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+21:44:39 INFO  : 'configparams force-mem-access 1' command is executed.
+21:44:39 INFO  : Context for 'APU' is selected.
+21:44:39 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+21:44:39 INFO  : 'ps7_init' command is executed.
+21:44:39 INFO  : 'ps7_post_config' command is executed.
+21:44:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:39 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:44:39 INFO  : 'configparams force-mem-access 0' command is executed.
+21:44:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:44:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:39 INFO  : 'con' command is executed.
+21:44:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:44:39 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'
+21:45:14 INFO  : Disconnected from the channel tcfchan#3.
+21:45:24 INFO  : Checking for BSP changes to sync application flags for project 'temptmee'...
+21:45:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:45:33 INFO  : Jtag cable 'Digilent Zed 210248469551' is selected.
+21:45:33 INFO  : 'jtag frequency' command is executed.
+21:45:33 INFO  : Context for 'APU' is selected.
+21:45:33 INFO  : System reset is completed.
+21:45:36 INFO  : 'after 3000' command is executed.
+21:45:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}' command is executed.
+21:45:38 INFO  : Device configured successfully with "C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit"
+21:45:38 INFO  : Context for 'APU' is selected.
+21:45:38 INFO  : Hardware design and registers information is loaded from 'C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa'.
+21:45:38 INFO  : 'configparams force-mem-access 1' command is executed.
+21:45:38 INFO  : Context for 'APU' is selected.
+21:45:38 INFO  : Sourcing of 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl' is done.
+21:45:38 INFO  : 'ps7_init' command is executed.
+21:45:38 INFO  : 'ps7_post_config' command is executed.
+21:45:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:39 INFO  : The application 'C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:45:39 INFO  : 'configparams force-mem-access 0' command is executed.
+21:45:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248469551" && level==0 && jtag_device_ctx=="jsn-Zed-210248469551-03727093-0"}
+fpga -file C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/dkeum/Desktop/Integration_v4/test/export/test/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:45:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:39 INFO  : 'con' command is executed.
+21:45:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:45:39 INFO  : Launch script is exported to file 'C:\Users\dkeum\Desktop\Integration_v4\temptmee_system\_ide\scripts\debugger_temptmee-default.tcl'

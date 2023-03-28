@@ -1,0 +1,24 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/34f8/hdl" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/d0f7" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+
+verilog fifo_generator_v13_2_5 --include "C:/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/34f8/hdl" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/d0f7" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/276e/simulation/fifo_generator_vlog_beh.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.v" \
+
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/34f8/hdl" --include "../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/d0f7" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_1/sim/design_1_xbar_1.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/sim/design_1_auto_pc_2.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/sim/design_1_auto_us_1.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2_clk_wiz.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ipshared/4e12/rand_num_gener.v" \
+"../../../../../../Downloads/ENSC452-latest_working_audio_vga_code_v3/vivado_latest_block_diagram/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rand_num_generator_0_1/sim/design_1_rand_num_generator_0_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
