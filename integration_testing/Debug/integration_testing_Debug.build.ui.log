@@ -1,0 +1,34 @@
+2023-03-28T20:01:26.100260200255-20:01:26 **** Incremental Build of configuration Debug for project integration_testing ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-'Building file: ../src/audio.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/official_lab_test_vga/design_1_wrapper_3/export/design_1_wrapper_3/sw/design_1_wrapper_3/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/audio.d" -MT"src/audio.o" -o "src/audio.o" "../src/audio.c"
+000-'Finished building: ../src/audio.c'
+000-' '
+000-'Building file: ../src/cplx_data.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/cplx_data.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/official_lab_test_vga/design_1_wrapper_3/export/design_1_wrapper_3/sw/design_1_wrapper_3/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/cplx_data.d" -MT"src/cplx_data.o" -o "src/cplx_data.o" "../src/cplx_data.c"
+000-'Finished building: ../src/cplx_data.c'
+000-' '
+000-'Building file: ../src/dma_accel.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_accel.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/official_lab_test_vga/design_1_wrapper_3/export/design_1_wrapper_3/sw/design_1_wrapper_3/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/dma_accel.d" -MT"src/dma_accel.o" -o "src/dma_accel.o" "../src/dma_accel.c"
+000-In file included from ../src/dma_accel.c:8:
+000/integration_testing/src/main.h40-1-1redefinition of 'XIicPs Iic'28:../src/main.h:40:8: error: redefinition of 'XIicPs Iic'
+000-   40 | XIicPs Iic; //I2C Interface
+000-      |        ^~~
+000-In file included from ../src/ip_functions.h:6,
+000-                 from ../src/main.h:24,
+000-                 from ../src/dma_accel.c:8:
+000/integration_testing/src/audio.h21-1-1'XIicPs Iic' previously declared here0-../src/audio.h:21:8: note: 'XIicPs Iic' previously declared here
+000-   21 | XIicPs Iic;
+000-      |        ^~~
+000/integration_testing0-1-1make[1]: *** [src/subdir.mk:44: src/dma_accel.o] Error 12-make[1]: *** [src/subdir.mk:44: src/dma_accel.o] Error 1
+000/integration_testing0-1-1make: *** [makefile:46: all] Error 22-make: *** [makefile:46: all] Error 2
+00255-
+20:01:27 Build Finished (took 1s.374ms)
+

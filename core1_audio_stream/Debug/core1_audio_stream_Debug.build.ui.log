@@ -1,0 +1,36 @@
+2023-03-28T19:56:28.498074700255-19:56:28 **** Incremental Build of configuration Debug for project core1_audio_stream ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-'Building file: ../src/main.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/official_lab_test_vga/design_1_wrapper_3/export/design_1_wrapper_3/sw/design_1_wrapper_3/core1/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+000-../src/main.c: In function 'void Global_Interrupt_Handler(void*)':
+000/core1_audio_stream/src/main.c155-1-1comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]1-../src/main.c:155:18: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
+000-  155 |  if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
+000-      |     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+000/core1_audio_stream/src/main.c180-1-1comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]1-../src/main.c:180:16: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
+000-  180 |  if (btn_value == XGpio_DiscreteRead(&btn_swt_gpio, BTN_INT) && btn_value != 0){
+000-      |      ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+000-../src/main.c: In function 'void playback_audio(unsigned int)':
+000/core1_audio_stream/src/main.c343-1-1comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]1-../src/main.c:343:10: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+000-  343 |  while(i < AUDIO_BUFF_SIZE && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) != 0)){
+000-      |        ~~^~~~~~~~~~~~~~~~~
+000-'Finished building: ../src/main.c'
+000-' '
+000-'Building target: core1_audio_stream.elf'
+000-'Invoking: ARM v7 g++ linker'
+000-arm-none-eabi-g++ -Lm -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dkeum/official_lab_test_vga/design_1_wrapper_3/export/design_1_wrapper_3/sw/design_1_wrapper_3/core1/bsplib/lib -o "core1_audio_stream.elf"  ./src/audio.o ./src/main.o   -lm -lm -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+000-'Finished building target: core1_audio_stream.elf'
+000-' '
+000-'Invoking: ARM v7 Print Size'
+000-arm-none-eabi-size core1_audio_stream.elf  |tee "core1_audio_stream.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000-  48512	   3040	3862752	3914304	 3bba40	core1_audio_stream.elf
+000-'Finished building: core1_audio_stream.elf.size'
+000-' '
+00255-
+19:56:29 Build Finished (took 1s.384ms)
+
