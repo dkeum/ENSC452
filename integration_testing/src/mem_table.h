@@ -1,0 +1,5 @@
+#ifndef MEM_TABLE_H_
+#define MEM_TABLE_H_
+#define ARM1_STARTADR 0xFFFFFFF0
+#define ARM1_BASEADDR 0x10800000
+#endif //__MEM_TABLE__H
