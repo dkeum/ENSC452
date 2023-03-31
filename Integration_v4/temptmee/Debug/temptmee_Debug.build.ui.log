@@ -1,0 +1,36 @@
+2023-03-27T21:45:24.922847900255-21:45:24 **** Incremental Build of configuration Debug for project temptmee ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-'Building file: ../src/main.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/Desktop/Integration_v4/test/export/test/sw/test/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+000-In file included from ../src/main.c:4:
+000/test/export/test/sw/test/standalone_domain/bspinclude/include/xtime_l.h65-1-1#pragma message: For the sleep routines, Global timer is being used0-C:/Users/dkeum/Desktop/Integration_v4/test/export/test/sw/test/standalone_domain/bspinclude/include/xtime_l.h:65:9: note: #pragma message: For the sleep routines, Global timer is being used
+000-   65 | #pragma message ("For the sleep routines, Global timer is being used")
+000-      |         ^~~~~~~
+000-../src/main.c: In function 'main':
+000/temptmee/src/main.c80-1-1implicit declaration of function 'generate_PRNG' [-Wimplicit-function-declaration]1-../src/main.c:80:9: warning: implicit declaration of function 'generate_PRNG' [-Wimplicit-function-declaration]
+000-   80 |         generate_PRNG(&myDma, tempTime);
+000-      |         ^~~~~~~~~~~~~
+000/temptmee/src/main.c69-1-1variable 'bin' set but not used [-Wunused-but-set-variable]1-../src/main.c:69:9: warning: variable 'bin' set but not used [-Wunused-but-set-variable]
+000-   69 |     int bin = 0;
+000-      |         ^~~
+000-'Finished building: ../src/main.c'
+000-' '
+000-'Building target: temptmee.elf'
+000-'Invoking: ARM v7 gcc linker'
+000-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dkeum/Desktop/Integration_v4/test/export/test/sw/test/standalone_domain/bsplib/lib -o "temptmee.elf"  ./src/audio.o ./src/cplx_data.o ./src/dma_accel.o ./src/fft.o ./src/interrupts.o ./src/intr_handlers.o ./src/ip_functions.o ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+000-'Finished building target: temptmee.elf'
+000-' '
+000-'Invoking: ARM v7 Print Size'
+000-arm-none-eabi-size temptmee.elf  |tee "temptmee.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000-  78968	   3532	3862768	3945268	 3c3334	temptmee.elf
+000-'Finished building: temptmee.elf.size'
+000-' '
+00255-
+21:45:26 Build Finished (took 1s.358ms)
+

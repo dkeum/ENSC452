@@ -1,0 +1,10 @@
+12:37:39 **** Build of configuration Debug for project temp_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 48373 C:/Users/dkeum/Desktop/clean_folder/v5_wrapper/export/v5_wrapper/v5_wrapper.xpfm standalone_ps7_cortexa9_0,core1 C:/Users/dkeum/Desktop/clean_folder/temp_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/dkeum/Desktop/clean_folder/v5_wrapper/export/v5_wrapper/v5_wrapper.xpfm --sys_config v5_wrapper --bif C:/Users/dkeum/Desktop/clean_folder/temp_system/Debug/system.bif --bitstream C:/Users/dkeum/Desktop/clean_folder/temp/_ide/bitstream/v5_wrapper.bit --elf C:/Users/dkeum/Desktop/clean_folder/temp/Debug/temp.elf,ps7_cortexa9_0 --elf C:/Users/dkeum/Desktop/clean_folder/core11/Debug/core11.elf,ps7_cortexa9_1
+creating BOOT.BIN using C:/Users/dkeum/Desktop/clean_folder/temp/_ide/bitstream/v5_wrapper.bit
+Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/Users/dkeum/Desktop/clean_folder/temp_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:37:46 Build Finished (took 6s.716ms)
+

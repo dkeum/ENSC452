@@ -1,0 +1,10 @@
+12:45:53 **** Build of configuration Debug for project integration_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 5854 C:/Users/dkeum/Desktop/clean_folder/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm standalone_ps7_cortexa9_0 C:/Users/dkeum/Desktop/clean_folder/integration_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/dkeum/Desktop/clean_folder/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif C:/Users/dkeum/Desktop/clean_folder/integration_system/Debug/system.bif --bitstream C:/Users/dkeum/Desktop/clean_folder/integration/_ide/bitstream/design_1_wrapper.bit --elf C:/Users/dkeum/Desktop/clean_folder/integration/Debug/integration.elf,ps7_cortexa9_0
+ELF does not exist: C:/Users/dkeum/Desktop/clean_folder/integration/Debug/integration.elf
+make: *** [makefile:39: package] Error 1
+
+12:45:56 Build Finished (took 3s.40ms)
+

@@ -1,0 +1,15 @@
+
+// Includes
+#include "dma_accel.hpp"
+
+#include <stdlib.h>
+#include "xaxidma.h"
+#include "xscugic.h"
+#include "interrupts.hpp"
+#include "main.hpp"
+
+
+
+
+extern XGpio btn_swt_gpio; // GPIO instance for buttons and switches
+

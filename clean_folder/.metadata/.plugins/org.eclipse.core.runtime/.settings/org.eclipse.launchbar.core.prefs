@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_core11-Default,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_temp_system,org.eclipse.launchbar.core.descriptorType.default\:Debugger_temp-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_try_version1-Default,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_try_version1_system
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_core11-Default/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_core11-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_temp-Default/activeLaunchMode=embdebug
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_try_version1-Default/activeLaunchMode=embdebug
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_try_version2-Default/activeLaunchMode=embdebug
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_temp_system/activeLaunchMode=systemdebug
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_try_version1_system/activeLaunchMode=systemdebug

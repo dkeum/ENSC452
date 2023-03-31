@@ -1,0 +1,10 @@
+2023-03-27T21:44:16.76825700255-21:44:16 **** Incremental Build of configuration Debug for project temptmee_system ****
+000-make all 
+000-Generating bif file for the system project
+000-generate_system_bif.bat 2136 C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm standalone_domain C:/Users/dkeum/Desktop/Integration_v4/temptmee_system/Debug/system.bif
+000-sdcard_gen --xpfm C:/Users/dkeum/Desktop/Integration_v4/test/export/test/test.xpfm --sys_config test --bif C:/Users/dkeum/Desktop/Integration_v4/temptmee_system/Debug/system.bif --bitstream C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit --elf C:/Users/dkeum/Desktop/Integration_v4/temptmee/Debug/temptmee.elf,ps7_cortexa9_0
+000-creating BOOT.BIN using C:/Users/dkeum/Desktop/Integration_v4/temptmee/_ide/bitstream/design_1_wrapper.bit
+000-Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/Users/dkeum/Desktop/Integration_v4/temptmee_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+00255-
+21:44:23 Build Finished (took 6s.740ms)
+

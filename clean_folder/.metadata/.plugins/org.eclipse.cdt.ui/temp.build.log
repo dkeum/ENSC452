@@ -1,0 +1,44 @@
+12:37:37 **** Incremental Build of configuration Debug for project temp ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/Desktop/clean_folder/v5_wrapper/export/v5_wrapper/sw/v5_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:5:
+C:/Users/dkeum/Desktop/clean_folder/v5_wrapper/export/v5_wrapper/sw/v5_wrapper/standalone_ps7_cortexa9_0/bspinclude/include/xtime_l.h:65:70: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |                                                                      ^
+../src/main.cpp: In function 'int main()':
+../src/main.cpp:137:6: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  137 |  int status = 0;
+      |      ^~~~~~
+../src/main.cpp: In function 'void Global_Interrupt_Handler(void*)':
+../src/main.cpp:255:18: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
+  255 |  if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
+      |     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.cpp:291:16: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
+  291 |  if (btn_value == XGpio_DiscreteRead(&btn_swt_gpio, BTN_INT) && btn_value != 0){
+      |      ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.cpp: In function 'void playback_audio(unsigned int)':
+../src/main.cpp:902:10: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  902 |  while(i < AUDIO_BUFF_SIZE && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) != 0)){
+      |        ~~^~~~~~~~~~~~~~~~~
+'Finished building: ../src/main.cpp'
+' '
+'Building target: temp.elf'
+'Invoking: ARM v7 g++ linker'
+arm-none-eabi-g++ -Lm -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dkeum/Desktop/clean_folder/v5_wrapper/export/v5_wrapper/sw/v5_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "temp.elf"  ./src/audio.o ./src/cplx_data.o ./src/fft.o ./src/ip_functions.o ./src/main.o ./src/shapes.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: temp.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size temp.elf  |tee "temp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 643271	   3876	66767600	67414747	404aadb	temp.elf
+'Finished building: temp.elf.size'
+' '
+
+12:37:38 Build Finished (took 1s.561ms)
+
