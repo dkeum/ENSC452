@@ -1,3 +1,4 @@
+
 #include "main.hpp"
 
 #include "xil_mmu.h"
@@ -30,6 +31,8 @@ void generate_with_shape_parms(int shape_type, int location, int color, int coun
 void generate_shape_from_Prng(int bin_num, int counter,int background_color, double rotation,int elongate_mode);
 void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int size,int counter,int background_color, double rotation, int elongate_on); //v2
 void generate_param_for_row(int*bins_covered, int bin_number);
+void generate_shape_from_rng_with_array(int bin_num, int counter,int background_color, double rotation,int elongate_mode, int* array);
+void generate_shape_from_Prng(int bin_num, int counter,int background_color, double rotation,int elongate_mode, int* array);
 
 void Global_Interrupt_Handler(void *InstancePtr);
 int InterruptSystemSetup(XScuGic *XScuGicInstancePtr);
@@ -122,9 +125,12 @@ int random_mode_color[5];
 
 int random_size_controler=0;
 
+int is_sound_effect_1_on =0;
+int is_sound_effect_2_on =0;
+int is_sound_effect_3_on =0;
 
-static int btn_value;
-static int switch_value;
+int btn_value;
+int switch_value;
 
 XScuGic INTCInst;
 XIicPs Iic; //I2C Interface
@@ -180,16 +186,23 @@ int main(void)
 	*AUDIO_STREAM_MODE_ADDR = 0x1; //On
 	*SIG_DETECT = 0x00; //0Hz for inital freq detected
 
-
     //Configure Audio Codec
 	AudioPllConfig();
 	LineinLineoutConfig();
-
 
 	//Configure DMA for RNG
     myDmaConfig = XAxiDma_LookupConfigBaseAddr(XPAR_RAND_SYS_AXI_DMA_0_BASEADDR);
     status = XAxiDma_CfgInitialize(&myDma, myDmaConfig);
 
+	if(XGpio_Initialize(&btn_swt_gpio, XPAR_GPIO_1_DEVICE_ID) != XST_SUCCESS)
+	{
+		return XST_FAILURE;
+	}
+
+	XGpio_SetDataDirection(&btn_swt_gpio, SWITCH_CHANNEL, 0xFF);
+	XGpio_SetDataDirection(&btn_swt_gpio, BUTTON_CHANNEL, 0xFF);
+
+	IntcInitFunction(XPAR_PS7_SCUGIC_0_DEVICE_ID, &btn_swt_gpio);
 
     // Create FFT object
     p_fft_inst = fft_create(
@@ -200,28 +213,12 @@ int main(void)
 		XPAR_FABRIC_SYS_CNTRL_AXI_DMA_0_MM2S_INTROUT_INTR
     );
 
+	IntcInitFunction(XPAR_PS7_SCUGIC_0_DEVICE_ID, &btn_swt_gpio);
+
     if (p_fft_inst == NULL){
     	xil_printf("ERROR! Failed to create FFT instance.\n\r");
     	return -1;
     }
-
-//    //Configure Switch and Button GPIO
-	if(XGpio_Initialize(&btn_swt_gpio, XPAR_GPIO_1_DEVICE_ID) != XST_SUCCESS)
-	{
-		return XST_FAILURE;
-	}
-
-	XGpio_SetDataDirection(&btn_swt_gpio, SWITCH_CHANNEL, 0xFF);
-	XGpio_SetDataDirection(&btn_swt_gpio, BUTTON_CHANNEL, 0xFF);
-
-	XGpio_InterruptEnable(&btn_swt_gpio, 0x01);
-	XGpio_InterruptEnable(&btn_swt_gpio, 0x02);
-	XGpio_InterruptGlobalEnable(&btn_swt_gpio);
-
-
-    //Setting the FFT to FFT_INIT_POINTS points
-    fft_set_num_pts(p_fft_inst, FFT_INIT_POINTS);
-
 
     if (tx_buff == NULL){
     	xil_printf("ERROR! Failed to allocate memory for the stimulus buffer.\n\r");
@@ -236,10 +233,6 @@ int main(void)
     XTime_GetTime(&tStart);
     unsigned long long int tempTime;
     int bin = 0;
-//    int * temp_arr = (int*)malloc(sizeof(int)*5242880);
-
-
-
 
 	// BACKGROUND DETAILS
 	background.set_background(background_color);
@@ -297,19 +290,12 @@ int main(void)
 	//	}
 
 	double rotation =0;
-	int counter =0;
-	int counter1 =-100;
-	int counter2 =-200;
-	int counter3 =-300;
-	int counter4 =-400;
+	int counter =-50;
+	int counter1 =-100-50;
+	int counter2 =-200-50;
+	int counter3 =-300-50;
+	int counter4 =-400-50;
 	double rotation_amount = 0.2; //(14th first turn,189 second turn)
-
-
-
-
-
-
-
 
 
 
@@ -327,11 +313,11 @@ int main(void)
     		bin += detect_freq(tx_buff, rx_buff, FFT_INIT_POINTS, p_fft_inst);
     	}
         xil_printf("VGA Bin = %d \r\n", bin/5);
-        generate_PRNG(&myDma, tempTime, bin/5);
+//        generate_PRNG(&myDma, tempTime, bin/5);
         bin = 0;
 
 
-    	    if(counter <=1){
+    	    if(counter <=0){
     			generate_param_for_row(bin_num1,0);
     		}
     		if(counter1<=-10){
@@ -366,6 +352,24 @@ int main(void)
         				bin4.draw_Bin(200,620,720,0,random_mode_color[3]); //temp value for freq range
         				bin5.draw_Bin(200,820,920,0,random_mode_color[4]); //temp value for freq range
         			}
+
+        			if(is_sound_effect_1_on==1){
+        				circle.draw_Circle_flexible_version(70,1230,8,(int)0xFF0000FF,background_color,elongate_mode);
+        				circle.draw_Circle_flexible_version(140,1230,8,background_color,background_color,elongate_mode);
+        				circle.draw_Circle_flexible_version(200,1230,8,background_color,background_color,elongate_mode);
+        			}
+        			else if(is_sound_effect_2_on==1){
+        				circle.draw_Circle_flexible_version(70,1230,8,background_color,background_color,elongate_mode);
+        				circle.draw_Circle_flexible_version(140,1230,8,(int)0xFF0000FF,background_color,elongate_mode);
+        				circle.draw_Circle_flexible_version(200,1230,8,background_color,background_color,elongate_mode);
+        			}
+        			else if(is_sound_effect_3_on==1){
+        				circle.draw_Circle_flexible_version(70,1230,8,background_color,background_color,elongate_mode);
+        				circle.draw_Circle_flexible_version(140,1230,8,background_color,background_color,elongate_mode);
+        				circle.draw_Circle_flexible_version(200,1230,8,(int)0xFF0000FF,background_color,elongate_mode);
+        			}
+
+
         			// drawing the appropriate name
         			sound_effect.draw_sound_effects_name(1000,200);
         			sound_effect.display_light_pattern_mode(light_pattern_mode); // takes input 1-4
@@ -399,35 +403,36 @@ int main(void)
         		}
 
 
-
-
         		// (2) generate shapes
         		if(light_pattern_mode == 3){
         			Xil_DCacheFlush();
-        			generate_shape_from_Prng(1,counter,background_color,rotation,elongate_mode);
+        			generate_shape_from_Prng(1,counter,background_color,rotation,elongate_mode,bin_num1);
         			Xil_DCacheFlush();
-        			generate_shape_from_Prng(2,counter1,background_color,rotation,elongate_mode);
+        			generate_shape_from_Prng(2,counter1,background_color,rotation,elongate_mode,bin_num2);
         			Xil_DCacheFlush();
-        			generate_shape_from_Prng(3,counter2,background_color,rotation,elongate_mode);
+        			generate_shape_from_Prng(3,counter2,background_color,rotation,elongate_mode,bin_num3);
         			Xil_DCacheFlush();
-        			generate_shape_from_Prng(4,counter3,background_color,rotation,elongate_mode);
+        			generate_shape_from_Prng(4,counter3,background_color,rotation,elongate_mode,bin_num4);
         			Xil_DCacheFlush();
-        			generate_shape_from_Prng(5,counter4,background_color,rotation,elongate_mode);
+        			generate_shape_from_Prng(5,counter4,background_color,rotation,elongate_mode,bin_num5);
         			Xil_DCacheFlush();
         		}
         		else{
         			Xil_DCacheFlush();
-        			generate_shape_from_rng(1,counter,background_color,rotation,elongate_mode);
+        			generate_shape_from_rng_with_array(1,counter,background_color,rotation,elongate_mode,bin_num1);
         			Xil_DCacheFlush();
-        			generate_shape_from_rng(2,counter1,background_color,rotation,elongate_mode);
+        			generate_shape_from_rng_with_array(2,counter1,background_color,rotation,elongate_mode,bin_num2);
         			Xil_DCacheFlush();
-        			generate_shape_from_rng(3,counter2,background_color,rotation,elongate_mode);
+        			generate_shape_from_rng_with_array(3,counter2,background_color,rotation,elongate_mode,bin_num3);
         			Xil_DCacheFlush();
-        			generate_shape_from_rng(4,counter3,background_color,rotation,elongate_mode);
+        			generate_shape_from_rng_with_array(4,counter3,background_color,rotation,elongate_mode,bin_num4);
         			Xil_DCacheFlush();
-        			generate_shape_from_rng(5,counter4,background_color,rotation,elongate_mode);
+        			generate_shape_from_rng_with_array(5,counter4,background_color,rotation,elongate_mode,bin_num5);
         			Xil_DCacheFlush();
         		}
+
+
+
 
 
 
@@ -576,7 +581,7 @@ int main(void)
         		usleep(100000);
         //		sleep(1);
         		if(counter > 1080){
-        			counter=0;
+        			counter=-50;
         			isbin1_changed=0;
         			bin1_print =0;
         			bin2_print =0;
@@ -632,10 +637,6 @@ int main(void)
         		}
 
 
-
-
-
-
         		isbin1_changed=0;
         		isbin2_changed=0;
         		isbin3_changed=0;
@@ -669,6 +670,9 @@ int main(void)
         			bin5.counter =0;
         			reset_bin_counters = 0;
         			shape_mode_is_one++;
+        			if(shape_mode_is_one%3 ==2){
+        		        is_light_pattern_changed=1;
+        		    }
         			xil_printf("All bins have been reset \r\n");
         		}
 
@@ -708,6 +712,7 @@ void Global_Interrupt_Handler(void *InstancePtr)
 	//Sleep to correct for button and switch double bounce
 	if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
 		*AUDIO_STREAM_MODE_ADDR = OFF;
+		xil_printf("SWT %d \r\n", switch_value);
 		switch(switch_value){
 			case RECORD:
 				record_audio(RECORD);
@@ -715,14 +720,30 @@ void Global_Interrupt_Handler(void *InstancePtr)
 			case PLAYBACK:
 				playback_audio(PLAYBACK);
 				break;
+			case LIGHT_PTN_1:
+				light_fx(LIGHT_PTN_1);
+				break;
+			case LIGHT_PTN_2:
+				light_fx(LIGHT_PTN_2);
+				break;
+			case LIGHT_PTN_3:
+				light_fx(LIGHT_PTN_3);
+				break;
 			case SOUND_EFFECT_1:
-				add_soundfx(SOUND_EFFECT_1);
+				is_sound_effect_1_on=1;
+				is_light_pattern_changed=1;
+//				add_soundfx(SOUND_EFFECT_1);
 				break;
 			case SOUND_EFFECT_2:
-				add_soundfx(SOUND_EFFECT_2);
+				is_sound_effect_2_on=1;
+				is_light_pattern_changed=1;
+//				add_soundfx(SOUND_EFFECT_2);
+
 				break;
 			case SOUND_EFFECT_3:
-				add_soundfx(SOUND_EFFECT_3);
+				is_sound_effect_3_on=1;
+				is_light_pattern_changed=1;
+//				add_soundfx(SOUND_EFFECT_3);
 				break;
 			case SIG_DETECT_1:
 				sig_detect_fx(SIG_DETECT_1);
@@ -773,10 +794,6 @@ void Global_Interrupt_Handler(void *InstancePtr)
     XGpio_InterruptEnable(&btn_swt_gpio, BTN_INT);
 }
 
-//----------------------------------------------------
-// INITIAL SETUP FUNCTIONS
-//----------------------------------------------------
-
 int InterruptSystemSetup(XScuGic *XScuGicInstancePtr)
 {
 	//Enable Button Interrupt
@@ -813,56 +830,15 @@ int IntcInitFunction(u16 DeviceId, XGpio *GpioInstancePtr)
 					  	  	 (Xil_ExceptionHandler)Global_Interrupt_Handler,
 					  	  	 (void *)GpioInstancePtr);
 
+	XScuGic_SetPriorityTriggerType(&INTCInst, INTC_GPIO_INTERRUPT_ID, 0x00, 0x3);
+
 	if(status != XST_SUCCESS) return XST_FAILURE;
-
-	// Enable Switch and Button interrupts
-	XGpio_InterruptEnable(GpioInstancePtr, BTN_INT);
-	XGpio_InterruptEnable(GpioInstancePtr, SWT_INT);
-
-	XGpio_InterruptGlobalEnable(GpioInstancePtr);
 
 	// Enable GPIO(s)
 	XScuGic_Enable(&INTCInst, INTC_GPIO_INTERRUPT_ID);
 
 	return XST_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Defines
@@ -1026,9 +1002,8 @@ static int init_intc(XScuGic* p_intc_inst, int intc_device_id, XAxiDma* p_dma_in
 	}
 
 	// Set interrupt priorities and trigger type
-	XScuGic_SetPriorityTriggerType(p_intc_inst, s2mm_intr_id, 0xA0, 0x3);
-	XScuGic_SetPriorityTriggerType(p_intc_inst, mm2s_intr_id, 0xA8, 0x3);
-	XScuGic_SetPriorityTriggerType(p_intc_inst, XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR, 0xF8, 0x3);
+	XScuGic_SetPriorityTriggerType(p_intc_inst, s2mm_intr_id, 0x08, 0x3);
+	XScuGic_SetPriorityTriggerType(p_intc_inst, mm2s_intr_id, 0x10, 0x3);
 
 	// Connect handlers
 	status = XScuGic_Connect(p_intc_inst, s2mm_intr_id, (Xil_InterruptHandler)s2mm_isr, p_dma_inst);
@@ -1044,17 +1019,9 @@ static int init_intc(XScuGic* p_intc_inst, int intc_device_id, XAxiDma* p_dma_in
 		return DMA_ACCEL_INTC_INIT_FAIL;
 	}
 
-	status = XScuGic_Connect(p_intc_inst, XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR, (Xil_InterruptHandler)Global_Interrupt_Handler, &btn_swt_gpio);
-	if (status != XST_SUCCESS)
-	{
-		xil_printf("ERROR! Failed to connect mm2s_isr to the interrupt controller.\r\n", status);
-		return DMA_ACCEL_INTC_INIT_FAIL;
-	}
-
 	// Enable all interrupts
 	XScuGic_Enable(p_intc_inst, s2mm_intr_id);
 	XScuGic_Enable(p_intc_inst, mm2s_intr_id);
-	XScuGic_Enable(p_intc_inst, XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR);
 
 	// Initialize exception table and register the interrupt controller handler with exception table
 	Xil_ExceptionInit();
@@ -1269,11 +1236,6 @@ int dma_accel_xfer(dma_accel_t* p_dma_accel_inst)
 }
 
 
-
-
-
-
-
 static int RECORDED_DATA_PTR[960000];
 unsigned int AUDIO_STATE;
 unsigned int INTR_CH;
@@ -1398,6 +1360,7 @@ void add_soundfx(unsigned int OP_CODE){
 			right = right ^ 0x008FFFFF;
 			Xil_Out32(I2S_DATA_TX_L_REG, left);
 			Xil_Out32(I2S_DATA_TX_R_REG, right);
+			usleep(23);
 	}
 	}else if(AUDIO_STATE == SOUND_EFFECT_2){
 		u32 temp_arr[96000];
@@ -1410,6 +1373,7 @@ void add_soundfx(unsigned int OP_CODE){
 				Xil_Out32(I2S_DATA_TX_R_REG, right);
 				temp_arr[i++] = left;
 				temp_arr[i++] = right;
+				usleep(23);
 			}
 			i = 0;
 			while( i < 96000 && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) == SOUND_EFFECT_2)){
@@ -1429,6 +1393,7 @@ void add_soundfx(unsigned int OP_CODE){
 			right = Xil_In32(I2S_DATA_RX_R_REG) & rnd_mask;
 			Xil_Out32(I2S_DATA_TX_L_REG, (int) 400*sin(2*3.14*1000));
 			Xil_Out32(I2S_DATA_TX_R_REG, (int) 400*sin(2*3.14*1000));
+			usleep(23);
 		}
 	}
 	change_sys_state(AUDIO_STATE, STREAM);
@@ -1437,11 +1402,13 @@ void add_soundfx(unsigned int OP_CODE){
 void start_stop_audio(unsigned int OP_CODE){
 	if(OP_CODE == STOP_START && *AUDIO_STREAM_MODE_ADDR == OFF){
 
-		is_music_streaming=1;
+		is_music_streaming=2;
+		reset_bin_counters =1;
 		change_sys_state(AUDIO_STATE, OP_CODE);
 		*AUDIO_STREAM_MODE_ADDR = ON;
 	}else if(OP_CODE == STOP_START && *AUDIO_STREAM_MODE_ADDR == ON) {
-		is_music_streaming=2;
+
+		is_music_streaming=1;
 		change_sys_state(AUDIO_STATE, OP_CODE);
 		*AUDIO_STREAM_MODE_ADDR = OFF;
 	}
@@ -1452,12 +1419,19 @@ void start_stop_audio(unsigned int OP_CODE){
 void light_fx(u8 OP_CODE){
 	if(OP_CODE == LIGHT_PTN_1){
 		//TODO Light Pattern 1
+		is_light_pattern_changed =1;
+		light_pattern_mode=2;
+
 		xil_printf("Adding light pattern 1.\r\n");
 	}else if(OP_CODE == LIGHT_PTN_2){
-		//TODO Light Pattern 2
+		//TODO Light Pattern 3 random
+		is_light_pattern_changed =1;
+		light_pattern_mode=3;
 		xil_printf("Adding light pattern 2.\r\n");
 	}else{
-		//TODO Light Pattern 3
+		//TODO Light Pattern 4 elongate
+		is_light_pattern_changed =1;
+		light_pattern_mode=4;
 		xil_printf("Adding light pattern 3.\r\n");
 	}
 	return;
@@ -1527,12 +1501,12 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 		default:
 			if(*AUDIO_STREAM_MODE_ADDR == ON){
 				xil_printf("STREAMING AUDIO\r\n");
-				is_music_streaming=1;
+//				is_music_streaming=1;
 				audio_stream();
 			} else {
 				xil_printf("AUDIO STREAM OFF\r\n");
-				is_music_streaming=2;
-				reset_bin_counters=1;
+//				is_music_streaming=2;
+//				reset_bin_counters=1;
 			}
 			break;
 	}
@@ -1542,6 +1516,11 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 } // audio_interface()
 
 
+
+
+// EVERYONE MODE EXCEPT FOR RANDOM MODE
+
+// EVERYONE MODE EXCEPT FOR RANDOM MODE
 
 void generate_shape(){
 	// Providing a seed value
@@ -1791,11 +1770,11 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 		int shape      = temp_buffer[5*4*jj + 5*buffer_index]; // accept values 1-4
 
 
-		int bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
-		int color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
-		int size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		int bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		int color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		int size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
 		size = size +random_size_controler;
-		int isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		int isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 		color = rand()%7;
 		double temp_rotate;
 		if(isrotating ==0){
@@ -1811,12 +1790,12 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 		jj= 1;
 		//bin 2
-		shape      = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
-		bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
-		color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
-		size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
 		size = size +random_size_controler;
-		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 		color = rand()%7;
 
 			if(isrotating ==0){
@@ -1830,13 +1809,12 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 		jj= 2;
 		//bin 3
-		shape      = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
-		bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
-		color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
-		size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
 		size = size +random_size_controler;
-
-		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 		color = rand()%7;
 
 			if(isrotating ==0){
@@ -1851,12 +1829,12 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 		jj= 3;
 		//bin 4
-		shape      = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
-		bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
-		color      = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 0-6
-		size	   = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
 		size = size +random_size_controler;
-		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 		color = rand()%7;
 
 		if(isrotating ==0){
@@ -1865,20 +1843,17 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 			temp_rotate = rotation;
 		}
 
-
-
 		generate_with_shape_parms_PRNG(shape, 4, color,size,counter,background_color,temp_rotate,elongate_mode);
 
 
 		jj= 4;
 		//bin 5
-		shape = temp_buffer[5*4*jj  + 5*buffer_index]; // accept values 1-4
-		bin   = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
-		color = temp_buffer[5*4*jj+2+ 5*buffer_index]; // accept valeus of 1-5
-		size  = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+		shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+		bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+		color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+		size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
 		size = size +random_size_controler;
-
-		isrotating = temp_buffer[5*4*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+		isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 		color = rand()%7;
 		if(isrotating ==0){
 				temp_rotate = 0;
@@ -2001,21 +1976,129 @@ void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int
 }
 
 
+
+
+void generate_shape_from_rng_with_array(int bin_num, int counter,int background_color, double rotation,int elongate_mode, int* array){
+	// the first 15 elements will be for bin 1, next 15 is bin 2, and so on until bin 5
+	int * temp_buffer= prng_output;
+	int buffer_index = (bin_num-1); // buffer number goes from 0-4
+
+	//bin 1
+	int jj= 0;
+
+	// the program accepts 4 shapes per bin at a time.
+	//
+	int shape = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+	int bin   = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+	int color = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 1-7
+	int size = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+
+	if(array[1]==1){
+		if(shape_mode_is_one%3!=2){
+			generate_with_shape_parms(shape, 1, color,counter,background_color,rotation,elongate_mode);
+		}
+		else{
+			generate_with_shape_parms(1, 1, color,counter,background_color,rotation,elongate_mode);
+		}
+	}
+
+	jj= 1;
+	//bin 2
+	shape = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+
+	if(array[2]==1){
+		if(shape_mode_is_one%3!=2){
+			generate_with_shape_parms(shape, 2, color,counter,background_color,rotation,elongate_mode);
+		}
+		else{
+			generate_with_shape_parms(1, 2, color,counter,background_color,rotation,elongate_mode);
+		}
+	}
+
+	jj= 2;
+	//bin 3
+	shape = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+
+	if(array[3]==1){
+		if(shape_mode_is_one%3!=2){
+			generate_with_shape_parms(shape, 3, color,counter,background_color,rotation,elongate_mode);
+		}
+		else{
+			generate_with_shape_parms(1, 3, color,counter,background_color,rotation,elongate_mode);
+		}
+	}
+
+
+	jj= 3;
+	//bin 4
+	shape = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+
+	if(array[4]==1){
+		if(shape_mode_is_one%3!=2){
+			generate_with_shape_parms(shape, 4, color,counter,background_color,rotation,elongate_mode);
+		}
+		else{
+			generate_with_shape_parms(1, 4, color,counter,background_color,rotation,elongate_mode);
+		}
+	}
+
+	jj= 4;
+	//bin 5
+	shape = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+	bin   = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+	color = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 1-5
+	size = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+
+	if(array[5]==1){
+		if(shape_mode_is_one%3!=2){
+			generate_with_shape_parms(shape, 5, color,counter,background_color,rotation,elongate_mode);
+		}
+		else{
+			generate_with_shape_parms(1, 5, color,counter,background_color,rotation,elongate_mode);
+		}
+	}
+	return;
+}
+
+
+
 void generate_param_for_row(int *bins_covered, int bin_number){
 
+
+
+
 	int vga_bin=0;
-	for(int ii = 0; ii <=10;ii++){
-			vga_bin += detect_freq(tx_buff, rx_buff, FFT_INIT_POINTS, p_fft_inst);
+	for(int ii = 0; ii <=5;ii++){
+			bins_covered[ii] = 0;
+			vga_bin = detect_freq(tx_buff, rx_buff, FFT_INIT_POINTS, p_fft_inst);
 //			vga_bin  =vga_bin/5;
 			if(vga_bin >= 5){
 				vga_bin = 5;
 			}
-			bins_covered[vga_bin] = 1;
+			if(vga_bin != 0){
+				bins_covered[vga_bin] = 1;
+			}
 		}
 
+
+//		bins_covered[1] = 1;
+//		bins_covered[2] = 0;
+//		bins_covered[3] = 1;
+//		bins_covered[4] = 1;
+//		bins_covered[5] = 1;
+
 		//for each covered bins create rand num for the shape.
-		for(int ii = 0; ii <=5;ii++){
-			if(bins_covered[ii] == 1){
+		for(int ii = 0; ii <=4;ii++){
+			if(bins_covered[ii+1] == 1){
 				int * temp_buffer= prng_output;
 				int buffer_index = bin_number; // buffer number goes from 0-4
 
@@ -2024,12 +2107,168 @@ void generate_param_for_row(int *bins_covered, int bin_number){
 
 			// the program accepts 4 shapes per bin at a time.
 				//
-				temp_buffer[5*4*jj  + 5*buffer_index]= (rand()%4) +1; // accept values 1-4
-				temp_buffer[5*4*jj+1+ 5*buffer_index]= (rand()%5) +1; // accept valeus of 1-5
-				temp_buffer[5*4*jj+2+ 5*buffer_index]= (rand()%7) +1; // accept valeus of 1-7
-				temp_buffer[5*4*jj+3+ 5*buffer_index]= (rand()%7) +1; // accept valeus of 1-7
+				temp_buffer[5*5*jj  + 5*buffer_index]= (rand()%4) +1; // accept values 1-4
+				temp_buffer[5*5*jj+1+ 5*buffer_index]= (rand()%5) +1; // accept valeus of 1-5
+				temp_buffer[5*5*jj+2+ 5*buffer_index]= (rand()%7) +1; // accept valeus of 1-7
+				temp_buffer[5*5*jj+3+ 5*buffer_index]= (rand()%7) +1; // accept valeus of 1-7
+				temp_buffer[5*5*jj+4+ 5*buffer_index]= (rand()%2);; // accept valeus of 1-2
 			}
 		}
 
 
 }
+
+
+void generate_shape_from_Prng(int bin_num, int counter,int background_color, double rotation,int elongate_mode, int* array){
+	// the first 15 elements will be for bin 1, next 15 is bin 2, and so on until bin 5
+			int * temp_buffer= prng_output;
+			int buffer_index = (bin_num-1); // buffer number goes from 0-4
+
+			//bin 1
+			int jj= 0;
+
+			// the program accepts 4 shapes per bin at a time.
+			//
+			int shape      = temp_buffer[5*4*jj + 5*buffer_index]; // accept values 1-4
+
+
+			int bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+			int color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+			int size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+			size = size +random_size_controler;
+			int isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+			color = rand()%7;
+			double temp_rotate;
+			if(isrotating ==0){
+				temp_rotate = 0;
+			}else{
+				temp_rotate = rotation;
+			}
+
+			if(array[1]==1){
+				if(shape_mode_is_one%3!=2){
+					generate_with_shape_parms_PRNG(shape, 1, color,size,counter,background_color,temp_rotate,elongate_mode);
+				}
+				else{
+					generate_with_shape_parms_PRNG(1, 1, color,size,counter,background_color,temp_rotate,elongate_mode);
+				}
+			}
+
+
+
+
+			jj= 1;
+			//bin 2
+			shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+			size = size +random_size_controler;
+			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+			color = rand()%7;
+
+				if(isrotating ==0){
+					temp_rotate = 0;
+				}else{
+					temp_rotate = rotation;
+			}
+
+				if(array[2]==1){
+					if(shape_mode_is_one%3!=2){
+						generate_with_shape_parms_PRNG(shape, 2, color,size,counter,background_color,temp_rotate,elongate_mode);
+					}
+					else{
+						generate_with_shape_parms_PRNG(1, 2, color,size,counter,background_color,temp_rotate,elongate_mode);
+					}
+				}
+
+
+			jj= 2;
+			//bin 3
+			shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+			size = size +random_size_controler;
+			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+			color = rand()%7;
+
+				if(isrotating ==0){
+					temp_rotate = 0;
+				}else{
+					temp_rotate = rotation;
+			}
+
+				if(array[3]==1){
+					if(shape_mode_is_one%3!=2){
+						generate_with_shape_parms_PRNG(shape, 3, color,size,counter,background_color,temp_rotate,elongate_mode);
+					}
+					else{
+						generate_with_shape_parms_PRNG(1, 3, color,size,counter,background_color,temp_rotate,elongate_mode);
+					}
+				}
+
+
+
+			jj= 3;
+			//bin 4
+			shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+			size = size +random_size_controler;
+			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+			color = rand()%7;
+
+			if(isrotating ==0){
+				temp_rotate = 0;
+			}else{
+				temp_rotate = rotation;
+			}
+
+			if(array[4]==1){
+				if(shape_mode_is_one%3!=2){
+					generate_with_shape_parms_PRNG(shape, 4, color,size,counter,background_color,temp_rotate,elongate_mode);
+				}
+				else{
+					generate_with_shape_parms_PRNG(1, 4, color,size,counter,background_color,temp_rotate,elongate_mode);
+				}
+			}
+
+
+			jj= 4;
+			//bin 5
+			shape      = temp_buffer[5*5*jj  + 5*buffer_index]; // accept values 1-4
+			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
+			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+			size = size +random_size_controler;
+			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
+			color = rand()%7;
+			if(isrotating ==0){
+					temp_rotate = 0;
+			}else{
+				temp_rotate = rotation;
+			}
+
+
+			if(array[5]==1){
+				if(shape_mode_is_one%3!=2){
+					generate_with_shape_parms_PRNG(shape, 5, color,size,counter,background_color,temp_rotate,elongate_mode);
+				}
+				else{
+					generate_with_shape_parms_PRNG(1, 5, color,size,counter,background_color,temp_rotate,elongate_mode);
+				}
+			}
+
+			return;
+}
+
+
+
+
+// THINGS TO DO MAYBE
+
+// random mode sound effects
+// START program using BTNC at the start
+// FIX light pattern mode and no sound effect

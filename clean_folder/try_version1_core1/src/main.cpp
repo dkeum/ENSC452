@@ -12,7 +12,7 @@
 
 
 #define COMM_VAL (*(volatile unsigned long *)(0xFFFF0000))
-#define FREQ_OUT_ADDR (int*)(0xFFFF0090)
+#define FREQ_OUT_ADDR (int*)(0xFFFF2000)
 #define AUDIO_STREAM_MODE_ADDR (int *)0x1008000C
 
 int main()

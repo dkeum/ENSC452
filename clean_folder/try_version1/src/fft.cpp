@@ -125,14 +125,18 @@ fft_t* fft_create(int gpio_device_id, int dma_device_id, int intc_device_id, int
 
 	// Initialize FFT parameters
 	fft_set_fwd_inv(p_obj, FFT_FORWARD);
-	status = fft_set_num_pts(p_obj, 1024);
+	status = fft_set_num_pts(p_obj, FFT_INIT_POINTS);
 	if (status != FFT_SUCCESS)
 	{
 		xil_printf("ERROR! Failed to initialize the number of points in the FFT.\n\r");
 		fft_destroy(p_obj);
 		return NULL;
 	}
-	fft_set_scale_sch(p_obj, 0x2AB);
+	if(FFT_INIT_POINTS == 512){
+		fft_set_scale_sch(p_obj, 0x1AB);
+	}else{
+		fft_set_scale_sch(p_obj, 0x2AB);
+	}
 
 	return p_obj;
 
