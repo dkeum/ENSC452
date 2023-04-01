@@ -31,3 +31,6 @@ bsp reload
 catch {bsp regenerate}
 platform generate -domains try_version1_core1 
 platform write
+platform generate
+platform clean
+platform generate

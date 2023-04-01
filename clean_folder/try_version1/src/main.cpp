@@ -123,8 +123,8 @@ int random_mode_color[5];
 int random_size_controler=0;
 
 
-static int btn_value;
-static int switch_value;
+int btn_value;
+int switch_value;
 
 XScuGic INTCInst;
 XIicPs Iic; //I2C Interface
@@ -180,16 +180,23 @@ int main(void)
 	*AUDIO_STREAM_MODE_ADDR = 0x1; //On
 	*SIG_DETECT = 0x00; //0Hz for inital freq detected
 
-
     //Configure Audio Codec
 	AudioPllConfig();
 	LineinLineoutConfig();
-
 
 	//Configure DMA for RNG
     myDmaConfig = XAxiDma_LookupConfigBaseAddr(XPAR_RAND_SYS_AXI_DMA_0_BASEADDR);
     status = XAxiDma_CfgInitialize(&myDma, myDmaConfig);
 
+	if(XGpio_Initialize(&btn_swt_gpio, XPAR_GPIO_1_DEVICE_ID) != XST_SUCCESS)
+	{
+		return XST_FAILURE;
+	}
+
+	XGpio_SetDataDirection(&btn_swt_gpio, SWITCH_CHANNEL, 0xFF);
+	XGpio_SetDataDirection(&btn_swt_gpio, BUTTON_CHANNEL, 0xFF);
+
+	IntcInitFunction(XPAR_PS7_SCUGIC_0_DEVICE_ID, &btn_swt_gpio);
 
     // Create FFT object
     p_fft_inst = fft_create(
@@ -205,24 +212,6 @@ int main(void)
     	return -1;
     }
 
-//    //Configure Switch and Button GPIO
-	if(XGpio_Initialize(&btn_swt_gpio, XPAR_GPIO_1_DEVICE_ID) != XST_SUCCESS)
-	{
-		return XST_FAILURE;
-	}
-
-	XGpio_SetDataDirection(&btn_swt_gpio, SWITCH_CHANNEL, 0xFF);
-	XGpio_SetDataDirection(&btn_swt_gpio, BUTTON_CHANNEL, 0xFF);
-
-	XGpio_InterruptEnable(&btn_swt_gpio, 0x01);
-	XGpio_InterruptEnable(&btn_swt_gpio, 0x02);
-	XGpio_InterruptGlobalEnable(&btn_swt_gpio);
-
-
-    //Setting the FFT to FFT_INIT_POINTS points
-    fft_set_num_pts(p_fft_inst, FFT_INIT_POINTS);
-
-
     if (tx_buff == NULL){
     	xil_printf("ERROR! Failed to allocate memory for the stimulus buffer.\n\r");
     	return -1;
@@ -236,10 +225,6 @@ int main(void)
     XTime_GetTime(&tStart);
     unsigned long long int tempTime;
     int bin = 0;
-//    int * temp_arr = (int*)malloc(sizeof(int)*5242880);
-
-
-
 
 	// BACKGROUND DETAILS
 	background.set_background(background_color);
@@ -303,13 +288,6 @@ int main(void)
 	int counter3 =-300;
 	int counter4 =-400;
 	double rotation_amount = 0.2; //(14th first turn,189 second turn)
-
-
-
-
-
-
-
 
 
 
@@ -708,6 +686,7 @@ void Global_Interrupt_Handler(void *InstancePtr)
 	//Sleep to correct for button and switch double bounce
 	if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
 		*AUDIO_STREAM_MODE_ADDR = OFF;
+		xil_printf("SWT %d \r\n", switch_value);
 		switch(switch_value){
 			case RECORD:
 				record_audio(RECORD);
@@ -773,10 +752,6 @@ void Global_Interrupt_Handler(void *InstancePtr)
     XGpio_InterruptEnable(&btn_swt_gpio, BTN_INT);
 }
 
-//----------------------------------------------------
-// INITIAL SETUP FUNCTIONS
-//----------------------------------------------------
-
 int InterruptSystemSetup(XScuGic *XScuGicInstancePtr)
 {
 	//Enable Button Interrupt
@@ -813,56 +788,15 @@ int IntcInitFunction(u16 DeviceId, XGpio *GpioInstancePtr)
 					  	  	 (Xil_ExceptionHandler)Global_Interrupt_Handler,
 					  	  	 (void *)GpioInstancePtr);
 
+	XScuGic_SetPriorityTriggerType(&INTCInst, INTC_GPIO_INTERRUPT_ID, 0x00, 0x3);
+
 	if(status != XST_SUCCESS) return XST_FAILURE;
-
-	// Enable Switch and Button interrupts
-	XGpio_InterruptEnable(GpioInstancePtr, BTN_INT);
-	XGpio_InterruptEnable(GpioInstancePtr, SWT_INT);
-
-	XGpio_InterruptGlobalEnable(GpioInstancePtr);
 
 	// Enable GPIO(s)
 	XScuGic_Enable(&INTCInst, INTC_GPIO_INTERRUPT_ID);
 
 	return XST_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Defines
@@ -1026,9 +960,8 @@ static int init_intc(XScuGic* p_intc_inst, int intc_device_id, XAxiDma* p_dma_in
 	}
 
 	// Set interrupt priorities and trigger type
-	XScuGic_SetPriorityTriggerType(p_intc_inst, s2mm_intr_id, 0xA0, 0x3);
-	XScuGic_SetPriorityTriggerType(p_intc_inst, mm2s_intr_id, 0xA8, 0x3);
-	XScuGic_SetPriorityTriggerType(p_intc_inst, XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR, 0xF8, 0x3);
+	XScuGic_SetPriorityTriggerType(p_intc_inst, s2mm_intr_id, 0x08, 0x3);
+	XScuGic_SetPriorityTriggerType(p_intc_inst, mm2s_intr_id, 0x10, 0x3);
 
 	// Connect handlers
 	status = XScuGic_Connect(p_intc_inst, s2mm_intr_id, (Xil_InterruptHandler)s2mm_isr, p_dma_inst);
@@ -1044,17 +977,9 @@ static int init_intc(XScuGic* p_intc_inst, int intc_device_id, XAxiDma* p_dma_in
 		return DMA_ACCEL_INTC_INIT_FAIL;
 	}
 
-	status = XScuGic_Connect(p_intc_inst, XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR, (Xil_InterruptHandler)Global_Interrupt_Handler, &btn_swt_gpio);
-	if (status != XST_SUCCESS)
-	{
-		xil_printf("ERROR! Failed to connect mm2s_isr to the interrupt controller.\r\n", status);
-		return DMA_ACCEL_INTC_INIT_FAIL;
-	}
-
 	// Enable all interrupts
 	XScuGic_Enable(p_intc_inst, s2mm_intr_id);
 	XScuGic_Enable(p_intc_inst, mm2s_intr_id);
-	XScuGic_Enable(p_intc_inst, XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR);
 
 	// Initialize exception table and register the interrupt controller handler with exception table
 	Xil_ExceptionInit();
@@ -1269,11 +1194,6 @@ int dma_accel_xfer(dma_accel_t* p_dma_accel_inst)
 }
 
 
-
-
-
-
-
 static int RECORDED_DATA_PTR[960000];
 unsigned int AUDIO_STATE;
 unsigned int INTR_CH;
@@ -1398,6 +1318,7 @@ void add_soundfx(unsigned int OP_CODE){
 			right = right ^ 0x008FFFFF;
 			Xil_Out32(I2S_DATA_TX_L_REG, left);
 			Xil_Out32(I2S_DATA_TX_R_REG, right);
+			usleep(23);
 	}
 	}else if(AUDIO_STATE == SOUND_EFFECT_2){
 		u32 temp_arr[96000];
@@ -1410,6 +1331,7 @@ void add_soundfx(unsigned int OP_CODE){
 				Xil_Out32(I2S_DATA_TX_R_REG, right);
 				temp_arr[i++] = left;
 				temp_arr[i++] = right;
+				usleep(23);
 			}
 			i = 0;
 			while( i < 96000 && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) == SOUND_EFFECT_2)){
@@ -1429,6 +1351,7 @@ void add_soundfx(unsigned int OP_CODE){
 			right = Xil_In32(I2S_DATA_RX_R_REG) & rnd_mask;
 			Xil_Out32(I2S_DATA_TX_L_REG, (int) 400*sin(2*3.14*1000));
 			Xil_Out32(I2S_DATA_TX_R_REG, (int) 400*sin(2*3.14*1000));
+			usleep(23);
 		}
 	}
 	change_sys_state(AUDIO_STATE, STREAM);
@@ -1540,8 +1463,6 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 		audio_stream();
 	}
 } // audio_interface()
-
-
 
 void generate_shape(){
 	// Providing a seed value
