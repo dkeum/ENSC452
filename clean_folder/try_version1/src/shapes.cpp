@@ -1623,7 +1623,7 @@ int Pentagon::draw_Pentagon_flexible_version(int x1, int y1,int size,int color,d
 
 	int rv =0;
 	int radius;
-	int adjustment = -10;
+	int adjustment = -7;
 
 		if(size <= 1){
 			radius = 33+adjustment;
@@ -2312,7 +2312,7 @@ void Background::label_bins(){
 	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001);
 
 
-	// 0.2
+	// 0.1
 	x_translate =0;
 	y_translate = -45;
 	for(int y = 65+x_translate; y<70+x_translate;y++){
@@ -2322,15 +2322,13 @@ void Background::label_bins(){
 		}
 
 
-
-
 	x_translate = -35;
 	y_translate = -60;
-	draw_line_bin(110+x_translate, 120+x_translate, 1000+y_translate, 1000+y_translate , (int)0x00000001); // 2
-	draw_line_bin(120+x_translate, 120+x_translate,  1000+y_translate , 1010 +y_translate, (int)0x00000001);
-	draw_line_bin(110+x_translate, 120+x_translate, 1010+y_translate, 1010+y_translate, (int)0x00000001);
-	draw_line_bin(110+x_translate, 110+x_translate, 1010+y_translate, 1020+y_translate , (int)0x00000001);
-	draw_line_bin(110+x_translate, 120+x_translate, 1020+y_translate, 1020+y_translate , (int)0x00000001);
+	draw_line_bin(110+x_translate, 110+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001); // 2
+//	draw_line_bin(120+x_translate, 120+x_translate,  1000+y_translate , 1010 +y_translate, (int)0x00000001);
+//	draw_line_bin(110+x_translate, 120+x_translate, 1010+y_translate, 1010+y_translate, (int)0x00000001);
+//	draw_line_bin(110+x_translate, 110+x_translate, 1010+y_translate, 1020+y_translate , (int)0x00000001);
+//	draw_line_bin(110+x_translate, 120+x_translate, 1020+y_translate, 1020+y_translate , (int)0x00000001);
 
 	// kHz
 
@@ -2363,7 +2361,7 @@ void Background::label_bins(){
 
 
 	//Second Bin
-		//0.6
+		//0.3
 	x_translate = -30+200;
 	y_translate = -60;
 
@@ -2385,10 +2383,10 @@ void Background::label_bins(){
 	y_translate = -60;
 
 	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000+y_translate, (int)0x00000001);	// 6
-	draw_line_bin(80+x_translate, 80+x_translate, 1000+y_translate, 1020+y_translate, (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1010+y_translate, 1010+y_translate, (int)0x00000001);
 	draw_line_bin(80+x_translate, 90+x_translate, 1020+y_translate, 1020 +y_translate, (int)0x00000001);
-	draw_line_bin(90+x_translate, 90+x_translate, 1010+y_translate, 1020 +y_translate, (int)0x00000001);
-	draw_line_bin(80+x_translate, 90+x_translate, 1010+y_translate, 1010 +y_translate, (int)0x00000001);
+	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020 +y_translate, (int)0x00000001);
+
 
 
 	// kHz
@@ -2413,10 +2411,32 @@ void Background::label_bins(){
 	//3rd bin
 
 
+
+	x_translate = -30+(200*2);
+	y_translate = -60;
+
+	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000+y_translate , (int)0x00000001); // O
+	draw_line_bin(80+x_translate, 80+x_translate,  1000+y_translate , 1020 +y_translate, (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1020+y_translate, 1020+y_translate, (int)0x00000001);
+	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001);
+
+
+	x_translate =0+(200*2);
+	y_translate = -45;
+	for(int y = 65+x_translate; y<70+x_translate;y++){
+		for(int x=1000+y_translate; x<=1005+y_translate; x++){ // predefined height
+			image_buffer_pointer[(y)+(x<<10)+(x<<8)]=(int)0x00000001; //image_buffer_pointer[(y)+(x<<10)+(x<<8)]=color;
+		}
+	}
+
 	x_translate = -15+(200*2);
 	y_translate = -60;
 
-	draw_line_bin(85+x_translate, 85+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001); // 1
+	draw_line_bin(90+x_translate, 100+x_translate, 1000+y_translate, 1000+y_translate , (int)0x00000001); // 1
+	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1010+y_translate , (int)0x00000001); // 1
+	draw_line_bin(90+x_translate, 100+x_translate, 1010+y_translate, 1010+y_translate , (int)0x00000001); // 1
+	draw_line_bin(100+x_translate, 100+x_translate, 1020+y_translate, 1010+y_translate , (int)0x00000001); // 1
+	draw_line_bin(90+x_translate, 100+x_translate, 1020+y_translate, 1020+y_translate , (int)0x00000001); // 1
 
 
 	// kHz
@@ -2445,9 +2465,14 @@ void Background::label_bins(){
 
 	//4th bin
 	//1.4 KHz
-	x_translate = -20+(200*3);
+	x_translate = -30+(200*3);
 	y_translate = -60;
-	draw_line_bin(80+x_translate, 80+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001); // 1
+
+	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000+y_translate , (int)0x00000001); // O
+	draw_line_bin(80+x_translate, 80+x_translate,  1000+y_translate , 1020 +y_translate, (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1020+y_translate, 1020+y_translate, (int)0x00000001);
+	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001);
+
 
 	x_translate =0+(200*3);
 	y_translate = -45;
@@ -2460,9 +2485,9 @@ void Background::label_bins(){
 	// 4
 	x_translate = -5+(200*3);
 	y_translate = -60;
-	draw_line_bin(80+x_translate, 90+x_translate, 1015+y_translate, 1015+y_translate , (int)0x00000001);  // 4
-	draw_line_bin(87+x_translate, 87+x_translate,  1020+y_translate , 1000 +y_translate, (int)0x00000001);
-	draw_line_bin(80+x_translate, 87+x_translate, 1015+y_translate, 1000+y_translate , (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000+y_translate , (int)0x00000001);  // 4
+	draw_line_bin(90+x_translate, 90+x_translate,  1020+y_translate , 1000 +y_translate, (int)0x00000001);
+//	draw_line_bin(80+x_translate, 87+x_translate, 1015+y_translate, 1000+y_translate , (int)0x00000001);
 
 
 	// kHz
@@ -2487,28 +2512,33 @@ void Background::label_bins(){
 
 	// 5th bin
 
-	//1.8 KHz
+	//0.9 KHz
 
-	x_translate = -20+(200*4);
-		y_translate = -60;
-		draw_line_bin(80+x_translate, 80+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001); // 1
+	x_translate = -30+(200*4);
+	y_translate = -60;
 
-		x_translate =0+(200*4);
-		y_translate = -45;
-		for(int y = 65+x_translate; y<70+x_translate;y++){
-			for(int x=1000+y_translate; x<=1005+y_translate; x++){ // predefined height
-				image_buffer_pointer[(y)+(x<<10)+(x<<8)]=(int)0x00000001; //image_buffer_pointer[(y)+(x<<10)+(x<<8)]=color;
-			}
+	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000+y_translate , (int)0x00000001); // O
+	draw_line_bin(80+x_translate, 80+x_translate,  1000+y_translate , 1020 +y_translate, (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1020+y_translate, 1020+y_translate, (int)0x00000001);
+	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020+y_translate , (int)0x00000001);
+
+
+	x_translate =0+(200*4);
+	y_translate = -45;
+	for(int y = 65+x_translate; y<70+x_translate;y++){
+		for(int x=1000+y_translate; x<=1005+y_translate; x++){ // predefined height
+			image_buffer_pointer[(y)+(x<<10)+(x<<8)]=(int)0x00000001; //image_buffer_pointer[(y)+(x<<10)+(x<<8)]=color;
 		}
+	}
 
 	x_translate =-5+(200*4);
 	y_translate = -60;
 
-	draw_line_bin(80+x_translate, 80+x_translate, 1000+y_translate, 1020+y_translate, (int)0x00000001);// 6
-	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020+y_translate, (int)0x00000001);
-	draw_line_bin(80+x_translate, 90+x_translate, 1020+y_translate, 1020 +y_translate, (int)0x00000001);
-	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000 +y_translate, (int)0x00000001);
-	draw_line_bin(80+x_translate, 90+x_translate, 1010+y_translate, 1010 +y_translate, (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1000+y_translate, 1000+y_translate, (int)0x00000001);// 6
+	draw_line_bin(80+x_translate, 80+x_translate, 1000+y_translate, 1005+y_translate, (int)0x00000001);
+	draw_line_bin(80+x_translate, 90+x_translate, 1005+y_translate, 1005 +y_translate, (int)0x00000001);
+	draw_line_bin(90+x_translate, 90+x_translate, 1000+y_translate, 1020 +y_translate, (int)0x00000001);
+//	draw_line_bin(80+x_translate, 90+x_translate, 1010+y_translate, 1010 +y_translate, (int)0x00000001);
 
 
 	// kHz

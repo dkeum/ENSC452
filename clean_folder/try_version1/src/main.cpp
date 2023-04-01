@@ -21,6 +21,7 @@ volatile bool isvertical = true;
 volatile bool BTN_FLAG= true;
 volatile int background_color=1;
 volatile int display_shape=1;
+volatile int is_program_started = 0;
 
 int shape_mode_is_one = 0;
 
@@ -158,7 +159,7 @@ int bin_num2[6] = {0};
 int bin_num3[6] = {0};
 int bin_num4[6] = {0};
 int bin_num5[6] = {0};
-
+unsigned long long int tempTime;
 
 //Main Program Entry Point
 int main(void)
@@ -231,8 +232,12 @@ int main(void)
     }
     XTime tStart,tEnd;
     XTime_GetTime(&tStart);
-    unsigned long long int tempTime;
     int bin = 0;
+    while (is_program_started==0){
+    }
+    XTime_GetTime(&tEnd);
+    tempTime = (tEnd-tStart)%300;
+
 
 	// BACKGROUND DETAILS
 	background.set_background(background_color);
@@ -393,11 +398,17 @@ int main(void)
         			if(audio_volume_change <= 7){
         				random_size_controler++;
         			}
+        			if(random_size_controler >= 7){
+        				random_size_controler=7;
+        			}
         			is_audio_changed=0;
         		}
         		if(is_audio_changed == 2){
         			if(audio_volume_change >= 0){
         				random_size_controler--;
+        			}
+        			if(random_size_controler <= 0){
+        				random_size_controler=0;
         			}
         			is_audio_changed=0;
         		}
@@ -578,7 +589,7 @@ int main(void)
         		Xil_DCacheFlush();
 
         		// (3) if the shapes reach the bottom then put the appropriate counters to 0.
-        		usleep(100000);
+//        		usleep(100000);
         //		sleep(1);
         		if(counter > 1080){
         			counter=-50;
@@ -670,11 +681,14 @@ int main(void)
         			bin5.counter =0;
         			reset_bin_counters = 0;
         			shape_mode_is_one++;
-        			if(shape_mode_is_one%3 ==2){
-        		        is_light_pattern_changed=1;
-        		    }
+        			if(shape_mode_is_one%3 ==2 || shape_mode_is_one%3== 0){
+        			     is_light_pattern_changed=1;
+        			}
+
+
         			xil_printf("All bins have been reset \r\n");
         		}
+
 
 
 
@@ -731,16 +745,22 @@ void Global_Interrupt_Handler(void *InstancePtr)
 				break;
 			case SOUND_EFFECT_1:
 				is_sound_effect_1_on=1;
+				is_sound_effect_2_on=0;
+				is_sound_effect_3_on=0;
 				is_light_pattern_changed=1;
 //				add_soundfx(SOUND_EFFECT_1);
 				break;
 			case SOUND_EFFECT_2:
+				is_sound_effect_1_on=0;
 				is_sound_effect_2_on=1;
+				is_sound_effect_3_on=0;
 				is_light_pattern_changed=1;
 //				add_soundfx(SOUND_EFFECT_2);
 
 				break;
 			case SOUND_EFFECT_3:
+				is_sound_effect_1_on=0;
+				is_sound_effect_2_on=0;
 				is_sound_effect_3_on=1;
 				is_light_pattern_changed=1;
 //				add_soundfx(SOUND_EFFECT_3);
@@ -769,6 +789,7 @@ void Global_Interrupt_Handler(void *InstancePtr)
 				change_amplitude(AMP_UP);
 				break;
 			case AMP_DWN:
+				is_light_pattern_changed =1;
 				change_amplitude(AMP_DWN);
 				break;
 			case TONE_UP:
@@ -778,6 +799,7 @@ void Global_Interrupt_Handler(void *InstancePtr)
 				change_tone(TONE_DWN);
 				break;
 			case STOP_START:
+				is_program_started=1;
 				start_stop_audio(STOP_START);
 				break;
 			default:
@@ -1271,7 +1293,6 @@ void change_amplitude(unsigned int OP_CODE){
 		if(audio_volume_change >= 2){
 			audio_volume_change--;
 			is_audio_changed =2;
-			is_light_pattern_changed =1;
 		}
 		if(*AMP_VAL_ADDR > 0x06){
 			*AMP_VAL_ADDR = *AMP_VAL_ADDR - 0x04;
@@ -1515,7 +1536,6 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 	}
 } // audio_interface()
 
-<<<<<<< HEAD
 
 
 
@@ -1523,8 +1543,6 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 
 // EVERYONE MODE EXCEPT FOR RANDOM MODE
 
-=======
->>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
 void generate_shape(){
 	// Providing a seed value
 	//	srand((unsigned) time(NULL));
@@ -1561,7 +1579,7 @@ void generate_shape(){
 		if(tempo_speed_change != 0 ){
 			counter = counter + speed;
 		}
-		usleep(10000);
+//		usleep(10000);
 		if(counter> 800){
 			return;
 		}
@@ -2109,12 +2127,12 @@ void generate_param_for_row(int *bins_covered, int bin_number){
 			    int jj= ii;
 
 			// the program accepts 4 shapes per bin at a time.
-				//
-				temp_buffer[5*5*jj  + 5*buffer_index]= (rand()%4) +1; // accept values 1-4
-				temp_buffer[5*5*jj+1+ 5*buffer_index]= (rand()%5) +1; // accept valeus of 1-5
-				temp_buffer[5*5*jj+2+ 5*buffer_index]= (rand()%7) +1; // accept valeus of 1-7
-				temp_buffer[5*5*jj+3+ 5*buffer_index]= (rand()%7) +1; // accept valeus of 1-7
-				temp_buffer[5*5*jj+4+ 5*buffer_index]= (rand()%2);; // accept valeus of 1-2
+				//unsigned long long int tempTime
+				temp_buffer[5*5*jj  + 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%4) +1; // accept values 1-4
+				temp_buffer[5*5*jj+1+ 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%5) +1; // accept valeus of 1-5
+				temp_buffer[5*5*jj+2+ 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%7) +1; // accept valeus of 1-7
+				temp_buffer[5*5*jj+3+ 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%7) +1; // accept valeus of 1-7
+				temp_buffer[5*5*jj+4+ 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%2);; // accept valeus of 1-2
 			}
 		}
 
@@ -2132,13 +2150,13 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 			// the program accepts 4 shapes per bin at a time.
 			//
-			int shape      = temp_buffer[5*4*jj + 5*buffer_index]; // accept values 1-4
+			int shape      = temp_buffer[5*5*jj + 5*buffer_index]; // accept values 1-4
 
 
 			int bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
 			int color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
 			int size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
-			size = size +random_size_controler;
+			size = size -random_size_controler;
 			int isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 			color = rand()%7;
 			double temp_rotate;
@@ -2166,7 +2184,7 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
 			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
 			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
-			size = size +random_size_controler;
+			size = size -random_size_controler;
 			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 			color = rand()%7;
 
@@ -2192,7 +2210,7 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
 			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
 			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
-			size = size +random_size_controler;
+			size = size -random_size_controler;
 			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 			color = rand()%7;
 
@@ -2219,7 +2237,7 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
 			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
 			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
-			size = size +random_size_controler;
+			size = size -random_size_controler;
 			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 			color = rand()%7;
 
@@ -2245,7 +2263,7 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 			bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
 			color      = temp_buffer[5*5*jj+2+ 5*buffer_index]; // accept valeus of 0-6
 			size	   = temp_buffer[5*5*jj+3+ 5*buffer_index]; // accept valeus of 1-7
-			size = size +random_size_controler;
+			size = size -random_size_controler;
 			isrotating = temp_buffer[5*5*jj+4+ 5*buffer_index]; // accept valeus of 1-7
 			color = rand()%7;
 			if(isrotating ==0){

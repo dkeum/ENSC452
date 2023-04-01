@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 20:54:01 **** Incremental Build of configuration Debug for project try_version1_core1 ****
-=======
-18:45:00 **** Incremental Build of configuration Debug for project try_version1_core1 ****
->>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -10,9 +6,5 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 make[1]: Nothing to be done for 'main-build'.
 
-<<<<<<< HEAD
 20:54:01 Build Finished (took 341ms)
-=======
-18:45:01 Build Finished (took 340ms)
->>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
 

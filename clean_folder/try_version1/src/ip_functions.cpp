@@ -59,64 +59,63 @@ int detect_freq(cplx_data_t * tx_buff, cplx_data_t * rx_buff, int sample_points,
 }
 
 //generates numbers up to 20 shapes. each shape will have randomized color, position,
-void generate_PRNG(XAxiDma * myDma,unsigned long long int time_elapsed, int fft_bin){
+int generate_PRNG(XAxiDma * myDma,unsigned long long int tempTime){
 	u32 status;
 	u32 output_location[20]; // output of seed is here. We want to let at most 4 shapes per bin at a time. 4*5 = 20
-	int* prng_output_location = prng_output;
+//	int* prng_output_location = prng_output;
 	u32 seed[20]; //seed
 
 	for(int ii =0; ii < 20;ii++){
-			seed[ii] = seed[ii]+time_elapsed+ii+1;
+			seed[ii] = seed[ii]+ii+1+tempTime;
 	}
 
-
-
-	u32 size= 20;
+	u32 size= 5;
 	memset(output_location, 0x0, size*sizeof(u32));
 	Xil_DCacheFlushRange((u32)seed,size*sizeof(u32));
 	Xil_DCacheFlushRange((u32)output_location,size*sizeof(u32));
 	status = XAxiDma_SimpleTransfer(myDma, (u32)seed, size*sizeof(u32),XAXIDMA_DMA_TO_DEVICE);
 	if(status != XST_SUCCESS){
 		xil_printf("DMA initialization failed\n");
-		return;
+		return 0;
 	}
 	status = XAxiDma_SimpleTransfer(myDma, (u32)output_location, size*sizeof(u32),XAXIDMA_DEVICE_TO_DMA);//typecasting in C/C++
 	if(status != XST_SUCCESS){
 		xil_printf("DMA initialization failed\n");
-		return;
+		return 0;
 	}
 	usleep(500);
 	int a,b,c,d,e;
 
-	// new seeds for the next iteration
-	for(int ii =0; ii < 1;ii++){
-		seed[ii] = output_location[ii];
+	return ((seed[0]+tempTime)%5);
 
-		xil_printf("the rand num generated: %0x \r\n",output_location[ii]);
+//	// new seeds for the next iteration
+//	for(int ii =0; ii < 1;ii++){
+//		seed[ii] = output_location[ii];
+//
+//		xil_printf("the rand num generated: %0x \r\n",output_location[ii]);
+//
+//		a = (rand() + output_location[ii]) % 4; //shapes
+//		b = output_location[ii] % 5; // location
+//		c = output_location[ii] % 7; // color
+//		d = (rand()+output_location[ii]) % 8; // size 1-8
+//		e = (rand() + output_location[ii]) % 2; //is shape rotating
+//
+////		printf("the rand num generated: %d \r\n",a);
+//		prng_output_location[5*ii]    =  abs(a)+1;
+//		prng_output_location[5*ii +1] =  fft_bin;// later on this could be the output from the FFT ip
+//		prng_output_location[5*ii +2] =  abs(c);
+//		prng_output_location[5*ii +3] =  abs(d)+1;
+//		prng_output_location[5*ii +4] =  abs(e);
+//
+//	}
+//
+//	//4*19+3 = 79
+//	prng_output_location[5*21 ] = output_location[1];// for random bin colors
+//	prng_output_location[5*21 +1] = output_location[6];
+//	prng_output_location[5*21 +2] = output_location[11];
+//	prng_output_location[5*21 +3] = output_location[16];
+//	prng_output_location[5*21 +4] = output_location[21];// for random bin colors
 
-		a = (rand() + output_location[ii]) % 4; //shapes
-		b = output_location[ii] % 5; // location
-		c = output_location[ii] % 7; // color
-		d = (rand()+output_location[ii]) % 8; // size 1-8
-		e = (rand() + output_location[ii]) % 2; //is shape rotating
-
-//		printf("the rand num generated: %d \r\n",a);
-		prng_output_location[5*ii]    =  abs(a)+1;
-		prng_output_location[5*ii +1] =  fft_bin;// later on this could be the output from the FFT ip
-		prng_output_location[5*ii +2] =  abs(c);
-		prng_output_location[5*ii +3] =  abs(d)+1;
-		prng_output_location[5*ii +4] =  abs(e);
-
-	}
-
-	//4*19+3 = 79
-	prng_output_location[5*21 ] = output_location[1];// for random bin colors
-	prng_output_location[5*21 +1] = output_location[6];
-	prng_output_location[5*21 +2] = output_location[11];
-	prng_output_location[5*21 +3] = output_location[16];
-	prng_output_location[5*21 +4] = output_location[21];// for random bin colors
-
-	return;
 
 }
 
