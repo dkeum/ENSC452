@@ -1,6 +1,24 @@
 Nothing to build in platform 'v5_wrapper_1'
 
+<<<<<<< HEAD
 21:07:09 **** Incremental Build of configuration Debug for project try_version1 ****
+=======
+18:45:00 **** Incremental Build of configuration Debug for project try_version1_core1 ****
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+<<<<<<< HEAD
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:6:
+C:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bspinclude/include/xtime_l.h:65:70: note: #pragma message: For the sleep routines, Global timer is being used
+=======
+make[1]: Nothing to be done for 'main-build'.
+18:45:01 **** Incremental Build of configuration Debug for project try_version1 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -8,9 +26,10 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 'Building file: ../src/main.cpp'
 'Invoking: ARM v7 g++ compiler'
-arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
-In file included from ../src/main.cpp:6:
-C:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bspinclude/include/xtime_l.h:65:70: note: #pragma message: For the sleep routines, Global timer is being used
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:5:
+C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bspinclude/include/xtime_l.h:65:70: note: #pragma message: For the sleep routines, Global timer is being used
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
    65 | #pragma message ("For the sleep routines, Global timer is being used")
       |                                                                      ^
 ../src/main.cpp: In function 'int main()':
@@ -21,6 +40,7 @@ C:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapp
   234 |     unsigned long long int tempTime;
       |                            ^~~~~~~~
 ../src/main.cpp: In function 'void Global_Interrupt_Handler(void*)':
+<<<<<<< HEAD
 ../src/main.cpp:715:18: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
   715 |  if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
       |     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,6 +61,28 @@ C:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapp
 ../src/main.cpp: In function 'void generate_shape_from_Prng(int, int, int, double, int)':
 ../src/main.cpp:1775:7: warning: variable 'bin' set but not used [-Wunused-but-set-variable]
  1775 |   int bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+=======
+../src/main.cpp:687:18: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
+  687 |  if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
+      |     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.cpp:724:16: warning: comparison of integer expressions of different signedness: 'int' and 'u32' {aka 'long unsigned int'} [-Wsign-compare]
+  724 |  if (btn_value == XGpio_DiscreteRead(&btn_swt_gpio, BTN_INT) && btn_value != 0){
+      |      ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.cpp: In function 'void playback_audio(unsigned int)':
+../src/main.cpp:1296:10: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+ 1296 |  while(i < AUDIO_BUFF_SIZE && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) != 0)){
+      |        ~~^~~~~~~~~~~~~~~~~
+../src/main.cpp: In function 'void generate_shape_from_rng(int, int, int, double, int)':
+../src/main.cpp:1532:6: warning: variable 'bin' set but not used [-Wunused-but-set-variable]
+ 1532 |  int bin   = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+      |      ^~~
+../src/main.cpp:1534:6: warning: variable 'size' set but not used [-Wunused-but-set-variable]
+ 1534 |  int size = temp_buffer[5*4*jj+3+ 5*buffer_index]; // accept valeus of 1-7
+      |      ^~~~
+../src/main.cpp: In function 'void generate_shape_from_Prng(int, int, int, double, int)':
+../src/main.cpp:1715:7: warning: variable 'bin' set but not used [-Wunused-but-set-variable]
+ 1715 |   int bin        = temp_buffer[5*4*jj+1+ 5*buffer_index]; // accept valeus of 1-5
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
       |       ^~~
 ../src/main.cpp: In function 'void generate_shape_from_rng_with_array(int, int, int, double, int, int*)':
 ../src/main.cpp:1994:6: warning: variable 'bin' set but not used [-Wunused-but-set-variable]
@@ -57,12 +99,25 @@ C:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapp
 ' '
 'Building target: try_version1.elf'
 'Invoking: ARM v7 g++ linker'
-arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/dkeum/Desktop/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bsplib/lib -o "try_version1.elf"  ./src/audio.o ./src/cplx_data.o ./src/fft.o ./src/ip_functions.o ./src/main.o ./src/shapes.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/export/v5_wrapper_1/sw/v5_wrapper_1/standalone_ps7_cortexa9_0/bsplib/lib -o "try_version1.elf"  ./src/audio.o ./src/cplx_data.o ./src/fft.o ./src/ip_functions.o ./src/main.o ./src/shapes.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
 'Finished building target: try_version1.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size try_version1.elf  |tee "try_version1.elf.size"
    text	   data	    bss	    dec	    hex	filename
+<<<<<<< HEAD
  670927	   3876	24826592	25501395	1851ed3	try_version1.elf
 'Finished building: try_version1.elf.size'
 ' '
+=======
+ 663975	   3876	24826576	25494427	185039b	try_version1.elf
+'Finished building: try_version1.elf.size'
+' '
+18:45:03 **** Incremental Build of configuration Debug for project try_version1_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 22839 C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/export/v5_wrapper_1/v5_wrapper_1.xpfm standalone_ps7_cortexa9_0,try_version1_core1 C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/export/v5_wrapper_1/v5_wrapper_1.xpfm --sys_config v5_wrapper_1 --bif C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1_system/Debug/system.bif --bitstream C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1/_ide/bitstream/v5_wrapper.bit --elf C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1/Debug/try_version1.elf,ps7_cortexa9_0 --elf C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1_core1/Debug/try_version1_core1.elf,ps7_cortexa9_1
+creating BOOT.BIN using C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1/_ide/bitstream/v5_wrapper.bit
+Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/try_version1_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef

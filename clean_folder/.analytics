@@ -335,6 +335,7 @@ timestamp=[2023-03-31 18:43:12], mode=BUILD, duration=0:00:06.469, duration_ms=6
 timestamp=[2023-03-31 18:45:01], mode=BUILD, duration=0:00:00.346, duration_ms=346, data={name=try_version1_core1, configuration=Debug, clean_build=false}
 timestamp=[2023-03-31 18:45:03], mode=BUILD, duration=0:00:01.671, duration_ms=1671, data={name=try_version1, configuration=Debug, clean_build=false}
 timestamp=[2023-03-31 18:45:09], mode=BUILD, duration=0:00:06.529, duration_ms=6529, data={name=try_version1_system, configuration=Debug, clean_build=false}
+<<<<<<< HEAD
 timestamp=[2023-03-31 18:53:49], mode=WORKBENCH_START, duration=0:00:09.776, duration_ms=9776, data={}
 timestamp=[2023-03-31 18:53:50], mode=WORKBENCH_UI_INIT, duration=0:00:01.013, duration_ms=1013, data={editors_count=17, platform_editors_count=9, projects_count=10, platform_projects_count=3, active_platform_editor=false, projects=RemoteSystemsTempFiles,core11,temp,temp_system,try_version1,try_version1_core1,try_version1_system,v5_wrapper,v5_wrapper_1,v5_wrapper_2}
 timestamp=[2023-03-31 18:53:51], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.121, duration_ms=121, data={}
@@ -424,3 +425,5 @@ timestamp=[2023-03-31 21:04:53], mode=BUILD, duration=0:00:01.695, duration_ms=1
 timestamp=[2023-03-31 21:05:25], mode=BUILD, duration=0:00:00.407, duration_ms=407, data={name=try_version1, configuration=Debug, clean_build=false}
 timestamp=[2023-03-31 21:05:34], mode=BUILD, duration=0:00:02.368, duration_ms=2368, data={name=try_version1, configuration=Debug, clean_build=false}
 timestamp=[2023-03-31 21:07:11], mode=BUILD, duration=0:00:01.684, duration_ms=1684, data={name=try_version1, configuration=Debug, clean_build=false}
+=======
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef

@@ -1515,6 +1515,7 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 	}
 } // audio_interface()
 
+<<<<<<< HEAD
 
 
 
@@ -1522,6 +1523,8 @@ void audio_interface(unsigned int op_mode, uint interrupt_ch){
 
 // EVERYONE MODE EXCEPT FOR RANDOM MODE
 
+=======
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
 void generate_shape(){
 	// Providing a seed value
 	//	srand((unsigned) time(NULL));

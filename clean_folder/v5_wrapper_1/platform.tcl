@@ -34,8 +34,11 @@ platform write
 platform generate
 platform clean
 platform generate
+<<<<<<< HEAD
 platform generate -domains standalone_ps7_cortexa9_0,try_version1_core1,zynq_fsbl 
 platform clean
 platform generate
 platform clean
 platform generate
+=======
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef

@@ -6964,6 +6964,7 @@ con
 
 18:45:22 INFO  : Launch script is exported to file 'C:\Users\mbwhiteh\ENSC452-Daniel\clean_folder\try_version1_system\_ide\scripts\systemdebugger_try_version1_system_standalone.tcl'
 18:45:43 INFO  : Disconnected from the channel tcfchan#75.
+<<<<<<< HEAD
 18:53:44 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\dkeum\Downloads\ENSC452-main\clean_folder\temp_xsdb_launch_script.tcl
 18:53:46 INFO  : XSCT server has started successfully.
 18:53:46 INFO  : plnx-install-location is set to ''
@@ -9798,3 +9799,5 @@ con
 ----------------End of Script----------------
 
 21:07:23 INFO  : Launch script is exported to file 'C:\Users\dkeum\Downloads\ENSC452-main\clean_folder\try_version1_system\_ide\scripts\systemdebugger_try_version1_system_standalone.tcl'
+=======
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef

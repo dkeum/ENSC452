@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.runs/synth_1/design_1_wrapper.tcl"
+  variable script "C:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.runs/synth_1/design_1_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -78,77 +78,77 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.cache/wt [current_project]
-set_property parent.project_path C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.cache/wt [current_project]
+set_property parent.project_path C:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths {
-  c:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/ip
-  c:/Users/dkeum/Downloads/vga_tutorial_students/vga_controller_ip
-  c:/Users/dkeum/audio_tutorial/CustomIP_test
-  c:/Users/dkeum/Desktop/dma_ex_fft/lib
+  c:/Users/mbwhiteh/Downloads/vga_tutorial_students/vga_controller_ip
+  c:/Users/mbwhiteh/ENSC452-Daniel/CustomIP_test
+  c:/Users/mbwhiteh/Desktop/dma_ex_fft/lib
+  c:/Users/mbwhiteh/Desktop/sources/zedboard/adventures_with_ip_integrator/ip
 } [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.cache/ip [current_project]
+set_property ip_output_repo c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-add_files C:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_1/design_1_rst_ps7_0_100M_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_1/design_1_rst_ps7_0_100M_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_1/design_1_rst_ps7_0_100M_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/fifo_generator_0/fifo_generator_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xfft_0_0/design_1_xfft_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_2/design_1_xbar_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_3/design_1_xbar_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
-set_property used_in_synthesis false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_ooc.xdc]
-set_property used_in_synthesis false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s00_mmu_0/design_1_s00_mmu_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s01_mmu_0/design_1_s01_mmu_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/dkeum/audio_tutorial/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/design_1_ooc.xdc]
+read_vhdl -library xil_defaultlib C:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+add_files C:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_1/design_1_rst_ps7_0_100M_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_1/design_1_rst_ps7_0_100M_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_1/design_1_rst_ps7_0_100M_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s00_mmu_0/design_1_s00_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s01_mmu_0/design_1_s01_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_3/design_1_rst_ps7_0_100M_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/fifo_generator_0/fifo_generator_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_2/design_1_clk_wiz_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xfft_0_0/design_1_xfft_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_2/design_1_xbar_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/ip/design_1_xbar_3/design_1_xbar_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mbwhiteh/ENSC452-Daniel/audio_tutorial/audio_tutorial.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -159,8 +159,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/constraints/adventures_with_ip.xdc
-set_property used_in_implementation false [get_files C:/Users/dkeum/Downloads/sources/zedboard/adventures_with_ip_integrator/constraints/adventures_with_ip.xdc]
+read_xdc C:/Users/mbwhiteh/Desktop/FFD-Integration/constraints/ffd.xdc
+set_property used_in_implementation false [get_files C:/Users/mbwhiteh/Desktop/FFD-Integration/constraints/ffd.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

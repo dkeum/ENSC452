@@ -7623,6 +7623,7 @@ C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/ps7_cortexa9_1/try_ve
 C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
 
 TRACE::2023-03-31.18:07:50::SCWMssOS::Sw design exists and opened at  C:/Users/mbwhiteh/ENSC452-Daniel/clean_folder/v5_wrapper_1/ps7_cortexa9_1/try_version1_core1/bsp/system.mss
+<<<<<<< HEAD
 TRACE::2023-03-31.18:59:30::SCWPlatform::Trying to open the hw design at C:/Users/dkeum/Downloads/ENSC452-main/clean_folder/v5_wrapper_1/hw/v5_wrapper.xsa
 TRACE::2023-03-31.18:59:30::SCWPlatform::DSA given C:/Users/dkeum/Downloads/ENSC452-main/clean_folder/v5_wrapper_1/hw/v5_wrapper.xsa
 TRACE::2023-03-31.18:59:30::SCWPlatform::DSA absoulate path C:/Users/dkeum/Downloads/ENSC452-main/clean_folder/v5_wrapper_1/hw/v5_wrapper.xsa
@@ -11678,3 +11679,5 @@ C:/Users/dkeum/Downloads/ENSC452-main/clean_folder/v5_wrapper_1/ps7_cortexa9_1/t
 C:/Users/dkeum/Downloads/ENSC452-main/clean_folder/v5_wrapper_1/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
 
 TRACE::2023-03-31.20:58:17::SCWMssOS::Sw design exists and opened at  C:/Users/dkeum/Downloads/ENSC452-main/clean_folder/v5_wrapper_1/ps7_cortexa9_1/try_version1_core1/bsp/system.mss
+=======
+>>>>>>> d9fc8b9c1330f07c1e70d7d28135fe00ed38d9ef
