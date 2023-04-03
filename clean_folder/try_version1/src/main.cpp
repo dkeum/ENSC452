@@ -159,6 +159,9 @@ int bin_num2[6] = {0};
 int bin_num3[6] = {0};
 int bin_num4[6] = {0};
 int bin_num5[6] = {0};
+int bin_num6[6] = {0};
+
+
 unsigned long long int tempTime;
 
 //Main Program Entry Point
@@ -300,6 +303,9 @@ int main(void)
 	int counter2 =-200-50;
 	int counter3 =-300-50;
 	int counter4 =-400-50;
+	int counter5 =-500-50;
+
+
 	double rotation_amount = 0.2; //(14th first turn,189 second turn)
 
 
@@ -322,21 +328,25 @@ int main(void)
         bin = 0;
 
 
-    	    if(counter <=0){
+    	    if(counter>= -10 && counter <=0){
     			generate_param_for_row(bin_num1,0);
     		}
-    		if(counter1<=-10){
+    		if(counter1>= -20 && counter1<=-10){
     			generate_param_for_row(bin_num2,1);
     		}
-    		if(counter2<=-10){
+    		if(counter2>= -20 &&  counter2<=-10){
     			generate_param_for_row(bin_num3,2);
     		}
-    		if(counter3<=-10){
+    		if(counter3>= -20 && counter3<=-10){
     			generate_param_for_row(bin_num4,3);
     		}
-    		if(counter4 <=-10){
+    		if(counter4>= -20 && counter4 <=-10){
     			generate_param_for_row(bin_num5,4);
-    	}
+    		}
+//    		if(counter5>= -20 && counter5 <=-10){
+//    			generate_param_for_row(bin_num6,6);
+//    		}
+
 
         // (1) check light pattern mode and other settings (sound effects)
         		while(is_light_pattern_changed==1){
@@ -427,6 +437,8 @@ int main(void)
         			Xil_DCacheFlush();
         			generate_shape_from_Prng(5,counter4,background_color,rotation,elongate_mode,bin_num5);
         			Xil_DCacheFlush();
+//        			generate_shape_from_Prng(6,counter5,background_color,rotation,elongate_mode,bin_num6);
+//        			Xil_DCacheFlush();
         		}
         		else{
         			Xil_DCacheFlush();
@@ -440,6 +452,8 @@ int main(void)
         			Xil_DCacheFlush();
         			generate_shape_from_rng_with_array(5,counter4,background_color,rotation,elongate_mode,bin_num5);
         			Xil_DCacheFlush();
+//        			generate_shape_from_rng_with_array(6,counter5,background_color,rotation,elongate_mode,bin_num6);
+//        			Xil_DCacheFlush();
         		}
 
 
@@ -646,7 +660,18 @@ int main(void)
         			bin4_print =0;
         			bin5_print =0;
         		}
+        		if(counter5 > 1080){
+        			counter5= counter4-100;
 
+        			isbin5_changed=0;
+        //			xil_printf("bin5 counter is here: %d \r\n",bin5.counter);
+        //			xil_printf("shape is unstored in bin5: %d \r\n",bin1.counter);
+        			bin1_print =0;
+        			bin2_print =0;
+        			bin3_print =0;
+        			bin4_print =0;
+        			bin5_print =0;
+        		}
 
         		isbin1_changed=0;
         		isbin2_changed=0;
@@ -665,6 +690,7 @@ int main(void)
         		counter3 = counter3+tempo_speed_change;
         //		if(counter3 >= 150)
         		counter4 = counter4+tempo_speed_change;
+        		counter5 = counter5+tempo_speed_change;
         		rotation=rotation+rotation_amount;
 
         		// (5) if stop playing music then stop everything
@@ -1669,7 +1695,7 @@ void generate_with_shape_parms(int shape_type, int location, int color, int coun
 	int size = audio_volume_change;
 	// take the current speed
 
-	if(shape_type ==1 ){
+	if(shape_type ==1){
 		//square
 		Square square;
 //		square.draw_Square(-50, (location-1)*200 +70,size, color_array[color]); // -50 is the starting y coordinate which is off the screen
@@ -1788,7 +1814,7 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 		// the program accepts 4 shapes per bin at a time.
 		//
-		int shape      = temp_buffer[5*4*jj + 5*buffer_index]; // accept values 1-4
+		int shape      = temp_buffer[5*5*jj + 5*buffer_index]; // accept values 1-4
 
 
 		int bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
@@ -1967,7 +1993,7 @@ void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int
 
 
 	}
-	else if(shape_type ==4){// if(shape_type != 1 || shape_type != 2 || shape_type != 3)
+	else{// if(shape_type != 1 || shape_type != 2 || shape_type != 3)
 		//pentagon
 		Pentagon pentagon;
 		//pentagon.draw_Pentagon(((location-1)*200 + 70), 100+counter,1,(int)0xFFFFFFFF, rotation);
@@ -1991,7 +2017,6 @@ void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int
 				isbin5_changed = 1;
 			}
 		}
-
 	}
 	return;
 }
@@ -2135,7 +2160,7 @@ void generate_param_for_row(int *bins_covered, int bin_number){
 				temp_buffer[5*5*jj+4+ 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%2);; // accept valeus of 1-2
 			}
 		}
-
+		// 104 + 30 134 135
 
 }
 
