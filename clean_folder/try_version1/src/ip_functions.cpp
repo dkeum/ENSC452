@@ -51,7 +51,7 @@ int detect_freq(cplx_data_t * tx_buff, cplx_data_t * rx_buff, int sample_points,
 		freq_detected = (freq_bin)*48000.00/FFT_INIT_POINTS;
 		int* tmp_ptr = FREQ_OUT_ADDR;
 		*tmp_ptr = freq_detected;
-		vga_bin = floor(freq_detected/200);
+		vga_bin = ceil(freq_detected/200);
 		//Max bin is 4 i.e 1000 Hz
 		if(vga_bin >= 5) return 5;
 		else return vga_bin;

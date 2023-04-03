@@ -57,9 +57,9 @@ int IntcInitFunction(u16 DeviceId, XGpio *GpioInstancePtr);
 #define SOUND_EFFECT_1 1
 #define SOUND_EFFECT_2 2
 #define SOUND_EFFECT_3 3
-#define SIG_DETECT_3 192
-#define SIG_DETECT_2 128
-#define SIG_DETECT_1 64
+#define SIG_DETECT_3 204
+#define SIG_DETECT_2 140
+#define SIG_DETECT_1 76
 #define LIGHT_PTN_1 4
 #define LIGHT_PTN_2 8
 #define LIGHT_PTN_3 12
@@ -130,8 +130,8 @@ int is_sound_effect_1_on =0;
 int is_sound_effect_2_on =0;
 int is_sound_effect_3_on =0;
 
-int btn_value;
-int switch_value;
+uint btn_value;
+uint switch_value;
 
 XScuGic INTCInst;
 XIicPs Iic; //I2C Interface
@@ -144,8 +144,6 @@ XGpio btn_swt_gpio; // GPIO instance for buttons and switches
 #define sev() __asm__("sev")
 #define ARM1_STARTADR 0xFFFFFFF0
 #define ARM1_BASEADDR  0x10080000
-
-
 
 fft_t*       p_fft_inst;
 cplx_data_t * rx_buff = (cplx_data_t *)malloc(sizeof(cplx_data_t)*FFT_INIT_POINTS);
@@ -161,7 +159,6 @@ int bin_num4[6] = {0};
 int bin_num5[6] = {0};
 unsigned long long int tempTime;
 
-//Main Program Entry Point
 int main(void)
 {
 
@@ -233,8 +230,6 @@ int main(void)
     XTime tStart,tEnd;
     XTime_GetTime(&tStart);
     int bin = 0;
-    while (is_program_started==0){
-    }
     XTime_GetTime(&tEnd);
     tempTime = (tEnd-tStart)%300;
 
@@ -300,6 +295,9 @@ int main(void)
 	int counter2 =-200-50;
 	int counter3 =-300-50;
 	int counter4 =-400-50;
+	int counter5 =-500-50;
+
+
 	double rotation_amount = 0.2; //(14th first turn,189 second turn)
 
 
@@ -322,21 +320,25 @@ int main(void)
         bin = 0;
 
 
-    	    if(counter <=0){
+    	    if(counter>= -10 && counter <=0){
     			generate_param_for_row(bin_num1,0);
     		}
-    		if(counter1<=-10){
+    		if(counter1>= -20 && counter1<=-10){
     			generate_param_for_row(bin_num2,1);
     		}
-    		if(counter2<=-10){
+    		if(counter2>= -20 &&  counter2<=-10){
     			generate_param_for_row(bin_num3,2);
     		}
-    		if(counter3<=-10){
+    		if(counter3>= -20 && counter3<=-10){
     			generate_param_for_row(bin_num4,3);
     		}
-    		if(counter4 <=-10){
+    		if(counter4>= -20 && counter4 <=-10){
     			generate_param_for_row(bin_num5,4);
-    	}
+    		}
+//    		if(counter5>= -20 && counter5 <=-10){
+//    			generate_param_for_row(bin_num6,6);
+//    		}
+
 
         // (1) check light pattern mode and other settings (sound effects)
         		while(is_light_pattern_changed==1){
@@ -427,6 +429,8 @@ int main(void)
         			Xil_DCacheFlush();
         			generate_shape_from_Prng(5,counter4,background_color,rotation,elongate_mode,bin_num5);
         			Xil_DCacheFlush();
+//        			generate_shape_from_Prng(6,counter5,background_color,rotation,elongate_mode,bin_num6);
+//        			Xil_DCacheFlush();
         		}
         		else{
         			Xil_DCacheFlush();
@@ -440,6 +444,8 @@ int main(void)
         			Xil_DCacheFlush();
         			generate_shape_from_rng_with_array(5,counter4,background_color,rotation,elongate_mode,bin_num5);
         			Xil_DCacheFlush();
+//        			generate_shape_from_rng_with_array(6,counter5,background_color,rotation,elongate_mode,bin_num6);
+//        			Xil_DCacheFlush();
         		}
 
 
@@ -646,7 +652,18 @@ int main(void)
         			bin4_print =0;
         			bin5_print =0;
         		}
+        		if(counter5 > 1080){
+        			counter5= counter4-100;
 
+        			isbin5_changed=0;
+        //			xil_printf("bin5 counter is here: %d \r\n",bin5.counter);
+        //			xil_printf("shape is unstored in bin5: %d \r\n",bin1.counter);
+        			bin1_print =0;
+        			bin2_print =0;
+        			bin3_print =0;
+        			bin4_print =0;
+        			bin5_print =0;
+        		}
 
         		isbin1_changed=0;
         		isbin2_changed=0;
@@ -665,6 +682,7 @@ int main(void)
         		counter3 = counter3+tempo_speed_change;
         //		if(counter3 >= 150)
         		counter4 = counter4+tempo_speed_change;
+        		counter5 = counter5+tempo_speed_change;
         		rotation=rotation+rotation_amount;
 
         		// (5) if stop playing music then stop everything
@@ -707,8 +725,6 @@ int main(void)
 
 }
 
-
-
 void Global_Interrupt_Handler(void *InstancePtr)
 {
 	// Disable GPIO interrupts for both switch and pointers
@@ -722,59 +738,119 @@ void Global_Interrupt_Handler(void *InstancePtr)
 
 	switch_value = XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT);
 	usleep(1000);
+	int sws_value = switch_value;
+
+	is_sound_effect_1_on=0;
+	is_sound_effect_2_on=0;
+	is_sound_effect_3_on=0;
+
+	// mask all bits except for sw3 and sw2
+	// 12 = 00001100
+
+	if((sws_value & 12) == 0 ){
+
+
+		if(light_pattern_mode !=1){
+			is_light_pattern_changed =1;
+		}
+		light_pattern_mode=1;
+
+
+	}
+	else if((sws_value & 12) == 4){
+
+
+		if(light_pattern_mode !=2){
+			is_light_pattern_changed =1;
+		}
+		light_pattern_mode=2;
+
+
+
+	}
+	else if((sws_value & 12) == 8){
+
+		if(light_pattern_mode !=3){
+			is_light_pattern_changed =1;
+		}
+		light_pattern_mode=3;
+
+
+
+		}
+	else if((sws_value & 12) == 12){
+
+		if(light_pattern_mode !=4){
+			is_light_pattern_changed =1;
+		}
+		light_pattern_mode=4;
+
+
+	}
 
 	//Sleep to correct for button and switch double bounce
 	if(switch_value == XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) && switch_value != 0){
 		*AUDIO_STREAM_MODE_ADDR = OFF;
-		xil_printf("SWT %d \r\n", switch_value);
 		switch(switch_value){
-			case RECORD:
-				record_audio(RECORD);
-				break;
-			case PLAYBACK:
-				playback_audio(PLAYBACK);
-				break;
 			case LIGHT_PTN_1:
-				light_fx(LIGHT_PTN_1);
 				break;
 			case LIGHT_PTN_2:
-				light_fx(LIGHT_PTN_2);
 				break;
 			case LIGHT_PTN_3:
-				light_fx(LIGHT_PTN_3);
+				break;
+			case RECORD:
+				*AUDIO_STREAM_STATE_ADDR = RECORD;
+				break;
+			case PLAYBACK:
+				*AUDIO_STREAM_STATE_ADDR = PLAYBACK;
 				break;
 			case SOUND_EFFECT_1:
 				is_sound_effect_1_on=1;
 				is_sound_effect_2_on=0;
 				is_sound_effect_3_on=0;
 				is_light_pattern_changed=1;
-//				add_soundfx(SOUND_EFFECT_1);
+				*AUDIO_STREAM_STATE_ADDR = SOUND_EFFECT_1;
 				break;
 			case SOUND_EFFECT_2:
 				is_sound_effect_1_on=0;
 				is_sound_effect_2_on=1;
 				is_sound_effect_3_on=0;
 				is_light_pattern_changed=1;
-//				add_soundfx(SOUND_EFFECT_2);
-
+				*AUDIO_STREAM_STATE_ADDR = SOUND_EFFECT_2;
 				break;
 			case SOUND_EFFECT_3:
 				is_sound_effect_1_on=0;
 				is_sound_effect_2_on=0;
 				is_sound_effect_3_on=1;
 				is_light_pattern_changed=1;
-//				add_soundfx(SOUND_EFFECT_3);
+				*AUDIO_STREAM_STATE_ADDR = SOUND_EFFECT_3;
 				break;
 			case SIG_DETECT_1:
-				sig_detect_fx(SIG_DETECT_1);
+				*AUDIO_STREAM_STATE_ADDR = SIG_DETECT_1;
+				if(*FREQ_OUT_ADDR >= 600 && *FREQ_OUT_ADDR < 700){
+					xil_printf("Detect Signal 1 Active - Frequency Range [600, 700) Hz detected\r\n");
+					light_pattern_mode=4;
+					is_light_pattern_changed=1;
+				}
 				break;
 			case SIG_DETECT_2:
-				sig_detect_fx(SIG_DETECT_2);
+				*AUDIO_STREAM_STATE_ADDR = SIG_DETECT_2;
+				if(*FREQ_OUT_ADDR >= 700 && *FREQ_OUT_ADDR < 800){
+					xil_printf("Detect Signal 2 Active - Frequency Range [700, 800) Hz detected\r\n");
+					light_pattern_mode=4;
+					is_light_pattern_changed=1;
+				}
 				break;
 			case SIG_DETECT_3:
-				sig_detect_fx(SIG_DETECT_3);
+				*AUDIO_STREAM_STATE_ADDR = SIG_DETECT_3;
+				if(*FREQ_OUT_ADDR >= 900 && *FREQ_OUT_ADDR < 1100){
+					xil_printf("Detect Signal 3 Active - Frequency Range [900, 1100) Hz detected\r\n");
+					light_pattern_mode=4;
+					is_light_pattern_changed=1;
+				}
 				break;
 			default:
+				*AUDIO_STREAM_STATE_ADDR = STREAM;
 				break;
 		}
 		*AUDIO_STREAM_MODE_ADDR = ON;
@@ -799,7 +875,6 @@ void Global_Interrupt_Handler(void *InstancePtr)
 				change_tone(TONE_DWN);
 				break;
 			case STOP_START:
-				is_program_started=1;
 				start_stop_audio(STOP_START);
 				break;
 			default:
@@ -1258,7 +1333,6 @@ int dma_accel_xfer(dma_accel_t* p_dma_accel_inst)
 }
 
 
-static int RECORDED_DATA_PTR[960000];
 unsigned int AUDIO_STATE;
 unsigned int INTR_CH;
 unsigned int AUDIO_BUFF_SIZE;
@@ -1269,7 +1343,6 @@ void change_sys_state(unsigned int curr_state, unsigned int new_state){
 	AUDIO_STATE = new_state;
 	return;
 }
-
 void change_amplitude(unsigned int OP_CODE){
 	//Change the system state
 	change_sys_state(AUDIO_STATE, OP_CODE);
@@ -1308,11 +1381,8 @@ void change_amplitude(unsigned int OP_CODE){
 void change_tone(unsigned int OP_CODE){
 	//Change the system state
 	change_sys_state(AUDIO_STATE, OP_CODE);
-
 	//Increase or decrease the tone of the audio stream
 	if(AUDIO_STATE == TONE_UP){
-
-
 		if(tempo_speed_change <8){
 			tempo_speed_change++;
 		}
@@ -1331,42 +1401,7 @@ void change_tone(unsigned int OP_CODE){
 	change_sys_state(AUDIO_STATE, STREAM);
 	return;
 }
-void record_audio(unsigned int OP_CODE){
-	//Change the system state
-	change_sys_state(AUDIO_STATE, OP_CODE);
-	u32 in_right, in_left;
-	int i = 0;
-	while(i < AUDIO_BUFF_MAX && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) != 0)){
-		// Read audio input from codec
-		in_left = Xil_In32(I2S_DATA_RX_L_REG);
-		in_right = Xil_In32(I2S_DATA_RX_R_REG);
-		RECORDED_DATA_PTR[i] = (u32)in_left;
-		i++;
-		RECORDED_DATA_PTR[i] = (u32)in_right;
-		usleep(23);
-		i++;
-	}
-	AUDIO_BUFF_SIZE = i;
-	//Revert system state to stream after recoding
-	change_sys_state(AUDIO_STATE, STREAM);
-	return;
-}
 
-void playback_audio(unsigned int OP_CODE){
-	//Change the system state
-	change_sys_state(AUDIO_STATE, OP_CODE);
-	int i = 0;
-	while(i < AUDIO_BUFF_SIZE && (XGpio_DiscreteRead(&btn_swt_gpio, SWT_INT) != 0)){
-		Xil_Out32(I2S_DATA_TX_L_REG, (u32)RECORDED_DATA_PTR[i]);
-		i++;
-		Xil_Out32(I2S_DATA_TX_R_REG, (u32)RECORDED_DATA_PTR[i]);
-		usleep(23*(*TONE_SCALE_ADDR));
-		i++;
-	}
-	//Revert system state to stream after playback
-	change_sys_state(AUDIO_STATE, STREAM);
-	return;
-}
 void add_soundfx(unsigned int OP_CODE){
 	//Change the system state
 	change_sys_state(AUDIO_STATE, OP_CODE);
@@ -1423,13 +1458,13 @@ void add_soundfx(unsigned int OP_CODE){
 void start_stop_audio(unsigned int OP_CODE){
 	if(OP_CODE == STOP_START && *AUDIO_STREAM_MODE_ADDR == OFF){
 
-		is_music_streaming=2;
+		is_music_streaming=1;
 		reset_bin_counters =1;
 		change_sys_state(AUDIO_STATE, OP_CODE);
 		*AUDIO_STREAM_MODE_ADDR = ON;
 	}else if(OP_CODE == STOP_START && *AUDIO_STREAM_MODE_ADDR == ON) {
 
-		is_music_streaming=1;
+		is_music_streaming=2;
 		change_sys_state(AUDIO_STATE, OP_CODE);
 		*AUDIO_STREAM_MODE_ADDR = OFF;
 	}
@@ -1439,18 +1474,15 @@ void start_stop_audio(unsigned int OP_CODE){
 
 void light_fx(u8 OP_CODE){
 	if(OP_CODE == LIGHT_PTN_1){
-		//TODO Light Pattern 1
 		is_light_pattern_changed =1;
 		light_pattern_mode=2;
 
 		xil_printf("Adding light pattern 1.\r\n");
 	}else if(OP_CODE == LIGHT_PTN_2){
-		//TODO Light Pattern 3 random
 		is_light_pattern_changed =1;
 		light_pattern_mode=3;
 		xil_printf("Adding light pattern 2.\r\n");
 	}else{
-		//TODO Light Pattern 4 elongate
 		is_light_pattern_changed =1;
 		light_pattern_mode=4;
 		xil_printf("Adding light pattern 3.\r\n");
@@ -1475,73 +1507,6 @@ void sig_detect_fx(u8 OP_CODE){
 	}
 	return;
 }
-
-void draw_static_canvas(){
-	xil_printf("Drawing Static Canvas\r\n");
-	return;
-}
-
-void audio_interface(unsigned int op_mode, uint interrupt_ch){
-
-	if(interrupt_ch != BTN_INT){
-
-	switch(op_mode){
-		case RECORD:
-			record_audio(RECORD);
-			break;
-		case PLAYBACK:
-			playback_audio(PLAYBACK);
-			break;
-		case SOUND_EFFECT_1:
-			add_soundfx(SOUND_EFFECT_1);
-			break;
-		case SOUND_EFFECT_2:
-			add_soundfx(SOUND_EFFECT_2);
-			break;
-		case SOUND_EFFECT_3:
-			add_soundfx(SOUND_EFFECT_3);
-			break;
-		case SIG_DETECT_1:
-			sig_detect_fx(SIG_DETECT_1);
-			break;
-		case SIG_DETECT_2:
-			sig_detect_fx(SIG_DETECT_2);
-			break;
-		case SIG_DETECT_3:
-			sig_detect_fx(SIG_DETECT_3);
-			break;
-		case LIGHT_PTN_1:
-			light_fx(LIGHT_PTN_1);
-			break;
-		case LIGHT_PTN_2:
-			light_fx(LIGHT_PTN_2);
-			break;
-		case LIGHT_PTN_3:
-			light_fx(LIGHT_PTN_3);
-			break;
-		default:
-			if(*AUDIO_STREAM_MODE_ADDR == ON){
-				xil_printf("STREAMING AUDIO\r\n");
-//				is_music_streaming=1;
-				audio_stream();
-			} else {
-				xil_printf("AUDIO STREAM OFF\r\n");
-//				is_music_streaming=2;
-//				reset_bin_counters=1;
-			}
-			break;
-	}
-	}else {
-		audio_stream();
-	}
-} // audio_interface()
-
-
-
-
-// EVERYONE MODE EXCEPT FOR RANDOM MODE
-
-// EVERYONE MODE EXCEPT FOR RANDOM MODE
 
 void generate_shape(){
 	// Providing a seed value
@@ -1669,7 +1634,7 @@ void generate_with_shape_parms(int shape_type, int location, int color, int coun
 	int size = audio_volume_change;
 	// take the current speed
 
-	if(shape_type ==1 ){
+	if(shape_type ==1){
 		//square
 		Square square;
 //		square.draw_Square(-50, (location-1)*200 +70,size, color_array[color]); // -50 is the starting y coordinate which is off the screen
@@ -1788,7 +1753,7 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 		// the program accepts 4 shapes per bin at a time.
 		//
-		int shape      = temp_buffer[5*4*jj + 5*buffer_index]; // accept values 1-4
+		int shape      = temp_buffer[5*5*jj + 5*buffer_index]; // accept values 1-4
 
 
 		int bin        = temp_buffer[5*5*jj+1+ 5*buffer_index]; // accept valeus of 1-5
@@ -1967,7 +1932,7 @@ void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int
 
 
 	}
-	else if(shape_type ==4){// if(shape_type != 1 || shape_type != 2 || shape_type != 3)
+	else{// if(shape_type != 1 || shape_type != 2 || shape_type != 3)
 		//pentagon
 		Pentagon pentagon;
 		//pentagon.draw_Pentagon(((location-1)*200 + 70), 100+counter,1,(int)0xFFFFFFFF, rotation);
@@ -1991,7 +1956,6 @@ void generate_with_shape_parms_PRNG(int shape_type, int location, int color, int
 				isbin5_changed = 1;
 			}
 		}
-
 	}
 	return;
 }
@@ -2135,7 +2099,7 @@ void generate_param_for_row(int *bins_covered, int bin_number){
 				temp_buffer[5*5*jj+4+ 5*buffer_index]= (generate_PRNG(&myDma,tempTime)+rand()%2);; // accept valeus of 1-2
 			}
 		}
-
+		// 104 + 30 134 135
 
 }
 
@@ -2284,12 +2248,3 @@ void generate_shape_from_Prng(int bin_num, int counter,int background_color, dou
 
 			return;
 }
-
-
-
-
-// THINGS TO DO MAYBE
-
-// random mode sound effects
-// START program using BTNC at the start
-// FIX light pattern mode and no sound effect

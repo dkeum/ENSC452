@@ -1,0 +1,10 @@
+#ifndef INTR_FUNCS_HPP
+#define INTR_FUNCS_HPP
+#include <stdlib.h>
+#include <stdio.h>
+#include "audio.hpp"
+
+//Prototype functions
+void record_audio(int * audio_buff, int * audio_state, int audio_buff_size, int * playback_tone);
+
+#endif

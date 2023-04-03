@@ -1,0 +1,121 @@
+#include "ip_functions.hpp"
+
+void sample_audio_stream(cplx_data_t * data_buff, int sample_points){
+	for(int i = 0; i < sample_points; i++){
+		//Read from audio codec
+		data_buff[i].data_re = Xil_In32(I2S_DATA_RX_L_REG);
+		data_buff[i].data_im = 0;
+		if((data_buff[i].data_re & 0x00800000) == 0x00800000){
+			data_buff[i].data_re = 0x00800000 | 0xFF800000; //Sign extend if MSB of audio data is 1
+		}
+		usleep(21); //Sample @ 48 kHz
+	}
+	return;
+}
+
+int detect_freq(cplx_data_t * tx_buff, cplx_data_t * rx_buff, int sample_points, fft_t * fft_inst){
+	
+	int status = 0;
+	double abs_val = 0;
+	int freq_bin = 0;
+	int vga_bin = 0;
+	double freq_detected = 0;
+	double test_val = 0;
+	
+	//Collection of sample_points from ADAU1761 Audio Codec for Xilinx FFT
+	memset(tx_buff, 0, sample_points*sizeof(cplx_data_t));
+	sample_audio_stream(tx_buff, sample_points);
+	memset(rx_buff, 0, sample_points*sizeof(cplx_data_t));
+
+	//Send data to FFT
+	status = fft(fft_inst, tx_buff, rx_buff);
+
+	if(status != FFT_SUCCESS){
+		xil_printf("FFT Failure.\n\r");
+		return -1;
+	}else{
+		//Determine the frequency range detected.
+		/*
+		1024 Points --> 46.875 Hz bins
+		Range of interest (0, 1000) Hz
+		Bins to find the max amplitude 0 to 43
+		*/
+		for(int i = 1; i < 43; i++){
+			test_val = sqrt(pow((rx_buff[i].data_re), 2) + pow((rx_buff[i].data_im) , 2));
+			if(test_val > abs_val){
+				abs_val = sqrt(pow((rx_buff[i].data_re), 2) + pow((rx_buff[i].data_im), 2));
+				freq_bin = i;
+			}
+		}
+		//Determine what freq to bin mapping
+		freq_detected = (freq_bin)*48000.00/FFT_INIT_POINTS;
+		int* tmp_ptr = FREQ_OUT_ADDR;
+		*tmp_ptr = freq_detected;
+		vga_bin = floor(freq_detected/200);
+		//Max bin is 4 i.e 1000 Hz
+		if(vga_bin >= 5) return 5;
+		else return vga_bin;
+	}
+}
+
+//generates numbers up to 20 shapes. each shape will have randomized color, position,
+int generate_PRNG(XAxiDma * myDma,unsigned long long int tempTime){
+	u32 status;
+	u32 output_location[20]; // output of seed is here. We want to let at most 4 shapes per bin at a time. 4*5 = 20
+//	int* prng_output_location = prng_output;
+	u32 seed[20]; //seed
+
+	for(int ii =0; ii < 20;ii++){
+			seed[ii] = seed[ii]+ii+1+tempTime;
+	}
+
+	u32 size= 5;
+	memset(output_location, 0x0, size*sizeof(u32));
+	Xil_DCacheFlushRange((u32)seed,size*sizeof(u32));
+	Xil_DCacheFlushRange((u32)output_location,size*sizeof(u32));
+	status = XAxiDma_SimpleTransfer(myDma, (u32)seed, size*sizeof(u32),XAXIDMA_DMA_TO_DEVICE);
+	if(status != XST_SUCCESS){
+		xil_printf("DMA initialization failed\n");
+		return 0;
+	}
+	status = XAxiDma_SimpleTransfer(myDma, (u32)output_location, size*sizeof(u32),XAXIDMA_DEVICE_TO_DMA);//typecasting in C/C++
+	if(status != XST_SUCCESS){
+		xil_printf("DMA initialization failed\n");
+		return 0;
+	}
+	usleep(500);
+	int a,b,c,d,e;
+
+	return ((seed[0]+tempTime)%5);
+
+//	// new seeds for the next iteration
+//	for(int ii =0; ii < 1;ii++){
+//		seed[ii] = output_location[ii];
+//
+//		xil_printf("the rand num generated: %0x \r\n",output_location[ii]);
+//
+//		a = (rand() + output_location[ii]) % 4; //shapes
+//		b = output_location[ii] % 5; // location
+//		c = output_location[ii] % 7; // color
+//		d = (rand()+output_location[ii]) % 8; // size 1-8
+//		e = (rand() + output_location[ii]) % 2; //is shape rotating
+//
+////		printf("the rand num generated: %d \r\n",a);
+//		prng_output_location[5*ii]    =  abs(a)+1;
+//		prng_output_location[5*ii +1] =  fft_bin;// later on this could be the output from the FFT ip
+//		prng_output_location[5*ii +2] =  abs(c);
+//		prng_output_location[5*ii +3] =  abs(d)+1;
+//		prng_output_location[5*ii +4] =  abs(e);
+//
+//	}
+//
+//	//4*19+3 = 79
+//	prng_output_location[5*21 ] = output_location[1];// for random bin colors
+//	prng_output_location[5*21 +1] = output_location[6];
+//	prng_output_location[5*21 +2] = output_location[11];
+//	prng_output_location[5*21 +3] = output_location[16];
+//	prng_output_location[5*21 +4] = output_location[21];// for random bin colors
+
+
+}
+

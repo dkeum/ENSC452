@@ -29,11 +29,13 @@
 
 #include "ip_functions.hpp"
 
-#define AMP_VAL_ADDR (char *)0x10080000 //Need to update
-#define BIN_DETECTED_ADDR (int *)0x10080004 //DDR Space for Freq Bin Detected
-#define TONE_SCALE_ADDR (int *)0x10080008
-#define AUDIO_STREAM_MODE_ADDR (int *)0x1008000C
+//Audio Stream Core 0/1 Shared Memory Space
+#define AMP_VAL_ADDR (char *)0x10080000
+#define BIN_DETECTED_ADDR (int *)0x10080004
 #define SIG_DETECT (int *)0x10080012
+#define AUDIO_STREAM_MODE_ADDR (int *)0x1008000C
+#define AUDIO_STREAM_STATE_ADDR (int *) 0xFFF00001
+#define TONE_SCALE_ADDR (int *)0xFFF00008
 
 // Parameter definitions
 #define INTC_DEVICE_ID 		XPAR_PS7_SCUGIC_0_DEVICE_ID

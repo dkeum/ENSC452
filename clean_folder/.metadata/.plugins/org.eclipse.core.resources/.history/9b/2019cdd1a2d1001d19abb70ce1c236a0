@@ -1,0 +1,4 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+void record_audio(int * audio_buff, int * audio_state, int audio_buff_size, int * playback_tone);
